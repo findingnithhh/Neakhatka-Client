@@ -1,30 +1,30 @@
-import { Icon} from "@/components";
+import { Icon } from "@/components";
 import { Typography } from "../../atoms/Typography";
 import React from "react";
 import Image from "next/image";
 import { DetailCard } from "@/Types/DetailCard";
- 
+
 interface CardProps {
-    className?: string;
-    data: DetailCard;
-  }
-const Card:React.FC<CardProps> = ({className="",data}) => {
-    const {
-        companyName,
-        companyLogo,
-        peopleAmount,
-        jobTitle,
-        salary,
-        Emploment,
-        location,
-        DeadLine
-    } = data;
+  className?: string;
+  data: DetailCard;
+}
+const Card: React.FC<CardProps> = ({ className = "", data }) => {
+  const {
+    companyName,
+    companyLogo,
+    peopleAmount,
+    jobTitle,
+    salary,
+    Emploment,
+    location,
+    DeadLine,
+  } = data;
   return (
     <>
       <main className="w-[1200px] mx-auto mt-10">
         {/* Card */}
-        <div className="grid grid-cols-2 gap-[20px] ">
-          <div className="w-full h-[212px] rounded-xl shadow-lg p-5 font-Poppins">
+        <div className="grid grid-cols-2 gap-[20px]">
+          <div className="w-full h-[212px] rounded-xl shadow-lg p-5 font-Poppins bg-red-500">
             <div className="flex justify-between items-center">
               {/* image */}
               <div className="flex">
