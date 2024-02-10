@@ -21,10 +21,10 @@ const Card: React.FC<CardProps> = ({ className = "", data }) => {
   } = data;
   return (
     <>
-      <main className="w-[1200px] mx-auto mt-10">
+      {/* <main className="w-[1200px] mx-auto mt-10"> */}
         {/* Card */}
-        <div className="grid grid-cols-2 gap-[20px]">
-          <div className="w-full h-[212px] rounded-xl shadow-lg p-5 font-Poppins bg-red-500">
+        {/* <div className="grid grid-cols-2 gap-[20px]"> */}
+          <div className="w-full h-[212px] rounded-xl shadow-lg p-5 font-Poppins">
             <div className="flex justify-between items-center">
               {/* image */}
               <div className="flex">
@@ -92,8 +92,8 @@ const Card: React.FC<CardProps> = ({ className = "", data }) => {
               </div>
             </div>
           </div>
-        </div>
-      </main>
+        {/* </div>
+      </main> */}
     </>
   );
 };

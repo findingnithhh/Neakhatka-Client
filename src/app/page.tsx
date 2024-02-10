@@ -23,22 +23,22 @@ export default function Home() {
       companyName: "Wing Bank",
       companyLogo: "/images.png",
       peopleAmount: "100+ people",
-      jobTitle: "React Js Intership",
-      salary: "$100-$200",
+      jobTitle: "UX/UI Intership",
+      salary: "$150-$200",
       location: "Phnom Penh",
       Emploment: "Full-Time",
-      DeadLine: "01-08-2045",
+      DeadLine: "01-01-2025",
     },
     {
       id: 2,
       companyName: "Sathapana Bank",
       companyLogo: "/images.png",
-      peopleAmount: "100+ people",
-      jobTitle: "React Js Intership",
+      peopleAmount: "50+ people",
+      jobTitle: "Vue Js Intership",
       salary: "$100-$200",
       location: "Phnom Penh",
       Emploment: "Full-Time",
-      DeadLine: "01-08-2045",
+      DeadLine: "09-08-2024",
     },
     {
       id: 3,
@@ -50,6 +50,61 @@ export default function Home() {
       location: "Phnom Penh",
       Emploment: "Full-Time",
       DeadLine: "01-08-2045",
+    },
+    {
+      id: 4,
+      companyName: "J Trust Bank",
+      companyLogo: "/images.png",
+      peopleAmount: "100+ people",
+      jobTitle: "Mobile app Intership",
+      salary: "$100-$200",
+      location: "Phnom Penh",
+      Emploment: "Full-Time",
+      DeadLine: "01-08-2025",
+    },
+    {
+      id: 5,
+      companyName: "ABA Bank",
+      companyLogo: "/images.png",
+      peopleAmount: "100+ people",
+      jobTitle: "React Js Intership",
+      salary: "$100-$200",
+      location: "Phnom Penh",
+      Emploment: "Full-Time",
+      DeadLine: "01-08-2045",
+    },
+    {
+      id: 6,
+      companyName: "J Trust Bank",
+      companyLogo: "/images.png",
+      peopleAmount: "100+ people",
+      jobTitle: "Mobile app Intership",
+      salary: "$100-$200",
+      location: "Phnom Penh",
+      Emploment: "Full-Time",
+      DeadLine: "01-08-2025",
+    },
+    {
+      id: 7,
+      companyName: "ABA Bank",
+      companyLogo: "/images.png",
+      peopleAmount: "100+ people",
+      jobTitle: "React Js Intership",
+      salary: "$100-$200",
+      location: "Phnom Penh",
+      Emploment: "Full-Time",
+      DeadLine: "01-08-2045",
+    },
+    {
+      id: 8,
+      companyName: "J Trust Bank",
+      companyLogo: "/images.png",
+      peopleAmount: "100+ people",
+      jobTitle: "Mobile app Intership",
+      salary: "$100-$200",
+      location: "Phnom Penh",
+      Emploment: "Full-Time",
+      DeadLine: "01-08-2025",
     },
   ];
   return (
@@ -64,11 +119,16 @@ export default function Home() {
       >
         Latest <span className="text-[#4B9960]">Interns</span>
       </Typography>
-      {Cardinfor.map((job) => (
-        <div key={job.id} className="card-container">
-          <Card className="w-[60px] h-[60px]" data={job} />
+      <main className="w-[1200px] mx-auto mt-10">
+        {/* Card */}
+        <div className="grid grid-cols-2 gap-[20px]">
+          {Cardinfor.map((job) => (
+            <div key={job.id} className="card-container">
+              <Card className="w-[60px] h-[60px]" data={job} />
+            </div>
+          ))}
         </div>
-      ))}
+      </main>
       <Promote />
       <Footer />
     </>
