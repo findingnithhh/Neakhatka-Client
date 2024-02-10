@@ -1,13 +1,27 @@
-import { Icon, Typography } from "@/components";
+import { Icon} from "@/components";
+import { Typography } from "../../atoms/Typography";
 import React from "react";
 import Image from "next/image";
-const Card = () => {
+import { DetailCard } from "@/Types/DetailCard";
+ 
+interface CardProps {
+    className?: string;
+    data: DetailCard;
+  }
+const Card:React.FC<CardProps> = ({className="",data}) => {
+    const {
+        companyName,
+        companyLogo,
+        peopleAmount,
+        jobTitle,
+        salary,
+        Emploment,
+        location,
+        DeadLine
+    } = data;
   return (
     <>
       <main className="w-[1200px] mx-auto mt-10">
-        <Typography className="text-[#212529] mb-10" fontSize="2xl">
-          Latest <span className="text-[#4B9960]">Interns</span>
-        </Typography>
         {/* Card */}
         <div className="grid grid-cols-2 gap-[20px] ">
           <div className="w-full h-[212px] rounded-xl shadow-lg p-5 font-Poppins">
@@ -23,9 +37,9 @@ const Card = () => {
                 ></Image>
                 {/* title */}
                 <div className="font-Poppins ml-2">
-                  <Typography>Sathapana Bank</Typography>
+                  <Typography>{companyName}</Typography>
                   <Typography fontSize="sm" className="text-gray-500">
-                    100+ people
+                    {peopleAmount}
                   </Typography>
                 </div>
               </div>
@@ -38,10 +52,10 @@ const Card = () => {
               <div>
                 {/* position name */}
                 <Typography className="mt-5" fontSize="sm">
-                  React Js developer
+                  {jobTitle}
                 </Typography>
                 <Typography className="text-gray-500" fontSize="sm">
-                  $100-$200
+                  {salary}
                 </Typography>
                 <div>
                   <Typography className="mt-2" fontSize="sm">
@@ -50,7 +64,7 @@ const Card = () => {
                   <Typography className="text-gray-500" fontSize="sm">
                     <div className="flex">
                       <Icon className="mr-2" label="Bag" size="sm" />
-                      Full-ime
+                      {Emploment}
                     </div>
                   </Typography>
                 </div>
@@ -63,7 +77,7 @@ const Card = () => {
                 <Typography className="text-gray-500" fontSize="sm">
                   <div className="flex">
                     <Icon className="mr-2" label="Location" size="sm" />
-                    Phnom Penh
+                    {location}
                   </div>
                 </Typography>
                 <Typography className="mt-2" fontSize="sm">
@@ -72,7 +86,7 @@ const Card = () => {
                 <Typography className="text-gray-500" fontSize="sm">
                   <div className="flex">
                     <Icon className="mr-2" label="Date" size="sm" />
-                    01-09-2024
+                    {DeadLine}
                   </div>
                 </Typography>
               </div>
