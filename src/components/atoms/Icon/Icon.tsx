@@ -2,7 +2,7 @@ import React from "react";
 import { IconItems } from "./IconItem";
 
 interface IconProps {
-  className?: string,
+  className?: string;
   label: string;
   size?: "xs" | "sm" | "md" | "lg" | "xl";
   colorBackground?: "red" | "blue" | "green" | "yellow";
@@ -47,11 +47,15 @@ export default function Icon({
   const findIcon = (label: string) => {
     const result = IconItems.filter((eachIcon) => eachIcon.label === label);
 
-    return result[0].icon({
-      className: ` ${classname}`,
-      // border: "#FD5858",
-      background: `${IconColorBackgroundStyle}`,
-    });
+    return (
+      result &&
+      result.length > 0 &&
+      result[0].icon({
+        className: ` ${classname}`,
+        // border: "#FD5858",
+        background: `${IconColorBackgroundStyle}`,
+      })
+    );
   };
 
   return <div className={`${className}`}>{findIcon(label)}</div>;
