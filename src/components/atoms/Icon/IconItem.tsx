@@ -90,9 +90,9 @@ const IconItems: IconItem[] = [
             <path
               d="M21.2917 13.375H17.4917C16.605 13.375 16.1616 13.375 15.8229 13.5476C15.525 13.6994 15.2827 13.9416 15.1309 14.2395C14.9584 14.5782 14.9584 15.0216 14.9584 15.9083V25.0917C14.9584 25.9784 14.9584 26.4218 15.1309 26.7605C15.2827 27.0584 15.525 27.3007 15.8229 27.4524C16.1616 27.625 16.605 27.625 17.4917 27.625H20.5M21.2917 13.375L26.0417 18.125M21.2917 13.375V16.8583C21.2917 17.3017 21.2917 17.5234 21.378 17.6927C21.4539 17.8417 21.575 17.9628 21.724 18.0387C21.8933 18.125 22.115 18.125 22.5584 18.125H26.0417M26.0417 18.125V20.5M24.4584 26.0417H27.625M26.0417 24.4583V27.625"
               stroke={background}
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </g>
           <defs>
@@ -131,7 +131,7 @@ const IconItems: IconItem[] = [
             d="M29.4062 15.75H23.6846C23.4878 14.8837 22.813 13.375 20.5 13.375C18.187 13.375 17.5123 14.8837 17.3154 15.75H11.5938C11.266 15.75 11 16.016 11 16.3438V27.0312C11 27.359 11.266 27.625 11.5938 27.625H29.4062C29.734 27.625 30 27.359 30 27.0312V16.3438C30 16.016 29.734 15.75 29.4062 15.75ZM20.5 14.5625C21.787 14.5625 22.2753 15.2287 22.4618 15.75H18.5371C18.7241 15.2314 19.2142 14.5625 20.5 14.5625ZM28.8125 16.9375V19.3125H12.1875V16.9375H28.8125ZM19.6094 20.5H21.3906V21.0938H19.6094V20.5ZM12.1875 26.4375V20.5H18.4219V21.6875C18.4219 22.0153 18.6879 22.2812 19.0156 22.2812H21.9844C22.3121 22.2812 22.5781 22.0153 22.5781 21.6875V20.5H28.8125V26.4375H12.1875Z"
             fill={background}
             stroke="black"
-            stroke-width="0.00064"
+            strokeWidth="0.00064"
           />
         </svg>
       );
@@ -157,9 +157,9 @@ const IconItems: IconItem[] = [
           <path
             d="M4 6L8 10L12 6"
             stroke="#94A3B8"
-            stroke-width="1.33333"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.33333"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       );
@@ -309,17 +309,17 @@ const IconItems: IconItem[] = [
               d="M6.99995 13.3C3.52056 13.3 0.699951 10.4794 0.699951 7.00001C0.699951 3.52062 3.52056 0.700012 6.99995 0.700012C10.4793 0.700012 13.3 3.52062 13.3 7.00001C13.3 10.4794 10.4793 13.3 6.99995 13.3Z"
               stroke="black"
               stroke-opacity="0.5"
-              stroke-width="1.4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M7.00002 4.20001V7.00001L4.90002 9.10001"
               stroke="black"
               stroke-opacity="0.5"
-              stroke-width="1.4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </g>
           <defs>
@@ -543,9 +543,9 @@ const IconItems: IconItem[] = [
           <path
             d="M3.75 6.75H20.25M3.75 12H20.25M3.75 17.25H20.25"
             stroke="black"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       );
