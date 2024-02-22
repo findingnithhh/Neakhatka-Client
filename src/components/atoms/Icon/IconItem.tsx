@@ -1,4 +1,3 @@
-import { Component, ReactNode } from "react";
 
 interface IconItemProps {
   className: string;
