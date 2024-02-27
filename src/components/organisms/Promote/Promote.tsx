@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Button,
@@ -11,6 +12,8 @@ import {
   Navbar,
   Banner,
 } from "@/components";
+import CountUp from "react-countup";
+
 const Promote = () => {
   return (
     <>
@@ -31,7 +34,14 @@ const Promote = () => {
             variant="bold"
             className="text-[#4B9960] text-center"
           >
-            500+
+            <CountUp
+              delay={0.2}
+              separator=" "
+              decimal=","
+              suffix=" +"
+              end={500}
+              duration={8}
+            />
           </Typography>
           <Typography fontSize="sm" className="text-[#4B9960]">
             Post dreams internship
@@ -43,7 +53,14 @@ const Promote = () => {
             variant="bold"
             className="text-[#4B9960] text-center"
           >
-            50+
+            <CountUp
+              delay={0.2}
+              separator=" "
+              decimal=","
+              suffix=" +"
+              end={50}
+              duration={8}
+            />
           </Typography>
           <Typography fontSize="sm" className="text-[#4B9960]">
             Companies
@@ -55,7 +72,13 @@ const Promote = () => {
             variant="bold"
             className="text-[#4B9960] text-center"
           >
-            1200+
+            <CountUp
+              delay={0.2}
+              decimal=","
+              suffix=" +"
+              end={1200}
+              duration={8}
+            />
           </Typography>
           <Typography fontSize="sm" className="text-[#4B9960]">
             Seekers
