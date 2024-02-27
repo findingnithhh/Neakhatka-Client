@@ -6,12 +6,23 @@ interface ButtonProps {
   size?: "sm" | "md" | "lg";
   colorScheme?: "primary" | "secondary" | "warning" | "danger" | "success";
   colorOutline?: "primary" | "secondary" | "warning" | "danger" | "success";
+  rounded?:
+    | "none"
+    | "base"
+    | "sm"
+    | "md"
+    | "lg"
+    | "xl"
+    | "2xl"
+    | "3xl"
+    | "full";
 }
 
 const Button: React.FC<ButtonProps> = ({
   children,
   className,
   size = "md",
+  rounded = "base",
   colorScheme = "",
   colorOutline = "",
 }) => {
@@ -44,6 +55,7 @@ const Button: React.FC<ButtonProps> = ({
         return "bg-[#ffffff]";
     }
   };
+
   const buttonOutline = (colorOutline: string) => {
     switch (colorOutline) {
       case "primary":
@@ -61,13 +73,37 @@ const Button: React.FC<ButtonProps> = ({
     }
   };
 
+  const ButtonRounded = (rounded: string) => {
+    switch (rounded) {
+      case "base":
+        return "rounded";
+      case "sm":
+        return "rounded-sm";
+      case "md":
+        return "rounded-md";
+      case "lg":
+        return "rounded-lg";
+      case "xl":
+        return "rounded-xl";
+      case "2xl":
+        return "rounded-2xl";
+      case "3xl":
+        return "rounded-3xl";
+      case "full":
+        return "rounded-full";
+      default:
+        return "rounded-none";
+    }
+  };
+
   const sizeButtonStyle = sizeButton(size);
   const colorSchemeStyle = getColorSchemeClass(colorScheme);
   const colorButtonOutline = buttonOutline(colorOutline);
+  const getButtonRounded = ButtonRounded(rounded);
 
   return (
     <div
-      className={`flex justify-center items-center cursor-pointer rounded-xl ${colorSchemeStyle} ${sizeButtonStyle} ${colorButtonOutline} ${className}`}
+      className={`flex justify-center items-center cursor-pointer ${getButtonRounded} ${colorSchemeStyle} ${sizeButtonStyle} ${colorButtonOutline} ${className}`}
     >
       {children}
     </div>

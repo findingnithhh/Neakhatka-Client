@@ -12,16 +12,19 @@ import Image from "next/image";
 const Search = () => {
   return (
     <>
-      <div className="xl:flex lg:flex sm:flex">
+      <div className="flex">
         <input
           type="text"
-          className="w-[250px] sm:w-[420px] h-[40px] text-sm pl-5 rounded-md border text-gray-900 placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-gray-500"
+          className="w-[400px] h-[54px] text-md pl-5
+           rounded-[12px] border text-gray-900 placeholder:text-gray-400 
+           outline-none"
           placeholder="Please search something...."
         />
         <Button
-          className="w-[100px] mt-1 sm:w-[120px] sm:h-[40px] sm:ml-2 sm:mt-0 text-white"
+          className="w-[140px] h-[54px] ml-3 text-white"
           colorScheme="primary"
           colorOutline="primary"
+          rounded="xl"
         >
           Search
         </Button>

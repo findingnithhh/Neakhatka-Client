@@ -15,7 +15,12 @@ const Promote = () => {
   return (
     <>
       <div className="flex justify-center items-center mt-10">
-        <Button colorOutline="primary" size="md" >
+        <Button
+          className="w-[124px] h-[42px]"
+          colorOutline="primary"
+          size="md"
+          rounded="xl"
+        >
           See more
         </Button>
       </div>
