@@ -19,5 +19,6 @@ export const Default: Story = {
     colorScheme: "primary",
     size: "md",
     colorOutline: "primary",
+    rounded: "none",
   },
 };

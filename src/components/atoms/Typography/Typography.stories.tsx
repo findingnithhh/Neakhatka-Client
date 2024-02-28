@@ -5,7 +5,7 @@ const meta: Meta<typeof Typography> = {
   title: "Matching-Internship/Atoms/Typography",
   component: Typography,
   parameters: {
-    layout: "centered",
+    // layout: "centered",
   },
   tags: ["autodocs"],
 };
