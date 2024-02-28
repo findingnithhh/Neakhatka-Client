@@ -1,40 +1,60 @@
-import { SSTConfig } from "sst";
-import { NextjsSite } from "sst/constructs";
-
 import { HostedZone } from "aws-cdk-lib/aws-route53";
-import {
-  Certificate,
-  CertificateValidation,
-} from "aws-cdk-lib/aws-certificatemanager";
+import { SSTConfig } from "sst";
+import { Bucket, NextjsSite } from "sst/constructs";
 
-const ROOT_DOMAIN_NAME = "neakhatka.com"; // Your domain name here
-const DOMAIN_NAME = `${ROOT_DOMAIN_NAME}`; // Any prefix you want, or just the root domain
+import * as cdk from "aws-cdk-lib";
+
+const ROOT_DOMAIN_NAME = "neakhatka.com";
+const DOMAIN_NAME = "neakhatka.com";
 
 export default {
-  config(_input) { 
+  config(_input) {
     return {
-      name: "neakhatka-app",
-      region: "us-east-1", // Keep it that way
+      name: "neakhatka",
+      region: "us-east-1",
     };
   },
   stacks(app) {
+    // A STACK DEPLOY NEXTJS TO AWS
     app.stack(function Site({ stack }) {
-      // Look up hosted zone
+      // LOOK UP HOSTED ZONE
       const hostedZone = HostedZone.fromLookup(stack, "HostedZone", {
         domainName: ROOT_DOMAIN_NAME,
       });
 
-      // Create a SSL certificate linked to the hosted zone
-      const certificate = new Certificate(stack, "Certificate", {
-        domainName: DOMAIN_NAME,
-        subjectAlternativeNames: [`www.${DOMAIN_NAME}`],
-        validation: CertificateValidation.fromDns(hostedZone),
+      // CREATE A SSL CERTIFICATE LINKED TO THE HOSTED ZONE
+      const certificate = new cdk.aws_certificatemanager.Certificate(
+        stack,
+        "Certificate",
+        {
+          domainName:
+            stack.stage === "prod"
+              ? DOMAIN_NAME
+              : `${stack.stage}.${DOMAIN_NAME}`,
+          validation:
+            cdk.aws_certificatemanager.CertificateValidation.fromDns(
+              hostedZone
+            ),
+        }
+      );
+
+      // SPECIFY THE NAME OF BUCKET
+      const bucket = new Bucket(stack, "public", {
+        cdk: {
+          bucket: {
+            bucketName: "neakhatka-website",
+          },
+        },
       });
 
-      // Add the hosted zone and the certificate to the Next.js site
-      const site = new NextjsSite(stack, "NextJS", {
+      // NEXTJS SITE
+      const site = new NextjsSite(stack, "site", {
+        bind: [bucket],
         customDomain: {
-          domainName: DOMAIN_NAME,
+          domainName:
+            stack.stage === "prod"
+              ? DOMAIN_NAME
+              : `${stack.stage}.${DOMAIN_NAME}`,
           domainAlias: `www.${DOMAIN_NAME}`,
           cdk: {
             hostedZone,
@@ -45,7 +65,6 @@ export default {
 
       stack.addOutputs({
         SiteUrl: site.url,
-        domainName: DOMAIN_NAME,
       });
     });
   },
