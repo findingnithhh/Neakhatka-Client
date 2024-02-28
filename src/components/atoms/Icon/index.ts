@@ -1,3 +1,3 @@
 import Icon from "./Icon";
-
-export { Icon };
+import { IconItems } from "./IconItem";
+export { Icon, IconItems };

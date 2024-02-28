@@ -120,7 +120,6 @@ export default function Home() {
         Latest <span className="text-[#4B9960]">Interns</span>
       </Typography>
       <main className="w-[1200px] mx-auto mt-10">
-        {/* Card */}
         <div className="grid grid-cols-2 gap-[20px]">
           {Cardinfor.map((job) => (
             <div key={job.id} className="card-container">
