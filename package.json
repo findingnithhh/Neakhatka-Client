@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "deploy:dev": "npx sst deploy --stage=dev",
+    "deploy:staging": "npx sst deploy --stage=staging",
+    "deploy:prod": "npx sst deploy --stage=prod"
   },
   "dependencies": {
     "next": "14.1.0",
@@ -29,15 +32,16 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "aws-cdk-lib": "2.124.0",
+    "constructs": "10.3.0",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "eslint-plugin-storybook": "^0.6.15",
     "postcss": "^8",
+    "sst": "^2.40.3",
     "storybook": "^7.6.12",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5",
-    "sst": "^2.40.3",
-    "aws-cdk-lib": "2.124.0",
-    "constructs": "10.3.0"
+    "typescript": "^5"
+   
   }
 }
