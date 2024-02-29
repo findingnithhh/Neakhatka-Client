@@ -10,7 +10,7 @@ import {
   Search,
   Navbar,
   Banner,
-  Promote,
+  CardReview,
   Footer,
 } from "@/components";
 import "./globals.css";
@@ -128,7 +128,7 @@ export default function Home() {
           ))}
         </div>
       </main>
-      <Promote />
+      <CardReview />
       <Footer />
     </>
   );

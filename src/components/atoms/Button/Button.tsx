@@ -5,7 +5,13 @@ interface ButtonProps {
   className?: string;
   size?: "sm" | "md" | "lg";
   colorScheme?: "primary" | "secondary" | "warning" | "danger" | "success";
-  colorOutline?: "primary" | "secondary" | "warning" | "danger" | "success";
+  colorOutline?:
+    | "none"
+    | "primary"
+    | "secondary"
+    | "warning"
+    | "danger"
+    | "success";
   rounded?:
     | "none"
     | "base"
@@ -52,7 +58,7 @@ const Button: React.FC<ButtonProps> = ({
       case "success":
         return "bg-[#69B77E]";
       default:
-        return "bg-[#ffffff]";
+        return "";
     }
   };
 
@@ -69,7 +75,7 @@ const Button: React.FC<ButtonProps> = ({
       case "success":
         return "border-2 border-[#69B77E]";
       default:
-        return "border-2 border-[#ffff]";
+        return "outline-none";
     }
   };
 

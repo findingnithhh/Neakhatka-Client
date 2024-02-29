@@ -1,11 +1,10 @@
 import React, { ReactNode } from "react";
-// import { Typography } from ".";
 
 interface TypographyProps {
   children: ReactNode;
   className?: string;
   align?: "left" | "center" | "right" | "justify";
-  fontSize?: "xs" | "sm" | "base" | "md" | "xl" | "2xl" | "text-title";
+  fontSize?: "xs" | "sm" | "base" | "md" | "xl" | "2xl" | "5xl" | "text-title";
   variant?:
     | "thin"
     | "extralight"
@@ -55,6 +54,8 @@ const Typography: React.FC<TypographyProps> = ({
         return "text-2xl";
       case "text-title":
         return "text-[38px]";
+      case "5xl":
+        return "text-[48px]";
       default:
         // 16px
         return "text-base";

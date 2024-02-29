@@ -17,7 +17,7 @@ import CountUp from "react-countup";
 const Promote = () => {
   return (
     <>
-      <div className="flex justify-center items-center mt-10">
+      {/* <div className="flex justify-center items-center mt-10">
         <Button
           className="w-[124px] h-[42px]"
           colorOutline="primary"
@@ -26,8 +26,8 @@ const Promote = () => {
         >
           See more
         </Button>
-      </div>
-      <div className="w-[1200px] h-[131px] shadow-lg mx-auto my-10 rounded-xl flex justify-between items-center px-20">
+      </div> */}
+      <div className="bg-white w-[1200px] h-[131px]  shadow-lg mx-auto my-10 rounded-xl flex justify-between items-center px-20">
         <div>
           <Typography
             fontSize="2xl"

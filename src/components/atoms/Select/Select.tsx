@@ -24,7 +24,7 @@ const Select = () => {
 
   return (
     <>
-      <div className="xl:w-[1200px] lg:container mx-auto px-5 flex mt-10">
+      <div className="xl:w-[1200px] lg:container mx-auto px-5 flex mt-36">
         <div className="relative w-[250px] lg:max-w-sm">
           <div className="relative">
             <select

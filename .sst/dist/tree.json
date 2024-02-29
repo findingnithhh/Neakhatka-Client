@@ -4,21 +4,21 @@
     "id": "App",
     "path": "",
     "children": {
-      "dev-matching-internship-storybook-new-Site": {
-        "id": "dev-matching-internship-storybook-new-Site",
-        "path": "dev-matching-internship-storybook-new-Site",
+      "dev-neakhatka-Site": {
+        "id": "dev-neakhatka-Site",
+        "path": "dev-neakhatka-Site",
         "children": {
           "CustomResourceHandler": {
             "id": "CustomResourceHandler",
-            "path": "dev-matching-internship-storybook-new-Site/CustomResourceHandler",
+            "path": "dev-neakhatka-Site/CustomResourceHandler",
             "children": {
               "ServiceRole": {
                 "id": "ServiceRole",
-                "path": "dev-matching-internship-storybook-new-Site/CustomResourceHandler/ServiceRole",
+                "path": "dev-neakhatka-Site/CustomResourceHandler/ServiceRole",
                 "children": {
                   "ImportServiceRole": {
                     "id": "ImportServiceRole",
-                    "path": "dev-matching-internship-storybook-new-Site/CustomResourceHandler/ServiceRole/ImportServiceRole",
+                    "path": "dev-neakhatka-Site/CustomResourceHandler/ServiceRole/ImportServiceRole",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.Resource",
                       "version": "2.124.0"
@@ -26,7 +26,7 @@
                   },
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-matching-internship-storybook-new-Site/CustomResourceHandler/ServiceRole/Resource",
+                    "path": "dev-neakhatka-Site/CustomResourceHandler/ServiceRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -59,7 +59,7 @@
                         "tags": [
                           {
                             "key": "sst:app",
-                            "value": "matching-internship-storybook-new"
+                            "value": "neakhatka"
                           },
                           {
                             "key": "sst:stage",
@@ -81,11 +81,11 @@
               },
               "Code": {
                 "id": "Code",
-                "path": "dev-matching-internship-storybook-new-Site/CustomResourceHandler/Code",
+                "path": "dev-neakhatka-Site/CustomResourceHandler/Code",
                 "children": {
                   "Stage": {
                     "id": "Stage",
-                    "path": "dev-matching-internship-storybook-new-Site/CustomResourceHandler/Code/Stage",
+                    "path": "dev-neakhatka-Site/CustomResourceHandler/Code/Stage",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.AssetStaging",
                       "version": "2.124.0"
@@ -93,7 +93,7 @@
                   },
                   "AssetBucket": {
                     "id": "AssetBucket",
-                    "path": "dev-matching-internship-storybook-new-Site/CustomResourceHandler/Code/AssetBucket",
+                    "path": "dev-neakhatka-Site/CustomResourceHandler/Code/AssetBucket",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                       "version": "2.124.0"
@@ -107,13 +107,13 @@
               },
               "Resource": {
                 "id": "Resource",
-                "path": "dev-matching-internship-storybook-new-Site/CustomResourceHandler/Resource",
+                "path": "dev-neakhatka-Site/CustomResourceHandler/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                   "aws:cdk:cloudformation:props": {
                     "code": {
                       "s3Bucket": "cdk-hnb659fds-assets-975050211130-us-east-1",
-                      "s3Key": "42985951d5cb59073b5cc8135c322e9c07df304c2d38fd0eb41e18819c553438.zip"
+                      "s3Key": "697b84d3992c23ad8f7b65fb7d384d70b2169a1b5066b3217ff5129f46d1f97a.zip"
                     },
                     "handler": "index.handler",
                     "memorySize": 1024,
@@ -127,7 +127,7 @@
                     "tags": [
                       {
                         "key": "sst:app",
-                        "value": "matching-internship-storybook-new"
+                        "value": "neakhatka"
                       },
                       {
                         "key": "sst:stage",
@@ -148,17 +148,241 @@
               "version": "2.124.0"
             }
           },
+          "HostedZone": {
+            "id": "HostedZone",
+            "path": "dev-neakhatka-Site/HostedZone",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.124.0"
+            }
+          },
+          "Certificate": {
+            "id": "Certificate",
+            "path": "dev-neakhatka-Site/Certificate",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "dev-neakhatka-Site/Certificate/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::CertificateManager::Certificate",
+                  "aws:cdk:cloudformation:props": {
+                    "domainName": "dev.neakhatka.com",
+                    "domainValidationOptions": [
+                      {
+                        "domainName": "dev.neakhatka.com",
+                        "hostedZoneId": "DUMMY"
+                      }
+                    ],
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "dev-neakhatka-Site/Certificate"
+                      },
+                      {
+                        "key": "sst:app",
+                        "value": "neakhatka"
+                      },
+                      {
+                        "key": "sst:stage",
+                        "value": "dev"
+                      }
+                    ],
+                    "validationMethod": "DNS"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_certificatemanager.CfnCertificate",
+                  "version": "2.124.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_certificatemanager.Certificate",
+              "version": "2.124.0"
+            }
+          },
+          "public": {
+            "id": "public",
+            "path": "dev-neakhatka-Site/public",
+            "children": {
+              "Bucket": {
+                "id": "Bucket",
+                "path": "dev-neakhatka-Site/public/Bucket",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "dev-neakhatka-Site/public/Bucket/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                      "aws:cdk:cloudformation:props": {
+                        "bucketName": "neakhatka-website",
+                        "corsConfiguration": {
+                          "corsRules": [
+                            {
+                              "allowedHeaders": [
+                                "*"
+                              ],
+                              "allowedMethods": [
+                                "GET",
+                                "PUT",
+                                "HEAD",
+                                "POST",
+                                "DELETE"
+                              ],
+                              "allowedOrigins": [
+                                "*"
+                              ]
+                            }
+                          ]
+                        },
+                        "ownershipControls": {
+                          "rules": [
+                            {
+                              "objectOwnership": "BucketOwnerPreferred"
+                            }
+                          ]
+                        },
+                        "publicAccessBlockConfiguration": {
+                          "blockPublicAcls": false,
+                          "ignorePublicAcls": false
+                        },
+                        "tags": [
+                          {
+                            "key": "sst:app",
+                            "value": "neakhatka"
+                          },
+                          {
+                            "key": "sst:stage",
+                            "value": "dev"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.CfnBucket",
+                      "version": "2.124.0"
+                    }
+                  },
+                  "Policy": {
+                    "id": "Policy",
+                    "path": "dev-neakhatka-Site/public/Bucket/Policy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "dev-neakhatka-Site/public/Bucket/Policy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::S3::BucketPolicy",
+                          "aws:cdk:cloudformation:props": {
+                            "bucket": {
+                              "Ref": "publicBucket5C3DBAB0"
+                            },
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "s3:*",
+                                  "Condition": {
+                                    "Bool": {
+                                      "aws:SecureTransport": "false"
+                                    }
+                                  },
+                                  "Effect": "Deny",
+                                  "Principal": {
+                                    "AWS": "*"
+                                  },
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "publicBucket5C3DBAB0",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "publicBucket5C3DBAB0",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.CfnBucketPolicy",
+                          "version": "2.124.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketPolicy",
+                      "version": "2.124.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3.Bucket",
+                  "version": "2.124.0"
+                }
+              },
+              "Parameter_bucketName": {
+                "id": "Parameter_bucketName",
+                "path": "dev-neakhatka-Site/public/Parameter_bucketName",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "dev-neakhatka-Site/public/Parameter_bucketName/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                      "aws:cdk:cloudformation:props": {
+                        "name": "/sst/neakhatka/dev/Bucket/public/bucketName",
+                        "tags": {
+                          "sst:app": "neakhatka",
+                          "sst:stage": "dev"
+                        },
+                        "type": "String",
+                        "value": {
+                          "Ref": "publicBucket5C3DBAB0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ssm.CfnParameter",
+                      "version": "2.124.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ssm.StringParameter",
+                  "version": "2.124.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
           "site": {
             "id": "site",
-            "path": "dev-matching-internship-storybook-new-Site/site",
+            "path": "dev-neakhatka-Site/site",
             "children": {
               "ServerFunctionRole": {
                 "id": "ServerFunctionRole",
-                "path": "dev-matching-internship-storybook-new-Site/site/ServerFunctionRole",
+                "path": "dev-neakhatka-Site/site/ServerFunctionRole",
                 "children": {
                   "ImportServerFunctionRole": {
                     "id": "ImportServerFunctionRole",
-                    "path": "dev-matching-internship-storybook-new-Site/site/ServerFunctionRole/ImportServerFunctionRole",
+                    "path": "dev-neakhatka-Site/site/ServerFunctionRole/ImportServerFunctionRole",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.Resource",
                       "version": "2.124.0"
@@ -166,7 +390,7 @@
                   },
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-matching-internship-storybook-new-Site/site/ServerFunctionRole/Resource",
+                    "path": "dev-neakhatka-Site/site/ServerFunctionRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -204,7 +428,7 @@
                         "tags": [
                           {
                             "key": "sst:app",
-                            "value": "matching-internship-storybook-new"
+                            "value": "neakhatka"
                           },
                           {
                             "key": "sst:stage",
@@ -217,6 +441,66 @@
                       "fqn": "aws-cdk-lib.aws_iam.CfnRole",
                       "version": "2.124.0"
                     }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "dev-neakhatka-Site/site/ServerFunctionRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "dev-neakhatka-Site/site/ServerFunctionRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "s3:*",
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "publicBucket5C3DBAB0",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "publicBucket5C3DBAB0",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "siteServerFunctionRoleDefaultPolicy213DB8A5",
+                            "roles": [
+                              {
+                                "Ref": "siteServerFunctionRole1F8F4FAC"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.124.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.124.0"
+                    }
                   }
                 },
                 "constructInfo": {
@@ -226,15 +510,15 @@
               },
               "ServerFunction": {
                 "id": "ServerFunction",
-                "path": "dev-matching-internship-storybook-new-Site/site/ServerFunction",
+                "path": "dev-neakhatka-Site/site/ServerFunction",
                 "children": {
                   "AssetReplacerPolicy": {
                     "id": "AssetReplacerPolicy",
-                    "path": "dev-matching-internship-storybook-new-Site/site/ServerFunction/AssetReplacerPolicy",
+                    "path": "dev-neakhatka-Site/site/ServerFunction/AssetReplacerPolicy",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "dev-matching-internship-storybook-new-Site/site/ServerFunction/AssetReplacerPolicy/Resource",
+                        "path": "dev-neakhatka-Site/site/ServerFunction/AssetReplacerPolicy/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                           "aws:cdk:cloudformation:props": {
@@ -283,11 +567,11 @@
                   },
                   "AssetReplacer": {
                     "id": "AssetReplacer",
-                    "path": "dev-matching-internship-storybook-new-Site/site/ServerFunction/AssetReplacer",
+                    "path": "dev-neakhatka-Site/site/ServerFunction/AssetReplacer",
                     "children": {
                       "Default": {
                         "id": "Default",
-                        "path": "dev-matching-internship-storybook-new-Site/site/ServerFunction/AssetReplacer/Default",
+                        "path": "dev-neakhatka-Site/site/ServerFunction/AssetReplacer/Default",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnResource",
                           "version": "2.124.0"
@@ -301,7 +585,7 @@
                   },
                   "IServerFunctionBucket": {
                     "id": "IServerFunctionBucket",
-                    "path": "dev-matching-internship-storybook-new-Site/site/ServerFunction/IServerFunctionBucket",
+                    "path": "dev-neakhatka-Site/site/ServerFunction/IServerFunctionBucket",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                       "version": "2.124.0"
@@ -309,11 +593,11 @@
                   },
                   "ServerFunction": {
                     "id": "ServerFunction",
-                    "path": "dev-matching-internship-storybook-new-Site/site/ServerFunction/ServerFunction",
+                    "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "dev-matching-internship-storybook-new-Site/site/ServerFunction/ServerFunction/Resource",
+                        "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                           "aws:cdk:cloudformation:props": {
@@ -327,9 +611,12 @@
                             "description": "Server handler placeholder",
                             "environment": {
                               "variables": {
-                                "SST_APP": "matching-internship-storybook-new",
+                                "SST_APP": "neakhatka",
                                 "SST_STAGE": "dev",
-                                "SST_SSM_PREFIX": "/sst/matching-internship-storybook-new/dev/"
+                                "SST_SSM_PREFIX": "/sst/neakhatka/dev/",
+                                "SST_Bucket_bucketName_public": {
+                                  "Ref": "publicBucket5C3DBAB0"
+                                }
                               }
                             },
                             "handler": "index.handler",
@@ -344,7 +631,7 @@
                             "tags": [
                               {
                                 "key": "sst:app",
-                                "value": "matching-internship-storybook-new"
+                                "value": "neakhatka"
                               },
                               {
                                 "key": "sst:stage",
@@ -361,11 +648,11 @@
                       },
                       "LogRetention": {
                         "id": "LogRetention",
-                        "path": "dev-matching-internship-storybook-new-Site/site/ServerFunction/ServerFunction/LogRetention",
+                        "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/LogRetention",
                         "children": {
                           "Resource": {
                             "id": "Resource",
-                            "path": "dev-matching-internship-storybook-new-Site/site/ServerFunction/ServerFunction/LogRetention/Resource",
+                            "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/LogRetention/Resource",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.CfnResource",
                               "version": "2.124.0"
@@ -379,7 +666,7 @@
                       },
                       "LogGroup": {
                         "id": "LogGroup",
-                        "path": "dev-matching-internship-storybook-new-Site/site/ServerFunction/ServerFunction/LogGroup",
+                        "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/LogGroup",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
                           "version": "2.124.0"
@@ -387,11 +674,11 @@
                       },
                       "Code": {
                         "id": "Code",
-                        "path": "dev-matching-internship-storybook-new-Site/site/ServerFunction/ServerFunction/Code",
+                        "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/Code",
                         "children": {
                           "Stage": {
                             "id": "Stage",
-                            "path": "dev-matching-internship-storybook-new-Site/site/ServerFunction/ServerFunction/Code/Stage",
+                            "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/Code/Stage",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.AssetStaging",
                               "version": "2.124.0"
@@ -399,7 +686,7 @@
                           },
                           "AssetBucket": {
                             "id": "AssetBucket",
-                            "path": "dev-matching-internship-storybook-new-Site/site/ServerFunction/ServerFunction/Code/AssetBucket",
+                            "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/Code/AssetBucket",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                               "version": "2.124.0"
@@ -425,17 +712,17 @@
               },
               "Parameter_url": {
                 "id": "Parameter_url",
-                "path": "dev-matching-internship-storybook-new-Site/site/Parameter_url",
+                "path": "dev-neakhatka-Site/site/Parameter_url",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-matching-internship-storybook-new-Site/site/Parameter_url/Resource",
+                    "path": "dev-neakhatka-Site/site/Parameter_url/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
                       "aws:cdk:cloudformation:props": {
-                        "name": "/sst/matching-internship-storybook-new/dev/NextjsSite/site/url",
+                        "name": "/sst/neakhatka/dev/NextjsSite/site/url",
                         "tags": {
-                          "sst:app": "matching-internship-storybook-new",
+                          "sst:app": "neakhatka",
                           "sst:stage": "dev"
                         },
                         "type": "String",
@@ -461,15 +748,15 @@
           },
           "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a": {
             "id": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a",
-            "path": "dev-matching-internship-storybook-new-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a",
+            "path": "dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a",
             "children": {
               "Code": {
                 "id": "Code",
-                "path": "dev-matching-internship-storybook-new-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code",
+                "path": "dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code",
                 "children": {
                   "Stage": {
                     "id": "Stage",
-                    "path": "dev-matching-internship-storybook-new-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/Stage",
+                    "path": "dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/Stage",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.AssetStaging",
                       "version": "2.124.0"
@@ -477,7 +764,7 @@
                   },
                   "AssetBucket": {
                     "id": "AssetBucket",
-                    "path": "dev-matching-internship-storybook-new-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/AssetBucket",
+                    "path": "dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/AssetBucket",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                       "version": "2.124.0"
@@ -491,11 +778,11 @@
               },
               "ServiceRole": {
                 "id": "ServiceRole",
-                "path": "dev-matching-internship-storybook-new-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole",
+                "path": "dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole",
                 "children": {
                   "ImportServiceRole": {
                     "id": "ImportServiceRole",
-                    "path": "dev-matching-internship-storybook-new-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/ImportServiceRole",
+                    "path": "dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/ImportServiceRole",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.Resource",
                       "version": "2.124.0"
@@ -503,7 +790,7 @@
                   },
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-matching-internship-storybook-new-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource",
+                    "path": "dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -536,7 +823,7 @@
                         "tags": [
                           {
                             "key": "sst:app",
-                            "value": "matching-internship-storybook-new"
+                            "value": "neakhatka"
                           },
                           {
                             "key": "sst:stage",
@@ -552,11 +839,11 @@
                   },
                   "DefaultPolicy": {
                     "id": "DefaultPolicy",
-                    "path": "dev-matching-internship-storybook-new-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy",
+                    "path": "dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "dev-matching-internship-storybook-new-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource",
+                        "path": "dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                           "aws:cdk:cloudformation:props": {
@@ -600,7 +887,7 @@
               },
               "Resource": {
                 "id": "Resource",
-                "path": "dev-matching-internship-storybook-new-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource",
+                "path": "dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnResource",
                   "version": "2.124.0"
@@ -614,7 +901,7 @@
           },
           "SSTStackOutputSSTMetadata": {
             "id": "SSTStackOutputSSTMetadata",
-            "path": "dev-matching-internship-storybook-new-Site/SSTStackOutputSSTMetadata",
+            "path": "dev-neakhatka-Site/SSTStackOutputSSTMetadata",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
               "version": "2.124.0"
@@ -622,7 +909,7 @@
           },
           "BootstrapVersion": {
             "id": "BootstrapVersion",
-            "path": "dev-matching-internship-storybook-new-Site/BootstrapVersion",
+            "path": "dev-neakhatka-Site/BootstrapVersion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnParameter",
               "version": "2.124.0"
@@ -630,7 +917,7 @@
           },
           "CheckBootstrapVersion": {
             "id": "CheckBootstrapVersion",
-            "path": "dev-matching-internship-storybook-new-Site/CheckBootstrapVersion",
+            "path": "dev-neakhatka-Site/CheckBootstrapVersion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnRule",
               "version": "2.124.0"
