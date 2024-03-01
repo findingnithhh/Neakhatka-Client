@@ -14,7 +14,7 @@ const CardTips = () => {
         <Typography align="center" className="mt-20 text-[18px]">
           Get Hired in<span className="text-[#4B9960]">4 Quick Easy Steps</span>
         </Typography>
-        <div className="w-[1200px] mt-10 md:w-4/5 lg:w-3/4 xl:w-2/3 mx-auto font-Poppins flex flex-wrap justify-center gap-10 md:gap-8">
+        <div className="w-[1200px] mt-10 md:w-4/5 lg:w-3/4 xl:w-2/3 mx-auto font-Poppins flex flex-wrap justify-center gap-10 md:gap-8 tracking-wide">
           <div className="w-full md:w-[270px] h-[176px] bg-white flex flex-col justify-center items-center shadow-lg ">
             <Icon label="User" size="xl" />
             <h1 className="text-[16px] text-center m-3">Create an account</h1>
