@@ -17,41 +17,33 @@ import CountUp from "react-countup";
 const Promote = () => {
   return (
     <>
-      {/* <div className="flex justify-center items-center mt-10">
-        <Button
-          className="w-[124px] h-[42px]"
-          colorOutline="primary"
-          size="md"
-          rounded="xl"
-        >
-          See more
-        </Button>
-      </div> */}
-      <div className="bg-white w-[1200px] h-[131px]  shadow-lg mx-auto my-10 rounded-xl flex justify-between items-center px-20">
+      <div className="w-[380px] h-[80px] bg-white sm:w-[600px] md:w-[800px] lg:w-[1000px] lg:h-[110px] xl:w-[1200px]  shadow-lg mx-auto my-10 rounded-xl flex justify-between items-center px-10">
+        <div>
+          <div className="">
+            <Typography
+              fontSize="sm"
+              variant="bold"
+              className="text-[#4B9960] text-center md:text-[16px] lg:text-[18px] xl:text-[20px]"
+            >
+              <CountUp
+                delay={0.2}
+                separator=" "
+                decimal=","
+                suffix=" +"
+                end={500}
+                duration={8}
+              />
+            </Typography>
+            <Typography fontSize="sm" className="text-[#4B9960] ">
+              Internship
+            </Typography>
+          </div>
+        </div>
         <div>
           <Typography
-            fontSize="2xl"
+            fontSize="sm"
             variant="bold"
-            className="text-[#4B9960] text-center"
-          >
-            <CountUp
-              delay={0.2}
-              separator=" "
-              decimal=","
-              suffix=" +"
-              end={500}
-              duration={8}
-            />
-          </Typography>
-          <Typography fontSize="sm" className="text-[#4B9960]">
-            Post dreams internship
-          </Typography>
-        </div>
-        <div className="mr-16">
-          <Typography
-            fontSize="2xl"
-            variant="bold"
-            className="text-[#4B9960] text-center"
+            className="text-[#4B9960] text-center md:text-[16px] lg:text-[18px] xl:text-[20px]"
           >
             <CountUp
               delay={0.2}
@@ -68,9 +60,9 @@ const Promote = () => {
         </div>
         <div>
           <Typography
-            fontSize="2xl"
+            fontSize="sm"
             variant="bold"
-            className="text-[#4B9960] text-center"
+            className="text-[#4B9960] text-center md:text-[16px] lg:text-[18px] xl:text-[20px]"
           >
             <CountUp
               delay={0.2}

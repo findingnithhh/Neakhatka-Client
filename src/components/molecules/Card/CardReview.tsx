@@ -32,7 +32,8 @@ const CardReview: React.FC = () => {
       id: 2,
       name: "Tang Sapho",
       position: "Vue Js at SabaiCode",
-      description: "dak jol hx nah pu !!! ouyyy thom gha ",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, exercitationem enim. Iure consectetur dolore quasi ut quidem beatae, inventore, excepturi omnis placeat recusandae doloremque aliquam reiciendis quaerat libero error deleniti?",
       image: "./userProfile/user1.svg",
     },
     {
@@ -70,6 +71,7 @@ const CardReview: React.FC = () => {
           >
             What our client say?
           </Typography>
+          {/* card */}
           <div className="grid grid-cols-2">
             <div className="mx-auto">
               {user.map((items, index) => (
@@ -108,6 +110,47 @@ const CardReview: React.FC = () => {
                   <q>{selectedDescription}</q>
                 </div>
               </div>
+            </div>
+          </div>
+          {/* card */}
+          <div className="grid grid-cols-2">
+            <div className="flex justify-end">
+              <div className="w-[450px] h-[500px] flex justify-center items-center">
+                <div className="w-[450px]">
+                  <q>{selectedDescription}</q>
+                </div>
+              </div>
+            </div>
+            <div className="mx-auto">
+              {user.map((items, index) => (
+                <div
+                  key={items.id}
+                  className={`w-[340px] h-[100px] shadow-xl flex items-center px-3 rounded-[6px] my-16 ${
+                    expanded === items.id ? "bg-gray-50" : ""
+                  } ${index === 1 ? "ml-20" : ""}`}
+                  onClick={() => handleToggle(items.id, items.description)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <div className="flex items-center">
+                    <Image
+                      src={items.image}
+                      alt="person"
+                      width={54}
+                      height={54}
+                      className="w-[60px] h-[60px] flex items-center rounded-full object-cover"
+                    />
+                    <div className="ml-3">
+                      <Typography>{items.name}</Typography>
+                      <Typography
+                        className="text-[#ADB5BD] tracking-wide"
+                        fontSize="xs"
+                      >
+                        {items.position}
+                      </Typography>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

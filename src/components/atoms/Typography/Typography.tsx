@@ -4,7 +4,7 @@ interface TypographyProps {
   children: ReactNode;
   className?: string;
   align?: "left" | "center" | "right" | "justify";
-  fontSize?: "xs" | "sm" | "base" | "md" | "xl" | "2xl" | "5xl" | "text-title";
+  fontSize?: "xs" | "sm" | "base" | "md" | "xl" | "2xl" | "3xl" | "5xl" | "text-title";
   variant?:
     | "thin"
     | "extralight"
@@ -52,6 +52,9 @@ const Typography: React.FC<TypographyProps> = ({
       case "2xl":
         // 24px
         return "text-2xl";
+      case "3xl":
+        return "text-[28px]";
+      // 28px
       case "text-title":
         return "text-[38px]";
       case "5xl":

@@ -57,12 +57,12 @@ const Navbar = () => {
         </div>
       </nav> */}
       <div className="flex justify-center">
-        <nav className="w-[1200px] h-auto p-3 text-[14px] absolute z-10 mx-auto ">
+        <nav className="w-[70%] h-auto p-3 text-[14px] absolute z-10 mx-auto">
           <div className="flex justify-between items-center font-Poppins cursor-pointer">
             <div>
               <Image src="/logo.svg" alt="next" width={50} height={50} />
             </div>
-            <div className="flex items-center text-white ">
+            <div className="hidden lg:flex items-center text-white ">
               <ul className="flex mr-3">
                 <li className="ml-9">
                   <Link href="/" />
@@ -85,6 +85,9 @@ const Navbar = () => {
                   Sign Up
                 </Button>
               </div>
+            </div>
+            <div className="block lg:hidden">
+              <Icon className="p-2 rounded-full text-white" label="Menu" />
             </div>
           </div>
         </nav>
