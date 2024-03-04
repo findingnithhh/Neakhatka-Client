@@ -111,8 +111,8 @@ export default function Home() {
     <>
       <Navbar />
       <Banner />
-      {/* <Select />
-      <CardTips />
+      <Select />
+      {/* <CardTips />
       <Typography
         className="w-[1200px] mx-auto mt-10 text-[#212529] mb-10"
         fontSize="2xl"
@@ -127,9 +127,9 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </main>
+      </main> */}
       <CardReview />
-      <Footer /> */}
+      <Footer />
     </>
   );
 }
