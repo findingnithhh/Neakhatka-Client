@@ -7,7 +7,6 @@ import {
   InputSearch,
   Icon,
   Select,
-  CardTips,
   Search,
 } from "@/components";
 import Link from "next/link";

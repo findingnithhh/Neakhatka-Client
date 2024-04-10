@@ -7,7 +7,6 @@ import {
   InputSearch,
   Icon,
   Select,
-  CardTips,
   Search,
   Navbar,
   Banner,
@@ -17,7 +16,7 @@ import CountUp from "react-countup";
 const Promote = () => {   
   return (
     <>
-      <div className="w-[380px] h-[80px] bg-white px-5 sm:w-[600px] sm:px-10 md:px-14 md:w-[800px] lg:px-20 lg:w-[1000px] lg:h-[110px] xl:w-[1200px]  shadow-lg my-10 rounded-xl flex justify-between items-center">
+      <div className="w-[440px] h-[80px] bg-white px-5 sm:w-[600px] sm:px-10 md:px-14 md:w-[800px] lg:px-20 lg:w-[1000px] lg:h-[110px] xl:w-[1150px]  shadow-lg my-10 rounded-xl flex justify-between items-center">
         <div>
           <Typography
             fontSize="sm"

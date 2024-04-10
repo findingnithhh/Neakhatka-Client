@@ -8,7 +8,7 @@ export default function CardTip() {
       <Typography align="center" className="text-18 mt-10">
         Get Hired in<span className="text-green-600">4 Quick Easy Steps</span>
       </Typography>
-      <main className="container xl:w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-5 my-10">
+      <main className="container xl:w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5 my-10">
         <Card className="py-4 rounded-none">
           <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
             <Icon label="User" size="xl" />
