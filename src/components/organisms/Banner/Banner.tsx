@@ -6,7 +6,6 @@ import {
   InputSearch,
   Icon,
   Select,
-  CardTips,
   Search,
   Navbar,
 } from "@/components";
@@ -30,7 +29,7 @@ const Banner = () => {
               className="-mt-5 mb-5 flex justify-center items-center font-bold md:text-[40px] md:mt-5 lg:text-[48px]"
             >
               Find Your Dream
-              <span className="text-[#5FAD74]">Internship</span>
+              <span className="text-[#5FAD74] mx-2">Internship</span>
               Here!
             </Typography>
             <div className="flex justify-center items-center">

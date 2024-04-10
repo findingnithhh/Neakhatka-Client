@@ -25,7 +25,7 @@ export default function Nav() {
   ];
   
   return (
-    <Navbar shouldHideOnScroll onMenuOpenChange={setIsMenuOpen}>
+    <Navbar className="py-1" shouldHideOnScroll onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
         <NavbarBrand>
           <Link href="/">

@@ -5,7 +5,6 @@ import {
   InputSearch,
   Icon,
   // Select,
-  CardTips,
   Card,
   Search,
   Navbar,
@@ -116,9 +115,8 @@ export default function Home() {
       <Nav />
       <Banner />
       <Filter />
-      {/* <CardTips /> */}
       <CardTip />
-      <main className="w-[1200px] mx-auto my-10">
+      {/* <main className="w-[1200px] mx-auto my-10">
         <div className="grid grid-cols-2 gap-[20px]">
           {Cardinfor.map((job) => (
             <div key={job.id} className="card-container">
@@ -126,7 +124,8 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </main>
+      </main> */}
+      <CardReview />
       <Footer />
     </>
   );
