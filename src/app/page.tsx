@@ -1,10 +1,10 @@
 import {
-  Button,
+  // Button,
   Typography,
   Input,
   InputSearch,
   Icon,
-  Select,
+  // Select,
   CardTips,
   Card,
   Search,
@@ -12,10 +12,14 @@ import {
   Banner,
   CardReview,
   Footer,
+  Filter,
 } from "@/components";
 import "./globals.css";
 import Image from "next/image";
 import { DetailCard } from "@/Types/DetailCard";
+import { Button } from "@/components/ui/button";
+import CardTip from "@/components/molecules/Card/CardTip";
+import Nav from "@/components/organisms/Navbar/nav";
 export default function Home() {
   const Cardinfor: DetailCard[] = [
     {
@@ -109,17 +113,12 @@ export default function Home() {
   ];
   return (
     <>
-      <Navbar />
+      <Nav />
       <Banner />
-      <Select />
-      {/* <CardTips />
-      <Typography
-        className="w-[1200px] mx-auto mt-10 text-[#212529] mb-10"
-        fontSize="2xl"
-      >
-        Latest <span className="text-[#4B9960]">Interns</span>
-      </Typography>
-      <main className="w-[1200px] mx-auto mt-10">
+      <Filter />
+      {/* <CardTips /> */}
+      <CardTip />
+      <main className="w-[1200px] mx-auto my-10">
         <div className="grid grid-cols-2 gap-[20px]">
           {Cardinfor.map((job) => (
             <div key={job.id} className="card-container">
@@ -127,8 +126,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </main> */}
-      <CardReview />
+      </main>
       <Footer />
     </>
   );

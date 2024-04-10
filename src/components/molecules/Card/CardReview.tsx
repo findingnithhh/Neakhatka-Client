@@ -77,7 +77,7 @@ const CardReview: React.FC = () => {
               {user.map((items, index) => (
                 <div
                   key={items.id}
-                  className={`w-[270px] h-[80px] bg-red-500 lg:w-[340px] lg:h-[100px] shadow-xl flex items-center px-3 rounded-[6px] my-16 ${
+                  className={`w-[270px] h-[80px] lg:w-[340px] lg:h-[100px] shadow-xl flex items-center px-3 rounded-[6px] my-16 ${
                     expanded === items.id ? "bg-gray-100" : ""
                   } ${index === 0 || index === 2 ? "ml-20" : ""}`}
                   onClick={() => handleToggle(items.id, items.description)}
@@ -89,7 +89,7 @@ const CardReview: React.FC = () => {
                       alt="person"
                       width={54}
                       height={54}
-                      layout="fixed" // or "responsive", depending on your use case
+                      layout="fixed" // or "responsive", depending on your u  se case
                       objectFit="cover" // or any other appropriate value
                       className="w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] flex items-center rounded-full"
                     />

@@ -53,7 +53,6 @@ const Banner = () => {
           <Promote />
         </div>
       </div>
-      {/* </div> */}
     </>
   );
 };

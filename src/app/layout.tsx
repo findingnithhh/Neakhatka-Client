@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Providers } from "../components/theme/providers";
+import Nav from "@/components/organisms/Navbar/nav";
+import { Footer } from "@/components";
+const poppins = Poppins({subsets: ["latin"],
+  weight: "400",
+});
 
 export const metadata: Metadata = {
   title: "Neakhatka",
@@ -17,7 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <link rel="icon" href="/logo.svg" />
-      <body className={inter.className}>{children}</body>
+      <body className={poppins.className}>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 }
