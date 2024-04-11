@@ -28,7 +28,7 @@ export default function Nav() {
     <Navbar className="py-1" shouldHideOnScroll onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
         <NavbarBrand>
-          <Link href="/">
+          <Link href="/home">
             <Image src="/logo.svg" alt="logo" width={45} height={45} />
           </Link>
         </NavbarBrand>

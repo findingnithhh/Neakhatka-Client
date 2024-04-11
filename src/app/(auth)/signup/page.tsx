@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import Image from "next/image";
+import '../../globals.css'
 
 const Signup = () => {
   return (
@@ -28,7 +29,7 @@ const Signup = () => {
         <div className="flex flex-col justify-center items-center h-full">
           {" "}
           {/* Use flexbox to make it full height */}
-          <Link href="/">
+          <Link href="/home">
             <Image
               src="/logo.svg"
               alt="logo"

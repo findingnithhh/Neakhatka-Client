@@ -2,13 +2,14 @@ import React from "react";
 import {Card, CardHeader, CardBody, Button} from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
+import '../../globals.css'
 const Join = () => {
   return (
     <>
       <div className="container h-screen flex justify-center items-center">
         <div className="flex flex-col justify-center items-center">
           <div className="h-96 flex justify-center items-center flex-col px-10">
-            <Link href="/">
+            <Link href="/home">
               <Image
                 className="mb-5"
                 src="./logo.svg"
@@ -30,7 +31,7 @@ const Join = () => {
                     <Image
                       alt="C"
                       className="object-cover rounded-full"
-                      src="/userProfile/user1.svg"
+                      src="/userProfile/student.svg"
                       width={100}
                       height={100}
                     />
@@ -51,7 +52,7 @@ const Join = () => {
                     <Image
                       alt="C"
                       className="object-cover rounded-full"
-                      src="/userProfile/user1.svg"
+                      src="/userProfile/employer.svg"
                       width={100}
                       height={100}
                     />

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import Nav from "@/components/organisms/Navbar/nav";
 import { Footer } from "@/components";
 import CardContext from "@/contexts/CardInfoContext";
@@ -20,7 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <link rel="icon" href="/logo.svg" />
       <body className={poppins.className}>
+        <Nav />
         <CardContext>{children}</CardContext>
+        <Footer />
       </body>
     </html>
   );
