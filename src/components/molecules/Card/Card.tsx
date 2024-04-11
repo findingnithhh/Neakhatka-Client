@@ -23,7 +23,7 @@ const Card: React.FC<CardProps> = ({ className = "", data }) => {
   } = data;
   return (
     <>
-      <Link href={`/${id}`}>
+      <Link href={`/detail/${id}`}>
         <div className="h-auto rounded-xl shadow-lg p-5 font-Poppins">
           <div className="flex justify-between items-center">
             {/* image */}

@@ -14,7 +14,6 @@ import {
   Filter,
 } from "@/components";
 import "../../globals.css";
-
 import CardTip from "@/components/molecules/Card/CardTip";
 import Nav from "@/components/organisms/Navbar/nav";
 import CardList from "@/components/molecules/Card/CardList";
