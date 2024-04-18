@@ -12,7 +12,7 @@ import {
   Banner,
   Promote,
 } from "@/components";
-import Image from "next/image";
+import Image from "next/legacy/image";
 const Footer = () => {
   return (
     <>

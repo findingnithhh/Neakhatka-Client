@@ -5,7 +5,7 @@ interface IconProps {
   className?: string;
   label: string;
   size?: "xs" | "sm" | "md" | "lg" | "xl";
-  colorBackground?: "red" | "blue" | "green" | "yellow";
+  colorBackground?: "red" | "blue" | "green" | "yellow" | "black";
 }
 
 export default function Icon({
@@ -36,6 +36,8 @@ export default function Icon({
         return `#4B9960`;
       case "yellow":
         return `#FFA826`;
+      case "black":
+        return `#000000`;
       default:
         return `#E01507`;
     }

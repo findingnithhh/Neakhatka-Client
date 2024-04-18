@@ -1,2 +1,3 @@
 import {Select} from "./Select"
-export { Select };
+import { Filter } from "./Filter";
+export { Select, Filter };

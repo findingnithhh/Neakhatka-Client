@@ -1,25 +1,35 @@
-import {
-  Button,
-  Typography,
-  Input,
-  InputSearch,
-  Icon,
-  Select,
-  CardTips,
-  Card,
-  Search,
-  Navbar,
-  Banner,
-  Promote,
-  Footer,
-} from "@/components";
-import "./globals.css";
-import Image from "next/image";
-import { DetailCard } from "@/Types/DetailCard";
-export default function Home() {
-  const Cardinfor: DetailCard[] = [
+"use client";
+
+import React, { createContext, useState, ReactNode } from "react";
+
+interface CardModal {
+  id: string; // Changed from string to number
+  companyName: string; // Corrected the spelling of companyName
+  companyLogo: string; // Changed from src to companyLogo
+  peopleAmount: string;
+  jobTitle: string;
+  salary: string;
+  location: string;
+  Emploment: string; // Corrected the spelling of Employment
+  DeadLine: string; // Corrected the spelling of Deadline
+}
+
+interface CardContextProp {
+  children: ReactNode;
+}
+
+interface ContextProps {
+  CardInfo: CardModal[];
+}
+
+export const MyContext = createContext<ContextProps>({
+  CardInfo: [],
+});
+
+const CardContext: React.FC<CardContextProp> = ({ children }) => {
+  const [CardInfo, setCardInfo] = useState([
     {
-      id: 1,
+      id: "1",
       companyName: "Wing Bank",
       companyLogo: "/images.png",
       peopleAmount: "100+ people",
@@ -30,7 +40,7 @@ export default function Home() {
       DeadLine: "01-01-2025",
     },
     {
-      id: 2,
+      id: "2",
       companyName: "Sathapana Bank",
       companyLogo: "/images.png",
       peopleAmount: "50+ people",
@@ -41,7 +51,7 @@ export default function Home() {
       DeadLine: "09-08-2024",
     },
     {
-      id: 3,
+      id: "3",
       companyName: "ABA Bank",
       companyLogo: "/images.png",
       peopleAmount: "100+ people",
@@ -52,7 +62,7 @@ export default function Home() {
       DeadLine: "01-08-2045",
     },
     {
-      id: 4,
+      id: "4",
       companyName: "J Trust Bank",
       companyLogo: "/images.png",
       peopleAmount: "100+ people",
@@ -63,7 +73,7 @@ export default function Home() {
       DeadLine: "01-08-2025",
     },
     {
-      id: 5,
+      id: "5",
       companyName: "ABA Bank",
       companyLogo: "/images.png",
       peopleAmount: "100+ people",
@@ -74,7 +84,7 @@ export default function Home() {
       DeadLine: "01-08-2045",
     },
     {
-      id: 6,
+      id: "6",
       companyName: "J Trust Bank",
       companyLogo: "/images.png",
       peopleAmount: "100+ people",
@@ -85,7 +95,7 @@ export default function Home() {
       DeadLine: "01-08-2025",
     },
     {
-      id: 7,
+      id: "7",
       companyName: "ABA Bank",
       companyLogo: "/images.png",
       peopleAmount: "100+ people",
@@ -96,7 +106,7 @@ export default function Home() {
       DeadLine: "01-08-2045",
     },
     {
-      id: 8,
+      id: "8",
       companyName: "J Trust Bank",
       companyLogo: "/images.png",
       peopleAmount: "100+ people",
@@ -105,31 +115,16 @@ export default function Home() {
       location: "Phnom Penh",
       Emploment: "Full-Time",
       DeadLine: "01-08-2025",
-    },
-  ];
+    }
+  ]);
+
+  const Contextvalue = {
+    CardInfo,
+    setCardInfo,
+  };
   return (
-    <>
-      <Navbar />
-      <Banner />
-      <Select />
-      <CardTips />
-      <Typography
-        className="w-[1200px] mx-auto mt-10 text-[#212529] mb-10"
-        fontSize="2xl"
-      >
-        Latest <span className="text-[#4B9960]">Interns</span>
-      </Typography>
-      <main className="w-[1200px] mx-auto mt-10">
-        <div className="grid grid-cols-2 gap-[20px]">
-          {Cardinfor.map((job) => (
-            <div key={job.id} className="card-container">
-              <Card className="w-[60px] h-[60px]" data={job} />
-            </div>
-          ))}
-        </div>
-      </main>
-      <Promote />
-      <Footer />
-    </>
+    <MyContext.Provider value={Contextvalue}>{children}</MyContext.Provider>
   );
-}
+};
+
+export default CardContext;

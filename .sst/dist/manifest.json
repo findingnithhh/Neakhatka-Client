@@ -1,32 +1,32 @@
 {
   "version": "36.0.0",
   "artifacts": {
-    "dev-matching-internship-storybook-new-Site.assets": {
+    "dev-neakhatka-Site.assets": {
       "type": "cdk:asset-manifest",
       "properties": {
-        "file": "dev-matching-internship-storybook-new-Site.assets.json",
+        "file": "dev-neakhatka-Site.assets.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
       }
     },
-    "dev-matching-internship-storybook-new-Site": {
+    "dev-neakhatka-Site": {
       "type": "aws:cloudformation:stack",
       "environment": "aws://975050211130/us-east-1",
       "properties": {
-        "templateFile": "dev-matching-internship-storybook-new-Site.template.json",
+        "templateFile": "dev-neakhatka-Site.template.json",
         "terminationProtection": false,
         "tags": {
-          "sst:app": "matching-internship-storybook-new",
+          "sst:app": "neakhatka",
           "sst:stage": "dev"
         },
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::975050211130:role/cdk-hnb659fds-deploy-role-975050211130-us-east-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::975050211130:role/cdk-hnb659fds-cfn-exec-role-975050211130-us-east-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-975050211130-us-east-1/87768a0f252f41b175b48722f3584d7150a57efb224fa83785017eefd9c42dda.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-975050211130-us-east-1/589b1dccea9d5e697e1d5e98bbb37b736b546b341b4b9de7a8608f1448e2e9e0.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
-          "dev-matching-internship-storybook-new-Site.assets"
+          "dev-neakhatka-Site.assets"
         ],
         "lookupRole": {
           "arn": "arn:${AWS::Partition}:iam::975050211130:role/cdk-hnb659fds-lookup-role-975050211130-us-east-1",
@@ -35,16 +35,34 @@
         }
       },
       "dependencies": [
-        "dev-matching-internship-storybook-new-Site.assets"
+        "dev-neakhatka-Site.assets"
       ],
       "metadata": {
-        "/dev-matching-internship-storybook-new-Site": [
+        "/dev-neakhatka-Site": [
+          {
+            "type": "aws:cdk:error",
+            "data": "Found zones: [] for dns:neakhatka.com, privateZone:undefined, vpcId:undefined, but wanted exactly 1 zone",
+            "trace": [
+              "Annotations.addMessage (D:\\SabaiCode\\next js\\product\\matching-internship-storybook -new\\node_modules\\aws-cdk-lib\\core\\lib\\annotations.js:1:1608)",
+              "Annotations.addError (D:\\SabaiCode\\next js\\product\\matching-internship-storybook -new\\node_modules\\aws-cdk-lib\\core\\lib\\annotations.js:1:1100)",
+              "ContextProvider.getValue (D:\\SabaiCode\\next js\\product\\matching-internship-storybook -new\\node_modules\\aws-cdk-lib\\core\\lib\\context-provider.js:2:1172)",
+              "HostedZone.fromLookup (D:\\SabaiCode\\next js\\product\\matching-internship-storybook -new\\node_modules\\aws-cdk-lib\\aws-route53\\lib\\hosted-zone.js:1:2618)",
+              "EmptyStack.Site (file:///D:/SabaiCode/next%20js/product/matching-internship-storybook%20-new/.sst.config.1709092278269.mjs:20:37)",
+              "stack (file:///D:/SabaiCode/next%20js/product/matching-internship-storybook%20-new/node_modules/sst/constructs/FunctionalStack.js:20:35)",
+              "App.stack (file:///D:/SabaiCode/next%20js/product/matching-internship-storybook%20-new/node_modules/sst/constructs/App.js:500:16)",
+              "Object.stacks [as fn] (file:///D:/SabaiCode/next%20js/product/matching-internship-storybook%20-new/.sst.config.1709092278269.mjs:19:9)",
+              "synthInRoot (file:///D:/SabaiCode/next%20js/product/matching-internship-storybook%20-new/node_modules/sst/stacks/synth.js:56:24)",
+              "async Module.synth (file:///D:/SabaiCode/next%20js/product/matching-internship-storybook%20-new/node_modules/sst/stacks/synth.js:19:16)",
+              "async buildApp (file:///D:/SabaiCode/next%20js/product/matching-internship-storybook%20-new/node_modules/sst/cli/commands/bind.js:86:13)",
+              "async Object.handler (file:///D:/SabaiCode/next%20js/product/matching-internship-storybook%20-new/node_modules/sst/cli/commands/bind.js:53:9)"
+            ]
+          },
           {
             "type": "aws:cdk:stack-tags",
             "data": [
               {
                 "Key": "sst:app",
-                "Value": "matching-internship-storybook-new"
+                "Value": "neakhatka"
               },
               {
                 "Key": "sst:stage",
@@ -53,92 +71,122 @@
             ]
           }
         ],
-        "/dev-matching-internship-storybook-new-Site/CustomResourceHandler/ServiceRole/Resource": [
+        "/dev-neakhatka-Site/CustomResourceHandler/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CustomResourceHandlerServiceRole41AEC181"
           }
         ],
-        "/dev-matching-internship-storybook-new-Site/CustomResourceHandler/Resource": [
+        "/dev-neakhatka-Site/CustomResourceHandler/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CustomResourceHandlerE8FB56BA"
           }
         ],
-        "/dev-matching-internship-storybook-new-Site/site/ServerFunctionRole/Resource": [
+        "/dev-neakhatka-Site/Certificate/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Certificate4E7ABB08"
+          }
+        ],
+        "/dev-neakhatka-Site/public/Bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "publicBucket5C3DBAB0"
+          }
+        ],
+        "/dev-neakhatka-Site/public/Bucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "publicBucketPolicy24028FED"
+          }
+        ],
+        "/dev-neakhatka-Site/public/Parameter_bucketName/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "publicParameterbucketName69D24DDB"
+          }
+        ],
+        "/dev-neakhatka-Site/site/ServerFunctionRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteServerFunctionRole1F8F4FAC"
           }
         ],
-        "/dev-matching-internship-storybook-new-Site/site/ServerFunction/AssetReplacerPolicy/Resource": [
+        "/dev-neakhatka-Site/site/ServerFunctionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunctionRoleDefaultPolicy213DB8A5"
+          }
+        ],
+        "/dev-neakhatka-Site/site/ServerFunction/AssetReplacerPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteServerFunctionAssetReplacerPolicy304BF125"
           }
         ],
-        "/dev-matching-internship-storybook-new-Site/site/ServerFunction/AssetReplacer/Default": [
+        "/dev-neakhatka-Site/site/ServerFunction/AssetReplacer/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteServerFunctionAssetReplacer9A11D516"
           }
         ],
-        "/dev-matching-internship-storybook-new-Site/site/ServerFunction/ServerFunction/Resource": [
+        "/dev-neakhatka-Site/site/ServerFunction/ServerFunction/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteServerFunction6DFA6F1B"
           }
         ],
-        "/dev-matching-internship-storybook-new-Site/site/ServerFunction/ServerFunction/LogRetention/Resource": [
+        "/dev-neakhatka-Site/site/ServerFunction/ServerFunction/LogRetention/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteServerFunctionLogRetention7123678D"
           }
         ],
-        "/dev-matching-internship-storybook-new-Site/site/Parameter_url/Resource": [
+        "/dev-neakhatka-Site/site/Parameter_url/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteParameterurl3D1716BC"
           }
         ],
-        "/dev-matching-internship-storybook-new-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource": [
+        "/dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB"
           }
         ],
-        "/dev-matching-internship-storybook-new-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource": [
+        "/dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB"
           }
         ],
-        "/dev-matching-internship-storybook-new-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource": [
+        "/dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A"
           }
         ],
-        "/dev-matching-internship-storybook-new-Site/SSTStackOutputSSTMetadata": [
+        "/dev-neakhatka-Site/SSTStackOutputSSTMetadata": [
           {
             "type": "aws:cdk:logicalId",
             "data": "SSTMetadata"
           }
         ],
-        "/dev-matching-internship-storybook-new-Site/BootstrapVersion": [
+        "/dev-neakhatka-Site/BootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
             "data": "BootstrapVersion"
           }
         ],
-        "/dev-matching-internship-storybook-new-Site/CheckBootstrapVersion": [
+        "/dev-neakhatka-Site/CheckBootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CheckBootstrapVersion"
           }
         ]
       },
-      "displayName": "dev-matching-internship-storybook-new-Site"
+      "displayName": "dev-neakhatka-Site"
     },
     "Tree": {
       "type": "cdk:tree",
@@ -146,5 +194,17 @@
         "file": "tree.json"
       }
     }
-  }
+  },
+  "missing": [
+    {
+      "key": "hosted-zone:account=975050211130:domainName=neakhatka.com:region=us-east-1",
+      "provider": "hosted-zone",
+      "props": {
+        "account": "975050211130",
+        "region": "us-east-1",
+        "domainName": "neakhatka.com",
+        "lookupRoleArn": "arn:${AWS::Partition}:iam::975050211130:role/cdk-hnb659fds-lookup-role-975050211130-us-east-1"
+      }
+    }
+  ]
 }

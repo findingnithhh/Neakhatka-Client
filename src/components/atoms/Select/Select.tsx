@@ -24,8 +24,8 @@ const Select = () => {
 
   return (
     <>
-      <div className="xl:w-[1200px] lg:container mx-auto px-5 flex mt-10">
-        <div className="relative w-[250px] lg:max-w-sm">
+      <div className="container grid grid-cols-1 lg:flex lg:mx-20 lg:w-[1200px] mx-auto mt-36">
+        <div className=" mt-2 relative w-[250px] lg:max-w-sm">
           <div className="relative">
             <select
               className={`w-full h-[40px] border px-3 text-[14px] text-gray-500 bg-white rounded-md shadow-sm outline-none appearance-none ${
@@ -48,7 +48,7 @@ const Select = () => {
             </div>
           </div>
         </div>
-        <div className="relative w-[200px] lg:max-w-sm ml-4">
+        <div className="mt-2  relative w-[200px] lg:max-w-sm">
           <div className="relative">
             <select
               className={`w-full h-[40px] border px-3 text-[14px] text-gray-500 bg-white rounded-md shadow-sm outline-none appearance-none ${
@@ -70,7 +70,7 @@ const Select = () => {
             </div>
           </div>
         </div>
-        <div className="relative w-[200px] lg:max-w-sm ml-4">
+        <div className="mt-2 relative w-[200px] lg:max-w-sm">
           <div className="relative">
             <select
               className={`w-full h-[40px] border px-3 text-[14px] text-gray-500 bg-white rounded-md shadow-sm outline-none appearance-none ${
