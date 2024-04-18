@@ -12,7 +12,6 @@ const Detail = () => {
 
   const route = useParams();
   const card= route.jobDetail;
- 
 
   const CardDetail = CardInfo.find((data)=>data.id == card);
 
