@@ -1,7 +1,7 @@
 import { Icon } from "@/components";
 import { Typography } from "../../atoms/Typography";
 import React from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { DetailCard } from "@/Types/DetailCard";
 import Link from "next/link";
 

@@ -5,22 +5,29 @@ import { Button } from "@/components/ui/button";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import Image from "next/legacy/image";
-import "../../globals.css";
+import '../../globals.css'
 
-const Login = () => {
+const Signup = () => {
   return (
-    <div className="flex h-screen mx-auto overflow-hidden">
+    <div className="flex h-screen">
+      {" "}
       {/* Use flexbox to make it full height */}
       <div className="left hidden lg:block w-full h-full p-10 bg-[#18181B] flex-col justify-between rounded-r-2xl">
         {/* <div>⚛</div> */}
         <div className="flex justify-center items-center h-screen">
-          <Image src="/auth/login.svg" alt="login" width={450} height={450} className="mb-20" />
+          <Image
+            src="/auth/signup.svg"
+            alt="login"
+            width={450}
+            height={450}
+            className="mb-20"
+          />
         </div>
       </div>
       <div className="right w-full p-10">
         <div className="text-end">
-          <Link href="/signup" color="primary" className="text-sm">
-            Sign Up
+          <Link href="/login" color="primary" className="text-sm">
+            Login
           </Link>
         </div>
         <div className="flex flex-col justify-center items-center h-full">
@@ -37,22 +44,27 @@ const Login = () => {
           </Link>
           <div className="text-center">
             <h1 className="font-bold mb-1 text-lg">Create an account</h1>
-            <p className="text-gray-500 text-sm">
-              Enter your email below to create your account
+            <p className="text-gray-500 text-sm text-center w-[380px]">
+              Enter your email below to sign up with Matching Internship
             </p>
           </div>
           <div className="mt-5">
             <Input
+              accept="text"
+              placeholder="company name"
+              className="w-[350px]"
+            />
+            <Input
               accept="email"
               placeholder="example@gmail.com"
-              className="w-[350px]"
+              className="w-[350px] mt-4"
             />
             <Input
               accept="password"
               placeholder="password123"
               className="w-[350px] mt-4"
             />
-            <Button className="mt-4 w-[350px]">Login</Button>
+            <Button className="mt-4 w-[350px]">Sign Up</Button>
           </div>
           <div className="mt-5">
             <span className="flex text-gray-300">or continue with</span>
@@ -88,4 +100,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

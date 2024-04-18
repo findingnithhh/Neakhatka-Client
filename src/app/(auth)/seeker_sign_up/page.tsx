@@ -4,8 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
-import Image from "next/image";
-import '../../globals.css'
+import Image from "next/legacy/image";
+import "../../globals.css";
 
 const Signup = () => {
   return (
@@ -13,11 +13,15 @@ const Signup = () => {
       {" "}
       {/* Use flexbox to make it full height */}
       <div className="left hidden lg:block w-full h-full p-10 bg-[#18181B] flex-col justify-between rounded-r-2xl">
-        <div>⚛</div>
-        <div className="flex items">
-          Acme Inc “This library has saved me countless hours of work and helped
-          me deliver stunning designs to my clients faster than ever before.”
-          Sofia Davis
+        {/* <div>⚛</div> */}
+        <div className="flex justify-center items-center h-screen">
+          <Image
+            src="/auth/signup.svg"
+            alt="login"
+            width={450}
+            height={450}
+            className="mb-20"
+          />
         </div>
       </div>
       <div className="right w-full p-10">
@@ -47,8 +51,13 @@ const Signup = () => {
           <div className="mt-5">
             <Input
               accept="text"
-              placeholder="company name"
+              placeholder="your firstname"
               className="w-[350px]"
+            />
+            <Input
+              accept="text"
+              placeholder="your lastname"
+              className="w-[350px] mt-4"
             />
             <Input
               accept="email"

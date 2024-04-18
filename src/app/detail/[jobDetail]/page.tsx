@@ -3,7 +3,7 @@ import React from "react";
 import { useContext } from "react";
 import { Icon, Typography } from "@/components";
 import { Button } from "@nextui-org/react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import '../../globals.css'
 import { MyContext } from "@/contexts/CardInfoContext";
 import { useParams } from "next/navigation";

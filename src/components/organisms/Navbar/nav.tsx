@@ -11,7 +11,7 @@ import {
   Link,
 } from "@nextui-org/react";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);

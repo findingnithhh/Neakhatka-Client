@@ -1,6 +1,6 @@
 import React from "react";
 import {Card, CardHeader, CardBody, Button} from "@nextui-org/react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import '../../globals.css'
 const Join = () => {

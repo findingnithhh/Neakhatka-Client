@@ -1,5 +1,5 @@
 import { Button, Icon, Typography } from "@/components/atoms";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React from "react";
 const BackUp = () => {
   return (
@@ -24,7 +24,7 @@ const BackUp = () => {
               <div className="w-[340px] h-[100px] shadow-xl flex items-center px-3 rounded-[6px] ml-20 my-16">
                 <div className="flex items-center">
                   <Image
-                    src="./userProfile/user.svg"
+                    src="/userProfile/user.svg"
                     alt="person"
                     width={54}
                     height={54}
@@ -127,7 +127,7 @@ const BackUp = () => {
               <div className="w-[340px] h-[100px] shadow-xl flex items-center px-3 rounded-[6px] float-right">
                 <div className="flex items-center">
                   <Image
-                    src="./userProfile/user.svg"
+                    src="/userProfile/user.svg"
                     alt="person"
                     width={54}
                     height={54}

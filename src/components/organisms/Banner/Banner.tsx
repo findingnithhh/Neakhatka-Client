@@ -10,7 +10,7 @@ import {
   Navbar,
 } from "@/components";
 import { Promote } from "@/components";
-import Image from "next/image";
+import Image from "next/legacy/image";
 const Banner = () => {
   return (
     <>
