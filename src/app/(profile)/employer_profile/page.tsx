@@ -3,8 +3,33 @@ import Image from 'next/image'
 import { Card, Icon} from '@/components'
 import { Typography } from "../../../components/atoms/Typography";
 import Link from "next/link";
+import CardList from "@/components/molecules/Card/CardList";
 
 import { Button } from '@/components/ui/button';
+import { DetailCard } from '@/Types/DetailCard';
+// const detailCard: DetailCard[] = [{
+//   companyName: 'Acme Inc.',
+//   companyLogo: '/company.svg',
+//   peopleAmount: '1000+',
+//   jobTitle: 'Software Engineer',
+//   salary: '$100,000 - $150,000',
+//   Emploment: 'Full-time',
+//   location: 'San Francisco, CA',
+//   DeadLine: '2023-03-31',
+//   id: ''
+// },
+
+// {companyName: 'Acme Inc.',
+//   companyLogo: '/company.svg',
+//   peopleAmount: '1000+',
+//   jobTitle: 'Software Engineer',
+//   salary: '$100,000 - $150,000',
+//   Emploment: 'Full-time',
+//   location: 'San Francisco, CA',
+//   DeadLine: '2023-03-31',
+//   id: ''
+// }
+// ];
 
 const employerProfile = () => {
   return (
@@ -78,14 +103,24 @@ const employerProfile = () => {
                 organization (NGO) in 1995, and at the time of acquisition, it
                 had become a deposit-taking microfinance institution providing
                 funds to the low income people throughout the country with a
-                strong contribution track record in Cambodia's economic
+                strong contribution track record in Cambodia economic
                 development.
               </Typography>
             </div>
+            
           </div>
+         
         </div>
+        
       </div>
       {/* card */}
+      {/* <CardList data={detailCard.flat()} /> */}
+      
+       
+      {/* <Card data={detailCard} /> */}
+      {/* <CardList /> */}
+
+     
     </>
   );
 }
