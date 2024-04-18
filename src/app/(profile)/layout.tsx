@@ -8,9 +8,9 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Nav />
+    
         <section>{children}</section>
-        <Footer />
+ 
       </body>
     </html>
   );
