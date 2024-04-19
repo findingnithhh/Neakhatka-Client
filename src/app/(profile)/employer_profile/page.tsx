@@ -7,34 +7,34 @@ import CardList from "@/components/molecules/Card/CardList";
 
 import { Button } from '@/components/ui/button';
 import { DetailCard } from '@/Types/DetailCard';
-// const detailCard: DetailCard[] = [{
-//   companyName: 'Acme Inc.',
-//   companyLogo: '/company.svg',
-//   peopleAmount: '1000+',
-//   jobTitle: 'Software Engineer',
-//   salary: '$100,000 - $150,000',
-//   Emploment: 'Full-time',
-//   location: 'San Francisco, CA',
-//   DeadLine: '2023-03-31',
-//   id: ''
-// },
-
-// {companyName: 'Acme Inc.',
-//   companyLogo: '/company.svg',
-//   peopleAmount: '1000+',
-//   jobTitle: 'Software Engineer',
-//   salary: '$100,000 - $150,000',
-//   Emploment: 'Full-time',
-//   location: 'San Francisco, CA',
-//   DeadLine: '2023-03-31',
-//   id: ''
-// }
-// ];
+const Cardinfor: DetailCard[] = [
+  {
+    id: "1",
+    companyName: "Wing Bank",
+    companyLogo: "/images.png",
+    peopleAmount: "100+ people",
+    jobTitle: "UX/UI Intership",
+    salary: "$150-$200",
+    location: "Phnom Penh",
+    Emploment: "Full-Time",
+    DeadLine: "01-01-2025",
+  },
+  {
+    id: "2",
+    companyName: "Sathapana Bank",
+    companyLogo: "/images.png",
+    peopleAmount: "50+ people",
+    jobTitle: "Vue Js Intership",
+    salary: "$100-$200",
+    location: "Phnom Penh",
+    Emploment: "Full-Time",
+    DeadLine: "09-08-2024",
+  }];
 
 const employerProfile = () => {
   return (
     <>
-      <div className="container xl:max-w-[1200px] bg-[#F8F9FA] rounded-xl mt-5 md:mt-10 p-5 md:px-24 md:py-10 h-screen">
+      <div className="container xl:max-w-[1200px] bg-[#F8F9FA] rounded-xl mt-5 md:mt-10 p-5 md:px-24 md:py-10 ">
         {/* top */}
         <div className="w-full flex md:flex-row justify-between items-center">
           <div className="flex items-center mb-4 md:mb-0">
@@ -114,10 +114,18 @@ const employerProfile = () => {
         
       </div>
       {/* card */}
-      {/* <CardList data={detailCard.flat()} /> */}
+      {/* <CardList cards={detailCard} /> */}
       
        
-      {/* <Card data={detailCard} /> */}
+      <main className="w-full container  my-10 px-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px]">
+          {Cardinfor.map((job) => (
+            <div key={job.id} className="card-container">
+              <Card className="w-full h-auto" data={job} />
+            </div>
+          ))}
+        </div>
+      </main>
       {/* <CardList /> */}
 
      

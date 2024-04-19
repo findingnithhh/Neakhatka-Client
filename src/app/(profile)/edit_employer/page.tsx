@@ -10,13 +10,11 @@ import Image from "next/image";
 const Editprofile = () => {
   return (
     <>
-      
-      
       <div className="max-w-[880px] mx-auto px-8 py-6 border rounded-lg shadow-sm">
         <Typography fontSize="xl" className="text-center ">
           Edit Company Profile
         </Typography>
-        <div >
+        <div>
           <Typography fontSize="sm" className="text-center mb-4">
             The company details will be visible to the public and candidate.
             Please enter accurate information about your company.
@@ -24,23 +22,45 @@ const Editprofile = () => {
         </div>
         {/* image */}
         <div className="flex items-center justify-center mb-2">
-        <div className=" h-[105px] w-[105px] rounded-full items-center bg-slate-500 mb-2">
-          
-        </div>
+          <div className=" h-[105px] w-[105px] rounded-full items-center bg-slate-500 mb-2"></div>
         </div>
         {/* input */}
+        {/* <div>
+        <label className="mb-2 text-sm">Name</label>
+            <div className="flex flex-col md:flex-row">
+                <div className="w-full flex-1 mx-2 svelte-1l8159u">
+                    <div className="bg-white my-2 p-1 flex border border-gray-200 rounded svelte-1l8159u">
+                    <Input type="text" placeholder="San Visal" className="text-sm"></Input>
+                </div>
+                <div className="w-full flex-1 mx-2 svelte-1l8159u">
+                    <div className="bg-white my-2 p-1 flex border border-gray-200 rounded svelte-1l8159u">
+                         <Input type="date" placeholder="2001-10-13" className="text-sm"></Input>
+                </div>
+            </div> */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pl-4">
           <div className="flex flex-col">
             <label className="mb-2 text-sm">Name</label>
-            <Input type="text" placeholder="San Visal" className="text-sm"></Input>
+            <Input
+              type="text"
+              placeholder="San Visal"
+              className="text-sm"
+            ></Input>
           </div>
           <div className="flex flex-col">
             <label className="mb-2 text-sm">Date of Birth</label>
-            <Input type="date" placeholder="2001-10-13" className="text-sm"></Input>
+            <Input
+              type="date"
+              placeholder="2001-10-13"
+              className="text-sm"
+            ></Input>
           </div>
           <div className="flex flex-col">
             <label className="mb-2 text-sm">Contact Phone</label>
-            <Input type="text" placeholder="0965774927" className="text-sm"></Input>
+            <Input
+              type="text"
+              placeholder="0965774927"
+              className="text-sm"
+            ></Input>
           </div>
           <div className="flex flex-col">
             <label className="mb-2 text-sm">Nationality</label>
@@ -52,11 +72,19 @@ const Editprofile = () => {
           </div>
           <div className="flex flex-col">
             <label className="mb-2 text-sm">Contact Email</label>
-            <Input type="email" placeholder="sanvisal@gmail.com" className="text-sm"></Input>
+            <Input
+              type="email"
+              placeholder="sanvisal@gmail.com"
+              className="text-sm"
+            ></Input>
           </div>
           <div className="flex flex-col">
             <label className="mb-2 text-sm">Location</label>
-            <Input type="text" placeholder="Phnom Penh" className="text-sm"></Input>
+            <Input
+              type="text"
+              placeholder="Phnom Penh"
+              className="text-sm"
+            ></Input>
           </div>
           <div className="flex flex-col">
             <label className="mb-2 text-sm">Address</label>
@@ -80,13 +108,16 @@ const Editprofile = () => {
           <Button colorOutline="danger" size="md" className="mr-3" rounded="lg">
             Cancel
           </Button>
-          <Button colorScheme="primary" rounded="lg" className="w-48 text-white" >
+          <Button
+            colorScheme="primary"
+            rounded="lg"
+            className="w-48 text-white"
+          >
             Save Change
           </Button>
-        
         </div>
       </div>
     </>
   );
 };
-export default Editprofile ;
+export default Editprofile;
