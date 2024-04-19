@@ -108,13 +108,7 @@ const Editprofile = () => {
           <Button colorOutline="danger" size="md" className="mr-3" rounded="lg">
             Cancel
           </Button>
-          <Button
-            colorScheme="primary"
-            rounded="lg"
-            className="w-48 text-white"
-          >
-            Save Change
-          </Button>
+          <Button colorScheme="primary" className="w-44 text-white">Save change</Button>
         </div>
       </div>
     </>
