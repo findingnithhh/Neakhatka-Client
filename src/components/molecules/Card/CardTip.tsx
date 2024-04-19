@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 import { Icon, Typography } from "@/components";
