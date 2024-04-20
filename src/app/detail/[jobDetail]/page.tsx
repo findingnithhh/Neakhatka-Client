@@ -19,7 +19,7 @@ const Detail = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <div className="container mx-auto">
+      <div className="w-full md:container mx-auto p-2 md:p-0">
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-5">
           <div className="col-span-7 p-2 lg:py-8 lg:px-14 border rounded-lg">
             <div className="flex justify-between mt-5">
@@ -68,7 +68,12 @@ const Detail = () => {
                       <Button className="mt-6 bg-[#4B9960] text-white">
                         Upload Now
                       </Button>
-                      <Button className="mt-3 bg-white text-black border border-red-500">Cancel</Button>
+                      <Button
+                        onClick={() => setIsOpen(false)}
+                        className="mt-3 bg-white text-black border border-red-500"
+                      >
+                        Cancel
+                      </Button>
                     </div>
                   </div>
                 </Modal>
@@ -230,12 +235,14 @@ const Detail = () => {
               >{`${CardDetail?.companyName}`}</Typography>
             </div>
             <div className="mt-10">
-              <Typography className="leading-10">San Visal</Typography>
-              <Typography className="leading-10">
+              <Typography className="leading-10 truncate">San Visal</Typography>
+              <Typography className="leading-10 truncate">
                 smilecomputertechnology@gmail.com
               </Typography>
-              <Typography className="leading-10">+855 984 383 330</Typography>
-              <Typography className="leading-10">
+              <Typography className="leading-10 truncate">
+                +855 984 383 330
+              </Typography>
+              <Typography className="leading-10 truncate">
                 2972 Westheimer Rd. Santa Ana, Illinois 85486
               </Typography>
             </div>

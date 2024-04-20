@@ -24,7 +24,7 @@ const SeekerReview: React.FC = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 lg:flex lg:flex-row-reverse ml-10 md:ml-48 pb-0 lg:pb-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:flex lg:flex-row-reverse -mt-10 md:0 ml-10 md:ml-48 pb-0 lg:pb-20">
         <div className="mx-auto">
           {SeekerData.map((items, index) => (
             <div
