@@ -56,7 +56,9 @@ const ResetPassword = () => {
               placeholder="your new password"
               className="w-[350px] mt-4"
             />
-            <Button className="mt-4 w-[350px]">Continue</Button>
+            <Button className="mt-4 w-[350px] bg-[#343A40] hover:bg-[#4a535c]">
+              Continue
+            </Button>
           </div>
         </div>
       </div>

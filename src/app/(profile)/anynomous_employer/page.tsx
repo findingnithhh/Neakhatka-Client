@@ -34,7 +34,7 @@ const Cardinfor: DetailCard[] = [
 const anynomousEmp = () => {
   return (
     <>
-      <div className="container xl:max-w-[1200px] bg-[#F8F9FA] rounded-xl mt-5 md:mt-10 p-5 md:px-24 md:py-10 ">
+      <div className="container xl:max-w-[1200px] bg-[#F8F9FA] rounded-xl mt-5 md:mt-10 p-5 md:px-24 md:py-10">
         {/* top */}
         <div className="w-full flex md:flex-row justify-between items-center">
           <div className="flex items-center mb-4 md:mb-0">
@@ -117,7 +117,7 @@ const anynomousEmp = () => {
       {/* <CardList cards={detailCard} /> */}
       
        
-      <main className="w-full container  my-10 px-20">
+      <main className="w-full mx-auto xl:max-w-[1200px] my-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px]">
           {Cardinfor.map((job) => (
             <div key={job.id} className="card-container">

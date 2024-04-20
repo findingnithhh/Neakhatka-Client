@@ -31,7 +31,7 @@ const SeekerReview: React.FC = () => {
               key={items.id}
               className={`w-[270px] h-[80px] lg:w-[340px] lg:h-[100px] shadow-xl flex items-center px-3 rounded-[6px] my-16 ${
                 expanded === items.id ? "bg-gray-100" : ""
-              } ${index === 0 || index === 2 ? "mr-20" : "ml-20"}`}
+              } ${index === 0 || index === 2 ? "mr-30" : "ml-10"}`}
               onClick={() => handleToggle(items.id, items.description)}
               style={{ cursor: "pointer" }}
             >

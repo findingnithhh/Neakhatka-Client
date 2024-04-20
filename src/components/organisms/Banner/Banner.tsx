@@ -25,7 +25,7 @@ const Banner = () => {
         <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center backdrop-brightness-50">
           <span className="text-white">
             <Typography
-              fontSize="2xl"
+              fontSize="xl"
               className="-mt-5 mb-5 flex justify-center items-center font-bold md:text-[40px] md:mt-5 lg:text-[48px]"
             >
               Find Your Dream
@@ -34,8 +34,7 @@ const Banner = () => {
             </Typography>
             <div className="flex justify-center items-center">
               <Typography
-                fontSize="xs"
-                className="w-[400px] text-center -mt-2 tracking-wide lg:w-[600px] lg:text-[16px] lg:mt-5"
+                className="text-xs md:text-sm w-[360px] text-center -mt-2 tracking-wide lg:w-[600px] lg:text-[16px] lg:mt-5"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore

@@ -1,10 +1,7 @@
+'use client'
 import {
-  // Button,
   Typography,
-  Input,
-  InputSearch,
   Icon,
-  // Select,
   Card,
   Search,
   Navbar,
@@ -12,6 +9,7 @@ import {
   CardReview,
   Footer,
   Filter,
+  Button,
 } from "@/components";
 import "../../globals.css";
 import CardTip from "@/components/molecules/Card/CardTip";

@@ -8,8 +8,14 @@ import Link from "next/link";
 interface CardProps {
   className?: string;
   data: DetailCard;
+  iconType?: "star" | "close";
+  onDelete?: () => void;
 }
-const Card: React.FC<CardProps> = ({ className = "", data }) => {
+const Card: React.FC<CardProps> = ({
+  className = "",
+  data,
+  iconType = "star",
+}) => {
   const {
     id,
     companyName,
@@ -45,7 +51,7 @@ const Card: React.FC<CardProps> = ({ className = "", data }) => {
             </div>
             {/* favorite icon */}
             <div>
-              <Icon label="Star" />
+              <Icon label={iconType === "star" ? "Star" : "Close"} />
             </div>
           </div>
           <div className="flex ">

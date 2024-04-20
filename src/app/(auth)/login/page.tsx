@@ -6,6 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import Image from "next/legacy/image";
 import "../../globals.css";
+import { Icon } from "@/components";
 
 const Login = () => {
   return (
@@ -14,12 +15,18 @@ const Login = () => {
       <div className="left hidden lg:block w-full h-full p-10 bg-[#18181B] flex-col justify-between rounded-r-2xl">
         {/* <div>⚛</div> */}
         <div className="flex justify-center items-center h-screen">
-          <Image src="/auth/login.svg" alt="login" width={450} height={450} className="mb-20" />
+          <Image
+            src="/auth/login.svg"
+            alt="login"
+            width={450}
+            height={450}
+            className="mb-20"
+          />
         </div>
       </div>
       <div className="right w-full p-10">
         <div className="text-end">
-          <Link href="/signup" color="primary" className="text-sm">
+          <Link href="/join" color="primary" className="text-sm">
             Sign Up
           </Link>
         </div>
@@ -52,7 +59,14 @@ const Login = () => {
               placeholder="password123"
               className="w-[350px] mt-4"
             />
-            <Button className="mt-4 w-[350px]">Login</Button>
+            <Link
+              href="/forgot_password"
+              className="flex justify-end text-blue-600 -mb-5 mt-2 text-sm underline"
+            >
+              forgot password?
+            </Link>
+            <br />
+            <Button className="mt-4 w-[350px] bg-[#343A40] hover:bg-[#4a535c]">Login</Button>
           </div>
           <div className="mt-5">
             <span className="flex text-gray-300">or continue with</span>
@@ -62,16 +76,16 @@ const Login = () => {
               className="mt-4 mb-2 flex justify-center items-center"
               variant="outline"
             >
-              <FcGoogle className="mx-1" />
-              Google
+              <Icon label="Google" className="-ml-10 mr-5" />
+              Continue with Google
             </Button>
 
             <Button
               className="flex justify-center items-center"
               variant="outline"
             >
-              <FaFacebook className="mx-1" />
-              Facebook
+              <FaFacebook className="-ml-6 mr-5 w-[22px] h-[22px] text-blue-600" />
+              Continue with facebook
             </Button>
           </div>
           <div className="mt-5 text-sm text-center">

@@ -6,10 +6,11 @@ import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import Image from "next/legacy/image";
 import '../../globals.css'
+import { Icon } from "@/components";
 
 const Signup = () => {
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen overflow-hidden">
       {" "}
       {/* Use flexbox to make it full height */}
       <div className="left hidden lg:block w-full h-full p-10 bg-[#18181B] flex-col justify-between rounded-r-2xl">
@@ -64,7 +65,9 @@ const Signup = () => {
               placeholder="password123"
               className="w-[350px] mt-4"
             />
-            <Button className="mt-4 w-[350px]">Sign Up</Button>
+            <Button className="mt-4 w-[350px] bg-[#343A40] hover:bg-[#4a535c]">
+              Sign Up
+            </Button>
           </div>
           <div className="mt-5">
             <span className="flex text-gray-300">or continue with</span>
@@ -74,16 +77,16 @@ const Signup = () => {
               className="mt-4 mb-2 flex justify-center items-center"
               variant="outline"
             >
-              <FcGoogle className="mx-1" />
-              Google
+              <Icon label="Google" className="-ml-10 mr-5" />
+              Continue with Google
             </Button>
 
             <Button
               className="flex justify-center items-center"
               variant="outline"
             >
-              <FaFacebook className="mx-1" />
-              Facebook
+              <FaFacebook className="-ml-6 mr-5 w-[22px] h-[22px] text-blue-600" />
+              Continue with facebook
             </Button>
           </div>
           <div className="mt-5 text-sm text-center">

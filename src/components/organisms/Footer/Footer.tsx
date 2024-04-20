@@ -6,7 +6,6 @@ import {
   InputSearch,
   Icon,
   Select,
-  CardTips,
   Search,
   Navbar,
   Banner,
@@ -51,13 +50,13 @@ const Footer = () => {
               <p>Our Social Media</p>
             </div>
             <div className="py-5 flex gap-4 font-Poppins text-[14px]">
-              <a href="">
+              <a href="https://www.facebook.com/profile.php?id=61550779933720">
                 <Icon label="Facebook" />
               </a>
               <a href="">
                 <Icon label="Telegram" />
               </a>
-              <a href="">
+              <a href="https://twitter.com/neakhatka">
                 <Icon label="X" />
               </a>
               <a href="">

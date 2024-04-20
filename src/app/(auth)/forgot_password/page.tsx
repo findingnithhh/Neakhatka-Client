@@ -53,7 +53,11 @@ const ForgotPassword = () => {
               placeholder="example@gmail.com"
               className="w-[350px] outline-none"
             />
-            <Button className="mt-4 w-[350px]">Continue</Button>
+            <Link href="/reset_password">
+              <Button className="mt-4 w-[350px] bg-[#343A40] hover:bg-[#4a535c]">
+                Continue
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
