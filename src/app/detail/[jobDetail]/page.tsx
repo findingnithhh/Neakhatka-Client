@@ -19,7 +19,7 @@ const Detail = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <div className="w-full md:container mx-auto p-2 md:p-0">
+      <div className="w-full md:container mx-auto p-2 lg:p-0">
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-5">
           <div className="col-span-7 p-2 lg:py-8 lg:px-14 border rounded-lg">
             <div className="flex justify-between mt-5">
@@ -87,10 +87,10 @@ const Detail = () => {
                   <table className="w-full border-collapse border border-slate-500">
                     <tbody>
                       <tr>
-                        <td className="w-1/2 border bg-[#F2F2F2] py-2 px-10">
+                        <td className="w-1/2 border bg-[#F2F2F2] py-2 px-2">
                           Duration
                         </td>
-                        <td className="w-1/2 border text-gray-500 py-2 px-10">
+                        <td className="w-1/2 border text-gray-500 py-2 px-2">
                           3 months
                         </td>
                       </tr>
@@ -101,10 +101,10 @@ const Detail = () => {
                   <table className="w-full border-collapse border">
                     <tbody>
                       <tr>
-                        <td className="w-1/2 border border-l-0 outline-none bg-[#F2F2F2] py-2 px-10">
+                        <td className="w-1/2 border border-l-0 outline-none bg-[#F2F2F2] py-2 px-2">
                           Location
                         </td>
-                        <td className="w-1/2 border text-gray-500 py-2 px-10">
+                        <td className="w-1/2 border text-gray-500 py-2 px-2">
                           {`${CardDetail?.location}`}
                         </td>
                       </tr>
@@ -118,10 +118,10 @@ const Detail = () => {
                   <table className="w-full border-collapse border border-slate-500">
                     <tbody>
                       <tr>
-                        <td className="w-1/2 border bg-[#F2F2F2] py-2 px-10">
+                        <td className="w-1/2 border bg-[#F2F2F2] py-2 px-2">
                           Duration
                         </td>
-                        <td className="w-1/2 border text-gray-500 py-2 px-10">
+                        <td className="w-1/2 border text-gray-500 py-2 px-2">
                           3 months
                         </td>
                       </tr>
@@ -132,10 +132,10 @@ const Detail = () => {
                   <table className="w-full border-collapse border">
                     <tbody>
                       <tr>
-                        <td className="w-1/2 border border-l-0 outline-none bg-[#F2F2F2] py-2 px-10">
+                        <td className="w-1/2 border border-l-0 outline-none bg-[#F2F2F2] py-2 px-2">
                           Deadline
                         </td>
-                        <td className="w-1/2 border text-gray-500 py-2 px-10">
+                        <td className="w-1/2 border text-gray-500 py-2 px-2">
                           {`${CardDetail?.DeadLine}`}
                         </td>
                       </tr>
