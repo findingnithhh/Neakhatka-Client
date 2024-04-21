@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { Icon, Typography } from "@/components";
 import { Button } from "@nextui-org/react";
 import Image from "next/legacy/image";
-import '../../globals.css'
+import "../../globals.css";
 import { MyContext } from "@/contexts/CardInfoContext";
 import { useParams } from "next/navigation";
 import Modal from "@/components/molecules/Modal/Modal";
@@ -13,9 +13,21 @@ import { useState } from "react";
 const Detail = () => {
   const { CardInfo } = useContext(MyContext);
   const route = useParams();
-  const card= route.jobDetail;
-  const CardDetail = CardInfo.find((data)=>data.id == card);
+  const card = route.jobDetail;
+  const CardDetail = CardInfo.find((data) => data.id == card);
   const [isOpen, setIsOpen] = useState(false);
+  const [isFavorited, setIsFavorited] = useState(false);
+
+  const toggleFavorite = () => {
+    setIsFavorited((prevState) => !prevState);
+  };
+  const [starred, setStarred] = useState(false);
+  const handleStarClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.preventDefault(); // To prevent default behavior of link
+    e.stopPropagation(); // To prevent redirect when star icon is clicked
+    setStarred((prev) => !prev);
+  };
+
   return (
     <>
       <div className="w-full md:container mx-auto p-2 lg:p-0">
@@ -30,8 +42,18 @@ const Detail = () => {
                 {/* salary */}
                 <Typography>{`${CardDetail?.salary}`}</Typography>
               </div>
-              <div className="flex justify-center items-center">
-                <Icon className="mr-5" label="Star" size="md" />
+              <div
+                className="flex justify-center items-center"
+                onClick={handleStarClick}
+              >
+                <button onClick={toggleFavorite}>
+                  <Icon
+                    className="mr-5"
+                    size="md"
+                    label={isFavorited ? "StarFill" : "Star"}
+                    colorBackground={isFavorited ? "yellow" : "black"}
+                  />
+                </button>
                 <Button
                   onClick={() => setIsOpen(true)}
                   className="bg-[#4B9960] outline-none text-white text-[14px] md:text-[16px]"
@@ -235,6 +257,7 @@ const Detail = () => {
             </div>
             <div className="mt-10">
               <Typography className="leading-10 truncate">San Visal</Typography>
+
               <Typography className="leading-10 truncate">
                 smilecomputertechnology@gmail.com
               </Typography>
