@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "../globals.css";
-import Nav from "@/components/organisms/Navbar/nav";
+import Nav from "@/components/organisms/Navbar/Nav";
 import { Footer } from "@/components";
 import CardContext from "@/contexts/CardInfoContext";
 

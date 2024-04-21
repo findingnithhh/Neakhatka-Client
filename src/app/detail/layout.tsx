@@ -1,5 +1,5 @@
 import { Poppins } from "next/font/google";
-import Nav from "@/components/organisms/Navbar/nav";
+import Nav from "@/components/organisms/Navbar/Nav";
 import { Footer } from "@/components";
 import CardContext from "@/contexts/CardInfoContext";
 
@@ -9,7 +9,9 @@ const DatailLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <body className={poppins.className}>
         <Nav />
-        <CardContext><section>{children}</section></CardContext>
+        <CardContext>
+          <section>{children}</section>
+        </CardContext>
         <Footer />
       </body>
     </html>

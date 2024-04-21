@@ -24,14 +24,14 @@ const SeekerReview: React.FC = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 lg:flex lg:flex-row-reverse ml-10 md:ml-48 pb-0 lg:pb-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:flex lg:flex-row-reverse -mt-10 md:0 ml-10 md:ml-48 pb-0 lg:pb-20">
         <div className="mx-auto">
           {SeekerData.map((items, index) => (
             <div
               key={items.id}
               className={`w-[270px] h-[80px] lg:w-[340px] lg:h-[100px] shadow-xl flex items-center px-3 rounded-[6px] my-16 ${
                 expanded === items.id ? "bg-gray-100" : ""
-              } ${index === 0 || index === 2 ? "mr-20" : "ml-20"}`}
+              } ${index === 0 || index === 2 ? "mr-30" : "ml-10"}`}
               onClick={() => handleToggle(items.id, items.description)}
               style={{ cursor: "pointer" }}
             >

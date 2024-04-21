@@ -22,6 +22,7 @@ interface ButtonProps {
     | "2xl"
     | "3xl"
     | "full";
+  onClick?: () => void; // Add onClick event handler
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -31,6 +32,7 @@ const Button: React.FC<ButtonProps> = ({
   rounded = "base",
   colorScheme = "",
   colorOutline = "",
+  onClick, // Destructure onClick
 }) => {
   const sizeButton = (size: string) => {
     switch (size) {
@@ -110,6 +112,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <div
       className={`flex justify-center items-center cursor-pointer ${getButtonRounded} ${colorSchemeStyle} ${sizeButtonStyle} ${colorButtonOutline} ${className}`}
+      onClick={onClick} // Add onClick event handler
     >
       {children}
     </div>

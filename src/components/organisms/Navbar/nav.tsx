@@ -1,5 +1,5 @@
 'use client'
-import React, {useState} from "react";
+import React from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -19,13 +19,17 @@ export default function Nav() {
   const menuItems = [
     { text: "Home", link: "/home" },
     { text: "Favorite", link: "/favorite" },
-    { text: "Contact Us", link: "/contact-us" },
-    { text: "Sign Up", link: "/signup" },
+    { text: "Contact Us", link: "/contact_us" },
+    { text: "Sign Up", link: "/join" },
     { text: "Login", link: "/login" },
   ];
   
   return (
-    <Navbar className="py-1" shouldHideOnScroll onMenuOpenChange={setIsMenuOpen}>
+    <Navbar
+      className="py-1"
+      shouldHideOnScroll
+      onMenuOpenChange={setIsMenuOpen}
+    >
       <NavbarContent>
         <NavbarBrand>
           <Link href="/home">
@@ -36,27 +40,29 @@ export default function Nav() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link size="sm" color="foreground" href="#">
+          <Link size="sm" color="foreground" href="/home">
             Home
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link size="sm" href="#" aria-current="page">
+          <Link size="sm" color="foreground" href="favorite">
             Favorite
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link size="sm" color="foreground" href="#">
+          <Link size="sm" color="foreground" href="contact_us">
             Contact Us
           </Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarContent className="ml-16" justify="end">
         <NavbarItem className="hidden sm:flex">
-          <Link href="/login">Login</Link>
+          <Link href="/login" className="text-gray-800">
+            Login
+          </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="/signup">
+          <Link href="/join">
             <Button className="bg-[#4B9960] hidden sm:flex">Sign Up</Button>
           </Link>
         </NavbarItem>
