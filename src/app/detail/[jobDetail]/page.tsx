@@ -9,7 +9,6 @@ import { MyContext } from "@/contexts/CardInfoContext";
 import { useParams } from "next/navigation";
 import Modal from "@/components/molecules/Modal/Modal";
 import { useState } from "react";
-import { PiWarningCircleFill } from "react-icons/pi";
 
 const Detail = () => {
   const { CardInfo } = useContext(MyContext);

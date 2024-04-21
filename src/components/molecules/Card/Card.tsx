@@ -1,6 +1,7 @@
+"use client";
 import { Icon } from "@/components";
 import { Typography } from "../../atoms/Typography";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/legacy/image";
 import { DetailCard } from "@/Types/DetailCard";
 import Link from "next/link";
@@ -10,6 +11,7 @@ interface CardProps {
   data: DetailCard;
   iconType?: "star" | "close";
 }
+
 const Card: React.FC<CardProps> = ({
   className = "",
   data,
@@ -26,10 +28,19 @@ const Card: React.FC<CardProps> = ({
     location,
     DeadLine,
   } = data;
+
+  const [starred, setStarred] = useState(false);
+
+  const handleStarClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.preventDefault(); // To prevent default behavior of link
+    e.stopPropagation(); // To prevent redirect when star icon is clicked
+    setStarred((prev) => !prev);
+  };
+
   return (
     <>
       <Link href={`/detail/${id}`}>
-        <div className="h-auto rounded-xl shadow-lg p-5 font-Poppins">
+        <div className="h-auto rounded-xl shadow-lg p-5 font-Poppins cursor-pointer">
           <div className="flex justify-between items-center">
             {/* image */}
             <div className="flex">
@@ -49,11 +60,17 @@ const Card: React.FC<CardProps> = ({
               </div>
             </div>
             {/* favorite icon */}
-            <div>
-              <Icon label={iconType === "star" ? "Star" : "Close"} />
+            <div onClick={handleStarClick}>
+              {iconType === "star" ? (
+                <Icon
+                  label={starred ? "StarFill" : "Star"}
+                />
+              ) : (
+                <Icon label="Close" />
+              )}
             </div>
           </div>
-          <div className="flex ">
+          <div className="flex">
             <div>
               {/* position name */}
               <Typography className="mt-5" fontSize="sm">

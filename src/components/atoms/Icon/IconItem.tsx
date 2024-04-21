@@ -197,6 +197,52 @@ const IconItems: IconItem[] = [
   },
   // Star
   {
+    label: "StarFill",
+    icon: ({
+      className,
+      border,
+      background,
+    }: IconItemProps): React.JSX.Element => {
+      return (
+        <svg
+          width="24"
+          height="22"
+          viewBox="0 0 24 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0_1240_2788)">
+            <g clip-path="url(#clip1_1240_2788)">
+              <path
+                d="M13.2042 1.29938C12.9833 0.839697 12.5167 0.547171 12.0042 0.547171C11.4917 0.547171 11.0292 0.839697 10.8042 1.29938L8.125 6.82813L2.14167 7.71407C1.64167 7.78929 1.225 8.14032 1.07083 8.6209C0.916667 9.10148 1.04167 9.63221 1.4 9.98742L5.74167 14.2959L4.71667 20.3847C4.63333 20.8861 4.84167 21.396 5.25417 21.6927C5.66667 21.9894 6.2125 22.027 6.6625 21.7888L12.0083 18.9262L17.3542 21.7888C17.8042 22.027 18.35 21.9935 18.7625 21.6927C19.175 21.3918 19.3833 20.8861 19.3 20.3847L18.2708 14.2959L22.6125 9.98742C22.9708 9.63221 23.1 9.10148 22.9417 8.6209C22.7833 8.14032 22.3708 7.78929 21.8708 7.71407L15.8833 6.82813L13.2042 1.29938Z"
+                fill="#F2C937"
+              />
+            </g>
+          </g>
+          <defs>
+            <clipPath id="clip0_1240_2788">
+              <rect
+                width="24"
+                height="21.3962"
+                fill="white"
+                transform="translate(0 0.547171)"
+              />
+            </clipPath>
+            <clipPath id="clip1_1240_2788">
+              <rect
+                width="24"
+                height="21.3962"
+                fill="white"
+                transform="translate(0 0.547171)"
+              />
+            </clipPath>
+          </defs>
+        </svg>
+      );
+    },
+  },
+  // Star
+  {
     label: "Star",
     icon: ({
       className,
