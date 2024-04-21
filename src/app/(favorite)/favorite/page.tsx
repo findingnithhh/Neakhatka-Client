@@ -1,8 +1,8 @@
 'use client'
 import React from 'react'
-import { Card, Icon} from '@/components'
+import { Card, Icon, Button} from '@/components'
 import { Typography } from "../../../components/atoms/Typography";
-import { Button } from '@/components/ui/button';
+// import { Button } from '@/components/ui/button';
 import { DetailCard } from '@/Types/DetailCard';
 import Modal from "@/components/molecules/Modal/Modal";
 import { useState } from "react";
@@ -69,7 +69,7 @@ const Favorite = () => {
         </div>
       </main>
 
-      {/* <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center h-screen">
         <button
           onClick={() => setIsOpen(true)}
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
@@ -95,7 +95,7 @@ const Favorite = () => {
               <div className="flex mt-5 gap-4">
                 <Button
                   onClick={() => setIsOpen(false)}
-                  className="border border-red-500 rounded-lg"
+                  className="border border-red-500 rounded-lg bg-white"
                 >
                   Cancel
                 </Button>
@@ -106,7 +106,7 @@ const Favorite = () => {
             </h1>
           </div>
         </Modal>
-      </div> */}
+      </div>
     </>
   );
 }

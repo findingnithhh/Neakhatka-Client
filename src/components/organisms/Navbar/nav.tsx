@@ -40,7 +40,7 @@ export default function Nav() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link size="sm" color="foreground" href="#">
+          <Link size="sm" color="foreground" href="/home">
             Home
           </Link>
         </NavbarItem>
@@ -57,7 +57,9 @@ export default function Nav() {
       </NavbarContent>
       <NavbarContent className="ml-16" justify="end">
         <NavbarItem className="hidden sm:flex">
-          <Link href="/login" className="text-gray-800">Login</Link>
+          <Link href="/login" className="text-gray-800">
+            Login
+          </Link>
         </NavbarItem>
         <NavbarItem>
           <Link href="/join">

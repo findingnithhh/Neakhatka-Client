@@ -53,7 +53,7 @@ const Footer = () => {
               <a href="https://www.facebook.com/profile.php?id=61550779933720">
                 <Icon label="Facebook" />
               </a>
-              <a href="">
+              <a href="https://t.me/MaNith_Svat" target="_blank">
                 <Icon label="Telegram" />
               </a>
               <a href="https://twitter.com/neakhatka">

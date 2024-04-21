@@ -1,12 +1,14 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { Card, Icon } from "@/components";
 import { Typography } from "../../../components/atoms/Typography";
-import Link from "next/link";
-import CardList from "@/components/molecules/Card/CardList";
-
 import { Button } from "@/components/ui/button";
 import { DetailCard } from "@/Types/DetailCard";
+import { useState } from "react";
+import Modal from "@/components/molecules/Modal/Modal";
+import EditEmployer from "../../(edit)/edit_employer/page";
+
 const Cardinfor: DetailCard[] = [
   {
     id: "1",
@@ -33,6 +35,7 @@ const Cardinfor: DetailCard[] = [
 ];
 
 const employerProfile = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <div className="container xl:max-w-[1200px] bg-[#F8F9FA] rounded-xl mt-5 md:mt-10 p-5 md:px-24 md:py-10 ">
@@ -56,12 +59,27 @@ const employerProfile = () => {
             </div>
           </div>
           <div className="flex items-center">
-            <Button className="bg-[#4B9960] rounded-full flex items-center justify-center gap-2 px-4 md:px-6 py-2">
+            <Button
+              onClick={() => setIsOpen(true)}
+              className="bg-[#4B9960] rounded-full flex items-center justify-center gap-2 px-4 md:px-6 py-2"
+            >
               <Icon label="Edit" className="flex items-center justify-center" />
               <span className="hidden md:block">Edit profile</span>
             </Button>
           </div>
         </div>
+        <Modal
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+          size="md"
+          corner="3xl"
+        >
+          <div className="bg-white p-8">
+            <h1 className="flex justify-center flex-col items-center">
+              <EditEmployer />
+            </h1>
+          </div>
+        </Modal>
         {/* bottom */}
         <div className="flex flex-col md:flex-row justify-between mt-5">
           <div className="w-full">

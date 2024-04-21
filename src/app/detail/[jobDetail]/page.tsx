@@ -220,7 +220,7 @@ const Detail = () => {
               </Typography>
             </div>
           </div>
-          <div className="col-span-7 lg:col-span-3 rounded-lg py-10 px-10 border h-[500px]">
+          <div className="col-span-7 lg:col-span-3 rounded-lg py-10 px-5 border h-[500px] ">
             <div className="flex justify-center items-center flex-col">
               <Image
                 src="/company.svg"

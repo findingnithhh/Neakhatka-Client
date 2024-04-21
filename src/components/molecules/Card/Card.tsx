@@ -9,7 +9,6 @@ interface CardProps {
   className?: string;
   data: DetailCard;
   iconType?: "star" | "close";
-  onDelete?: () => void;
 }
 const Card: React.FC<CardProps> = ({
   className = "",
