@@ -31,7 +31,7 @@ const Modal: React.FC<ModalProps> = ({
 
   const sizes = {
     sm: "w-60", // Set width to 300px
-    md: "w-[420px]", // Set width to 400px
+    md: "w-[480px]", // Set width to 400px
     lg: "w-[700px]", // Set width to 500px
     xl: "w-[1000px]", // Set width to 600px
   };
