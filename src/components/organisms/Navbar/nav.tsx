@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import {
   Navbar,
@@ -24,7 +24,7 @@ export default function Nav() {
     { text: "Sign Up", link: "/join" },
     { text: "Login", link: "/login" },
   ];
-  
+
   return (
     <Navbar
       className="py-1"
