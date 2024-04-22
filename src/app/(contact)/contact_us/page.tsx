@@ -1,4 +1,4 @@
-import { Icon, Typography } from "@/components";
+import { Button, Icon, Typography } from "@/components";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import React from "react";
@@ -73,6 +73,9 @@ const ContactUs = () => {
                 placeholder="Typing somethig..."
                 className="text-[14px] p-2 h-72 rounded-md mt-4 border md:mb-0 mb-10"
               />
+              <div className="flex justify-end mt-4">
+                <Button colorScheme="primary" className="w-[150px] text-white" rounded="lg">Submit</Button>
+              </div>
             </div>
           </div>
         </div>
