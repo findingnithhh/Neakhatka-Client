@@ -20,6 +20,7 @@ export default function Nav() {
     { text: "Home", link: "/home" },
     { text: "Favorite", link: "/favorite" },
     { text: "Contact Us", link: "/contact_us" },
+    { text: "About Us", link: "/about_us" },
     { text: "Sign Up", link: "/join" },
     { text: "Login", link: "/login" },
   ];
@@ -54,6 +55,11 @@ export default function Nav() {
             Contact Us
           </Link>
         </NavbarItem>
+        <NavbarItem>
+          <Link size="sm" color="foreground" href="about_us">
+            About Us
+          </Link>
+        </NavbarItem>
       </NavbarContent>
       <NavbarContent className="ml-16" justify="end">
         <NavbarItem className="hidden sm:flex">
@@ -75,13 +81,14 @@ export default function Nav() {
         {menuItems.map((item, index) => (
           <NavbarMenuItem className="mt-5" key={`${item}-${index}`}>
             <Link
-              color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
+              // color={
+              //   index === 0
+              //     // ? "primary"
+              //     // : index === menuItems.length - 1
+              //     ? "danger"
+              //     : "foreground"
+              // }
+              color="foreground"
               className="w-full"
               href={item.link}
               size="lg"
