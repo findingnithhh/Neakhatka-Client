@@ -10,11 +10,14 @@ import {
   NavbarMenuItem,
   Link,
 } from "@nextui-org/react";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Image from "next/legacy/image";
+import { useCount } from "../../../contexts/CountContext";
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const { count } = useCount();
 
   const menuItems = [
     { text: "Home", link: "/home" },
@@ -48,6 +51,11 @@ export default function Nav() {
         <NavbarItem>
           <Link size="sm" color="foreground" href="favorite">
             Favorite
+            {count > 0 && (
+              <Badge variant="destructive" className="-mt-3">
+                {count > 9 ? "9+" : count}
+              </Badge>
+            )}
           </Link>
         </NavbarItem>
         <NavbarItem>

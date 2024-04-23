@@ -7,7 +7,6 @@ import {
   Icon,
   Select,
   Search,
-  Navbar,
 } from "@/components";
 import { Promote } from "@/components";
 import Image from "next/legacy/image";
@@ -33,11 +32,10 @@ const Banner = () => {
               Here!
             </Typography>
             <div className="flex justify-center items-center">
-              <Typography
-                className="text-xs md:text-sm w-[360px] text-center -mt-2 tracking-wide lg:w-[600px] lg:text-[16px] lg:mt-5"
-              >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore
+              <Typography className="text-xs md:text-sm w-[360px] text-center -mt-2 tracking-wide lg:w-[600px] lg:text-[16px] lg:mt-5 text-gray-300">
+                Explore our extensive list of internship opportunities, connect
+                with leading companies, and take the first step towards a
+                brighter future.
               </Typography>
             </div>
             <div className="text-[16px] flex justify-center items-center mt-10">
