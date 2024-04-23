@@ -3,6 +3,7 @@
 import React, { createContext, useState, ReactNode } from "react";
 
 interface CardModal {
+  [x: string]: any;
   id: string; // Changed from string to number
   companyName: string; // Corrected the spelling of companyName
   companyLogo: string; // Changed from src to companyLogo

@@ -6,6 +6,7 @@ import { Icon } from "@/components";
 import { Typography } from "../../atoms/Typography";
 import { DetailCard } from "@/Types/DetailCard";
 import { useCount } from "../../../contexts/CountContext";
+import { toast } from "sonner";
 
 interface CardProps {
   className?: string;
@@ -44,14 +45,18 @@ const Card: React.FC<CardProps> = ({
   const handleStarClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault(); // To prevent default behavior of link
     e.stopPropagation(); // To prevent redirect when star icon is clicked
+
     setIsFavorited((prev) => !prev); // Toggle favorite
+
     if (iconType === "star") {
       if (isFavorited) {
         // If already favorited, decrement
         descrement();
+        toast("Remove from favorites successfully!");
       } else {
         // If not favorited, increment
         increment();
+        toast("Added to favorites successfully!");
       }
     }
   };

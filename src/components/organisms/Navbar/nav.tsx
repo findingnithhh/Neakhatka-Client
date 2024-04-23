@@ -102,6 +102,11 @@ export default function Nav() {
               size="lg"
             >
               {item.text}
+              {item.text === "Favorite" && count > 0 && (
+                <Badge variant="destructive" className="ml-2">
+                  {count > 9 ? "9+" : count}
+                </Badge>
+              )}
             </Link>
           </NavbarMenuItem>
         ))}
