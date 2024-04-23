@@ -51,7 +51,6 @@ const Detail = () => {
                     className="mr-5"
                     size="md"
                     label={isFavorited ? "StarFill" : "Star"}
-                    colorBackground={isFavorited ? "yellow" : "black"}
                   />
                 </button>
                 <Button

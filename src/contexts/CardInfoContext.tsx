@@ -115,7 +115,29 @@ const CardContext: React.FC<CardContextProp> = ({ children }) => {
       location: "Phnom Penh",
       Emploment: "Full-Time",
       DeadLine: "01-08-2025",
-    }
+    },
+    {
+      id: "9",
+      companyName: "J Trust Bank",
+      companyLogo: "/images.png",
+      peopleAmount: "100+ people",
+      jobTitle: "Mobile app Intership",
+      salary: "$100-$200",
+      location: "Phnom Penh",
+      Emploment: "Full-Time",
+      DeadLine: "01-08-2025",
+    },
+    {
+      id: "10",
+      companyName: "J Trust Bank",
+      companyLogo: "/images.png",
+      peopleAmount: "100+ people",
+      jobTitle: "Mobile app Intership",
+      salary: "$100-$200",
+      location: "Phnom Penh",
+      Emploment: "Full-Time",
+      DeadLine: "01-08-2025",
+    },
   ]);
 
   const Contextvalue = {

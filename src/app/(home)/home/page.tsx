@@ -4,7 +4,6 @@ import {
   Icon,
   Card,
   Search,
-  Navbar,
   Banner,
   CardReview,
   Footer,

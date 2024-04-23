@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import {
   Navbar,
@@ -10,20 +10,24 @@ import {
   NavbarMenuItem,
   Link,
 } from "@nextui-org/react";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Image from "next/legacy/image";
+import { useCount } from "../../../contexts/CountContext";
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const { count } = useCount();
 
   const menuItems = [
     { text: "Home", link: "/home" },
     { text: "Favorite", link: "/favorite" },
     { text: "Contact Us", link: "/contact_us" },
+    { text: "About Us", link: "/about_us" },
     { text: "Sign Up", link: "/join" },
     { text: "Login", link: "/login" },
   ];
-  
+
   return (
     <Navbar
       className="py-1"
@@ -47,11 +51,21 @@ export default function Nav() {
         <NavbarItem>
           <Link size="sm" color="foreground" href="favorite">
             Favorite
+            {count > 0 && (
+              <Badge variant="destructive" className="-mt-3">
+                {count > 9 ? "9+" : count}
+              </Badge>
+            )}
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link size="sm" color="foreground" href="contact_us">
             Contact Us
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link size="sm" color="foreground" href="about_us">
+            About Us
           </Link>
         </NavbarItem>
       </NavbarContent>
@@ -75,13 +89,14 @@ export default function Nav() {
         {menuItems.map((item, index) => (
           <NavbarMenuItem className="mt-5" key={`${item}-${index}`}>
             <Link
-              color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
+              // color={
+              //   index === 0
+              //     // ? "primary"
+              //     // : index === menuItems.length - 1
+              //     ? "danger"
+              //     : "foreground"
+              // }
+              color="foreground"
               className="w-full"
               href={item.link}
               size="lg"

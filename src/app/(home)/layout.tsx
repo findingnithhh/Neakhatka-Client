@@ -4,6 +4,7 @@ import "../globals.css";
 import Nav from "@/components/organisms/Navbar/Nav";
 import { Footer } from "@/components";
 import CardContext from "@/contexts/CardInfoContext";
+import { CountProvider } from "../../contexts/CountContext";
 
 const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 export const metadata: Metadata = {
@@ -20,9 +21,11 @@ export default function RootLayout({
     <html lang="en">
       <link rel="icon" href="/logo.svg" />
       <body className={poppins.className}>
-        <Nav />
-        <CardContext>{children}</CardContext>
-        <Footer />
+        <CountProvider>
+          <Nav />
+          <CardContext>{children}</CardContext>
+          <Footer />
+        </CountProvider>
       </body>
     </html>
   );

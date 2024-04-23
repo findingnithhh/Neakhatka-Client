@@ -8,7 +8,6 @@ import {
   Icon,
   Select,
   Search,
-  Navbar,
   Banner,
 } from "@/components";
 import CountUp from "react-countup";

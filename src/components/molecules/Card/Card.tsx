@@ -1,10 +1,11 @@
-"use client";
-import { Icon } from "@/components";
-import { Typography } from "../../atoms/Typography";
+'use client'
 import React, { useState } from "react";
 import Image from "next/legacy/image";
 import Link from "next/link";
+import { Icon } from "@/components";
+import { Typography } from "../../atoms/Typography";
 import { DetailCard } from "@/Types/DetailCard";
+import { useCount } from "../../../contexts/CountContext";
 
 interface CardProps {
   className?: string;
@@ -31,10 +32,7 @@ const Card: React.FC<CardProps> = ({
   } = data;
 
   const [isFavorited, setIsFavorited] = useState(false);
-
-  const toggleFavorite = () => {
-    setIsFavorited((prevState) => !prevState);
-  };
+  const { increment, descrement } = useCount();
 
   const handleDelete = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -42,12 +40,20 @@ const Card: React.FC<CardProps> = ({
       onDelete(e);
     }
   };
-  const [starred, setStarred] = useState(false);
 
   const handleStarClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault(); // To prevent default behavior of link
     e.stopPropagation(); // To prevent redirect when star icon is clicked
-    setStarred((prev) => !prev);
+    setIsFavorited((prev) => !prev); // Toggle favorite
+    if (iconType === "star") {
+      if (isFavorited) {
+        // If already favorited, decrement
+        descrement();
+      } else {
+        // If not favorited, increment
+        increment();
+      }
+    }
   };
 
   return (
@@ -77,11 +83,8 @@ const Card: React.FC<CardProps> = ({
           {/* favorite */}
           <div onClick={handleStarClick}>
             {iconType === "star" ? (
-              <button onClick={toggleFavorite}>
-                <Icon
-                  label={isFavorited ? "StarFill" : "Star"}
-                  colorBackground={isFavorited ? "yellow" : "black"}
-                />
+              <button>
+                <Icon label={isFavorited ? "StarFill" : "Star"} />
               </button>
             ) : (
               <button
