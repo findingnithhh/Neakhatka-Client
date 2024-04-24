@@ -6,22 +6,24 @@ import {
   InputSearch,
   Icon,
   Select,
-  CardTips,
 } from "@/components";
-import Image from "next/image";
+import Image from "next/legacy/image";
 const Search = () => {
   return (
     <>
-      <div className="container flex">
+      <div className="flex">
         <input
           type="text"
-          className="w-[420px] h-[40px] text-sm pl-5 rounded-md border text-gray-900 placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-gray-500"
-          placeholder="Please enter the position you are looking for..."
+          className="w-[260px] h-[45px] text-[14px] tracking-wide lg:text-[16px] lg:w-[400px] lg:h-[52px] text-md pl-5 font-Poppins
+           rounded-[12px] border text-gray-900 placeholder:text-gray-400
+           outline-none bg-none"
+          placeholder="Please search something..."
         />
         <Button
-          className="w-[120px] h-[40px] text-white ml-2"
+          className="w-[100px] h-[45px] lg:w-[140px] lg:h-[52px] ml-3 text-white"
           colorScheme="primary"
           colorOutline="primary"
+          rounded="xl"
         >
           Search
         </Button>

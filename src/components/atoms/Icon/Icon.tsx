@@ -5,7 +5,7 @@ interface IconProps {
   className?: string;
   label: string;
   size?: "xs" | "sm" | "md" | "lg" | "xl";
-  colorBackground?: "red" | "blue" | "green" | "yellow";
+  colorBackground?: "red" | "blue" | "green" | "yellow" | "black";
 }
 
 export default function Icon({
@@ -31,13 +31,15 @@ export default function Icon({
   const IconColorBackground = (colorBackground: string) => {
     switch (colorBackground) {
       case "blue":
-        return `#AA58FD`;
+        return `#005AB5`;
       case "green":
-        return `#3B9339`;
+        return `#4B9960`;
       case "yellow":
-        return `#DB9C24`;
+        return `#FFA826`;
+      case "black":
+        return `#000000`;
       default:
-        return `#FD5858`;
+        return `#E01507`;
     }
   };
   const IconSizeStyle = IconSize(size);

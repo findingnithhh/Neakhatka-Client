@@ -1,5 +1,5 @@
   export interface DetailCard{
-    id:number,
+    id:string,
     companyName:string,
     companyLogo:string,
     peopleAmount:string

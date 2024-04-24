@@ -1,32 +1,37 @@
 "use client";
-import React from "react";
-import {
-  Button,
-  Typography,
-  Input,
-  InputSearch,
-  Icon,
-  CardTips,
-  Search,
-  Navbar,
-} from "@/components";
-import { useState } from "react";
-const Select = () => {
-  const [isOpen, setIsOpen] = useState(false);
+import React, { useState } from "react";
+import { Icon } from "@/components";
 
-  const handleToggle = () => {
-    setIsOpen(!isOpen);
+const Select = () => {
+  const [isOpenOccupation, setIsOpenOccupation] = useState(false);
+  const [isOpenTime, setIsOpenTime] = useState(false);
+  const [isOpenSalary, setIsOpenSalary] = useState(false);
+
+  const handleToggleOccupation = (e: React.MouseEvent<HTMLSelectElement>) => {
+    e.stopPropagation();
+    setIsOpenOccupation(!isOpenOccupation);
   };
+
+  const handleToggleTime = (e: React.MouseEvent<HTMLSelectElement>) => {
+    e.stopPropagation();
+    setIsOpenTime(!isOpenTime);
+  };
+
+  const handleToggleSalary = (e: React.MouseEvent<HTMLSelectElement>) => {
+    e.stopPropagation();
+    setIsOpenSalary(!isOpenSalary);
+  };
+
   return (
     <>
-      <div className="w-[1200px] mx-auto px-5 flex mt-10">
-        <div className="relative w-[250px] lg:max-w-sm">
+      <div className="container grid grid-cols-1 lg:flex lg:mx-20 lg:w-[1200px] mx-auto mt-36">
+        <div className=" mt-2 relative w-[250px] lg:max-w-sm">
           <div className="relative">
             <select
               className={`w-full h-[40px] border px-3 text-[14px] text-gray-500 bg-white rounded-md shadow-sm outline-none appearance-none ${
-                isOpen ? "border-gray-500" : ""
+                isOpenOccupation ? "border-gray-500" : ""
               }`}
-              onClick={handleToggle}
+              onClick={handleToggleOccupation}
             >
               <option>Occupation Unlimited</option>
               <option>Web Developer</option>
@@ -37,19 +42,19 @@ const Select = () => {
               <Icon
                 label="ArrowDown"
                 className={`transform origin-center transition-transform ${
-                  isOpen ? "rotate-180" : ""
+                  isOpenOccupation ? "rotate-180" : ""
                 }`}
               />
             </div>
           </div>
         </div>
-        <div className="relative w-[200px] lg:max-w-sm ml-4">
+        <div className="mt-2  relative w-[200px] lg:max-w-sm">
           <div className="relative">
             <select
               className={`w-full h-[40px] border px-3 text-[14px] text-gray-500 bg-white rounded-md shadow-sm outline-none appearance-none ${
-                isOpen ? "border-gray-500" : ""
+                isOpenTime ? "border-gray-500" : ""
               }`}
-              onClick={handleToggle}
+              onClick={handleToggleTime}
             >
               <option>Time Unlimited</option>
               <option>Full time</option>
@@ -59,19 +64,19 @@ const Select = () => {
               <Icon
                 label="ArrowDown"
                 className={`transform origin-center transition-transform ${
-                  isOpen ? "rotate-180" : ""
+                  isOpenTime ? "rotate-180" : ""
                 }`}
               />
             </div>
           </div>
         </div>
-        <div className="relative w-[200px] lg:max-w-sm ml-4">
+        <div className="mt-2 relative w-[200px] lg:max-w-sm">
           <div className="relative">
             <select
               className={`w-full h-[40px] border px-3 text-[14px] text-gray-500 bg-white rounded-md shadow-sm outline-none appearance-none ${
-                isOpen ? "border-gray-500" : ""
+                isOpenSalary ? "border-gray-500" : ""
               }`}
-              onClick={handleToggle}
+              onClick={handleToggleSalary}
             >
               <option>Salary Unlimited</option>
               <option>Paid</option>
@@ -81,7 +86,7 @@ const Select = () => {
               <Icon
                 label="ArrowDown"
                 className={`transform origin-center transition-transform ${
-                  isOpen ? "rotate-180" : ""
+                  isOpenSalary ? "rotate-180" : ""
                 }`}
               />
             </div>

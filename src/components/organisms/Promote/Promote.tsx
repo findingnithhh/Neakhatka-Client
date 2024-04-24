@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Button,
@@ -6,53 +7,65 @@ import {
   InputSearch,
   Icon,
   Select,
-  CardTips,
   Search,
-  Navbar,
   Banner,
 } from "@/components";
-const Promote = () => {
+import CountUp from "react-countup";
+
+const Promote = () => {   
   return (
     <>
-      <div className="flex justify-center items-center mt-10">
-        <Button colorOutline="primary" size="md" >
-          See more
-        </Button>
-      </div>
-      <div className="w-[1200px] h-[131px] shadow-lg mx-auto my-10 rounded-xl flex justify-between items-center px-20">
+      <div className="w-[380px] h-[65px] bg-white px-5 sm:w-[600px] sm:px-10 md:px-14 md:w-[800px] lg:px-20 lg:w-[1000px] lg:h-[110px] xl:w-[1150px]  shadow-lg my-10 rounded-xl flex justify-between items-center">
         <div>
           <Typography
-            fontSize="2xl"
             variant="bold"
-            className="text-[#4B9960] text-center"
+            className="text-[#4B9960] text-xs text-center md:text-[16px] lg:text-[18px] xl:text-[20px]"
           >
-            500+
+            <CountUp
+              delay={0.2}
+              separator=" "
+              decimal=","
+              suffix=" +"
+              end={500}
+              duration={8}
+            />
           </Typography>
-          <Typography fontSize="sm" className="text-[#4B9960]">
-            Post dreams internship
+          <Typography fontSize="xs" className="text-[#4B9960] sm:text-[14px]">
+            Internship
           </Typography>
         </div>
-        <div className="mr-16">
+        <div>
           <Typography
-            fontSize="2xl"
             variant="bold"
-            className="text-[#4B9960] text-center"
+            className="text-[#4B9960] text-xs text-center md:text-[16px] lg:text-[18px] xl:text-[20px]"
           >
-            50+
+            <CountUp
+              delay={0.2}
+              separator=" "
+              decimal=","
+              suffix=" +"
+              end={50}
+              duration={8}
+            />
           </Typography>
-          <Typography fontSize="sm" className="text-[#4B9960]">
+          <Typography fontSize="xs" className="text-[#4B9960] sm:text-[14px]">
             Companies
           </Typography>
         </div>
         <div>
           <Typography
-            fontSize="2xl"
             variant="bold"
-            className="text-[#4B9960] text-center"
+            className="text-[#4B9960] text-xs text-center md:text-[16px] lg:text-[18px] xl:text-[20px]"
           >
-            1200+
+            <CountUp
+              delay={0.2}
+              decimal=","
+              suffix=" +"
+              end={1200}
+              duration={8}
+            />
           </Typography>
-          <Typography fontSize="sm" className="text-[#4B9960]">
+          <Typography fontSize="xs" className="text-[#4B9960] sm:text-[14px]">
             Seekers
           </Typography>
         </div>

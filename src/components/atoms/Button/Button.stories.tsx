@@ -18,6 +18,7 @@ export const Default: Story = {
     children: "Button",
     colorScheme: "primary",
     size: "md",
-    colorOutline: "primary",
+    colorOutline: "none",
+    rounded: "none",
   },
 };

@@ -6,18 +6,16 @@ import {
   InputSearch,
   Icon,
   Select,
-  CardTips,
   Search,
-  Navbar,
   Banner,
   Promote,
 } from "@/components";
-import Image from "next/image";
+import Image from "next/legacy/image";
 const Footer = () => {
   return (
     <>
       <footer className="bg-[#212529] py-10">
-        <div className="w-[1200px] mx-auto flex justify-between">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between">
           <div className="w-full sm:w-1/3 mb-8 sm:mb-0 pr-8 text-white font-Poppins text-[14px]">
             <Image src="/logo.svg" alt="next" width={50} height={50} />
             <p className="my-5">
@@ -51,17 +49,17 @@ const Footer = () => {
               <p>Our Social Media</p>
             </div>
             <div className="py-5 flex gap-4 font-Poppins text-[14px]">
-              <a href="">
+              <a href="https://www.facebook.com/profile.php?id=61550779933720">
                 <Icon label="Facebook" />
               </a>
-              <a href="">
+              <a href="https://t.me/MaNith_Svat" target="_blank">
                 <Icon label="Telegram" />
               </a>
-              <a href="">
+              <a href="https://twitter.com/neakhatka">
                 <Icon label="X" />
               </a>
               <a href="">
-                <Icon label="Instargram" />
+                <Icon label="Instagram" />
               </a>
             </div>
           </div>

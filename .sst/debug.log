@@ -1,0 +1,23 @@
+2024-04-24T02:13:05.607Z   +132ms [debug] Config loaded {"version":"2.40.3","cdkVersion":"2.124.0","constructsVersion":"10.3.0","config":{"name":"neakhatka","region":"us-east-1","stage":"dev","ssmPrefix":"/sst/neakhatka/dev/"},"metafile":{"inputs":{"sst.config.ts":{"bytes":390,"imports":[{"path":"aws-cdk-lib/aws-route53","kind":"import-statement","external":true},{"path":"sst","kind":"import-statement","external":true},{"path":"sst/constructs","kind":"import-statement","external":true},{"path":"aws-cdk-lib","kind":"import-statement","external":true}],"format":"esm"}},"outputs":{".sst.config.1713924785494.mjs":{"imports":[],"exports":["default"],"entryPoint":"sst.config.ts","inputs":{"sst.config.ts":{"bytesInOutput":124}},"bytes":306}}},"paths":{"config":"D:\\SabaiCode\\next js\\product\\matching-internship-storybook -new\\sst.config.ts","root":"D:\\SabaiCode\\next js\\product\\matching-internship-storybook -new","out":"D:\\SabaiCode\\next js\\product\\matching-internship-storybook -new\\.sst","artifacts":"D:\\SabaiCode\\next js\\product\\matching-internship-storybook -new\\.sst\\artifacts"}}
+2024-04-24T02:13:06.837Z  +1230ms [debug] Using AWS profile 
+2024-04-24T02:13:06.841Z     +4ms [debug] Created AWS client STSClient
+2024-04-24T02:13:06.842Z     +1ms [debug] Fetching app metadata
+2024-04-24T02:13:06.843Z     +1ms [debug] Initializing bootstrap context
+2024-04-24T02:13:06.844Z     +1ms [debug] Created AWS client CloudFormationClient
+2024-04-24T02:13:08.565Z  +1721ms [debug] Using identity Account: 211125513237 User: AIDATCKAPVQKS7XF2QQU5
+2024-04-24T02:13:08.607Z    +42ms [debug] Loaded bootstrap status
+2024-04-24T02:13:08.607Z     +0ms [debug] Bootstrap context initialized {"status":"ready","version":"7.3","bucket":"sstbootstrap-useast124d14e4b-21d16r30mzqw"}
+2024-04-24T02:13:11.491Z  +2884ms [debug] Fetching app metadata: not found
+2024-04-24T02:13:13.878Z  +2387ms [debug] Synthesizing stacks...
+2024-04-24T02:13:13.895Z    +16ms [debug] Generating types in D:\SabaiCode\next js\product\matching-internship-storybook -new\.sst\types
+2024-04-24T02:13:14.088Z   +194ms [debug] Running "npx --yes open-next@2.3.1 build" script
+2024-04-24T02:14:14.262Z +60174ms [debug] Running 1 deferred tasks with concurrency: 15
+2024-04-24T02:14:18.867Z  +4605ms [debug] 
+2024-04-24T02:14:18.867Z     +0ms [debug] Loading v2 AWS SDK
+2024-04-24T02:14:18.867Z     +0ms [debug] Finished synthesizing
+2024-04-24T02:14:18.895Z    +28ms [debug] Deploying stacks ["dev-neakhatka-Site"]
+2024-04-24T02:14:18.901Z     +6ms [debug] Checking if dev-neakhatka-Site is ready to deploy
+2024-04-24T02:14:18.901Z     +0ms [debug] Deploying stack dev-neakhatka-Site
+2024-04-24T02:14:20.807Z  +1906ms [debug] Publishing event {"type":"stack.status","properties":{"stackID":"dev-neakhatka-Site","status":"PUBLISH_ASSETS_IN_PROGRESS"},"sourceID":"a01f75cc431f60f96cd63c204a2ff9da"}
+2024-04-24T02:14:28.645Z  +7838ms [debug] Failed to deploy stack dev-neakhatka-Site {}
+2024-04-24T02:14:28.645Z     +0ms [debug] Publishing event {"type":"stack.status","properties":{"stackID":"dev-neakhatka-Site","status":"UPDATE_FAILED"},"sourceID":"a01f75cc431f60f96cd63c204a2ff9da"}

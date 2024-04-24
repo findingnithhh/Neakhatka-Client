@@ -1,0 +1,20 @@
+{
+  "/_not-found": "app/_not-found.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/(contact)/contact_us/page": "app/(contact)/contact_us/page.js",
+  "/(auth)/forgot_password/page": "app/(auth)/forgot_password/page.js",
+  "/(auth)/login/page": "app/(auth)/login/page.js",
+  "/(auth)/emplyer_sign_up/page": "app/(auth)/emplyer_sign_up/page.js",
+  "/(auth)/reset_password/page": "app/(auth)/reset_password/page.js",
+  "/(auth)/seeker_sign_up/page": "app/(auth)/seeker_sign_up/page.js",
+  "/(about)/about_us/page": "app/(about)/about_us/page.js",
+  "/(edit)/edit_employer/page": "app/(edit)/edit_employer/page.js",
+  "/(favorite)/favorite/page": "app/(favorite)/favorite/page.js",
+  "/(join)/join/page": "app/(join)/join/page.js",
+  "/(home)/home/page": "app/(home)/home/page.js",
+  "/(profile)/employer_profile/page": "app/(profile)/employer_profile/page.js",
+  "/(profile)/anynomous_employer/page": "app/(profile)/anynomous_employer/page.js",
+  "/(profile)/seeker_profile/page": "app/(profile)/seeker_profile/page.js",
+  "/(post)/post_job/page": "app/(post)/post_job/page.js",
+  "/detail/[jobDetail]/page": "app/detail/[jobDetail]/page.js"
+}
