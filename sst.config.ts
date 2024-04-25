@@ -10,7 +10,7 @@ const DOMAIN_NAME = "neakhatka.com";
 export default {
   config(_input) {
     return {
-      name: "neakhatka",
+      name: `prod-neakhatka`,
       region: "us-east-1",
     };
   },
@@ -19,7 +19,10 @@ export default {
     app.stack(function Site({ stack }) {
       // LOOK UP HOSTED ZONE
       const hostedZone = HostedZone.fromLookup(stack, "HostedZone", {
-        domainName: ROOT_DOMAIN_NAME,
+        domainName:
+          stack.stage === "prod"
+            ? ROOT_DOMAIN_NAME
+            : `${stack.stage}.${ROOT_DOMAIN_NAME}`,
       });
 
       // CREATE A SSL CERTIFICATE LINKED TO THE HOSTED ZONE
@@ -42,7 +45,10 @@ export default {
       const bucket = new Bucket(stack, "public", {
         cdk: {
           bucket: {
-            bucketName: "neakhatka-website",
+            bucketName:
+              stack.stage === "dev"
+                ? "neakhatka-website"
+                : `${stack.stage}-neakhatka-website`,
           },
         },
       });
