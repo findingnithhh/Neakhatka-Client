@@ -5,3 +5,5 @@ export * from "./Footer";
 export * from './Editor';
 export * from './Sidebar';
 export * from './UserItem';
+export * from './PieChart';
+export * from './Doughnut';

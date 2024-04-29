@@ -13,7 +13,7 @@ import { MdOutlineWork } from "react-icons/md";
 import { MdVerified } from "react-icons/md";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { PieChart } from "@/components/organisms/PieChart";
+import { PieChart, DoughnutChart } from "@/components";
 
 const Dashboard = () => {
   return (
@@ -86,8 +86,8 @@ const Dashboard = () => {
         <div className="w-full h-full p-10">
             <PieChart />
         </div>
-        <div className="bg-gray-500 w-full h-full">
-
+        <div className="w-full h-full p-10">
+            <DoughnutChart />
         </div>
       </div>
     </>
