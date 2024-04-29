@@ -52,11 +52,9 @@ const Card: React.FC<CardProps> = ({
       if (isFavorited) {
         // If already favorited, decrement
         descrement();
-        // toast("Remove from favorites successfully!");
       } else {
         // If not favorited, increment
         increment();
-        // toast("Added to favorites successfully!");
       }
     }
   };

@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { DetailCard } from "@/Types/DetailCard";
 import { useState } from "react";
 import Modal from "@/components/molecules/Modal/Modal";
-import EditEmployer from "../../(edit)/edit_employer/page";
 
 const Cardinfor: DetailCard[] = [
   {
@@ -68,7 +67,7 @@ const EmployerProfile = () => {
             </Button>
           </div>
         </div>
-        <Modal
+        {/* <Modal
           isOpen={isOpen}
           onClose={() => setIsOpen(false)}
           size="md"
@@ -79,7 +78,7 @@ const EmployerProfile = () => {
               <EditEmployer />
             </h1>
           </div>
-        </Modal>
+        </Modal> */}
         {/* bottom */}
         <div className="flex flex-col md:flex-row justify-between mt-5">
           <div className="w-full">
@@ -132,7 +131,7 @@ const EmployerProfile = () => {
       {/* card */}
       {/* <CardList cards={detailCard} /> */}
 
-      <main className="container my-10 px-0 md:px-20">
+      <main className="w-full mx-auto xl:max-w-[1200px] my-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px]">
           {Cardinfor.map((job) => (
             <div key={job.id} className="card-container">
