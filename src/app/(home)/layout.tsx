@@ -5,7 +5,6 @@ import Nav from "@/components/organisms/Navbar/Nav";
 import { Footer } from "@/components";
 import CardContext from "@/contexts/CardInfoContext";
 import { CountProvider } from "../../contexts/CountContext";
-import { Toaster } from "@/components/ui/sonner";
 
 const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 export const metadata: Metadata = {
@@ -25,7 +24,6 @@ export default function RootLayout({
         <CountProvider>
           <Nav />
           <CardContext>{children}</CardContext>
-          <Toaster />
           <Footer />
         </CountProvider>
       </body>

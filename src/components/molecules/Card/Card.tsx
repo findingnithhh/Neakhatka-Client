@@ -6,7 +6,7 @@ import { Icon } from "@/components";
 import { Typography } from "../../atoms/Typography";
 import { DetailCard } from "@/Types/DetailCard";
 import { useCount } from "../../../contexts/CountContext";
-import { toast } from "sonner";
+// import { toast } from "sonner";
 
 interface CardProps {
   className?: string;
@@ -52,11 +52,11 @@ const Card: React.FC<CardProps> = ({
       if (isFavorited) {
         // If already favorited, decrement
         descrement();
-        toast("Remove from favorites successfully!");
+        // toast("Remove from favorites successfully!");
       } else {
         // If not favorited, increment
         increment();
-        toast("Added to favorites successfully!");
+        // toast("Added to favorites successfully!");
       }
     }
   };
