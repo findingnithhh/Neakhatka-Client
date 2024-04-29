@@ -7,7 +7,6 @@ import {
   Icon,
   Select,
   Search,
-  Navbar,
   Banner,
   Promote,
 } from "@/components";
