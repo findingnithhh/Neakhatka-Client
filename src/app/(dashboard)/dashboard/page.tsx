@@ -14,9 +14,6 @@ import { MdVerified } from "react-icons/md";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { PieChart } from "@/components/organisms/PieChart";
-// import { Chart as ChartJS } from "chart.js";
-// import { Bar, Doughnut } from "react-chartjs-2";
-// import { CategoryScale } from "chart.js"; 
 
 const Dashboard = () => {
   return (
@@ -85,8 +82,8 @@ const Dashboard = () => {
           </Card>
         </div>
       </div>
-      <div className="w-full h-screen px-10 grid grid-cols-2">
-        <div className="w-full h-full">
+      <div className="w-full px-10 grid grid-cols-2">
+        <div className="w-full h-full p-10">
             <PieChart />
         </div>
         <div className="bg-gray-500 w-full h-full">
