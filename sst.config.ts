@@ -24,7 +24,7 @@ export default {
             ? ROOT_DOMAIN_NAME
             : `${stack.stage}.${ROOT_DOMAIN_NAME}`,
       });
-
+   console.log(stack.stage);
       // CREATE A SSL CERTIFICATE LINKED TO THE HOSTED ZONE
       const certificate = new cdk.aws_certificatemanager.Certificate(
         stack,
@@ -32,6 +32,7 @@ export default {
         {
           domainName:
             stack.stage === "prod"
+          
               ? DOMAIN_NAME
               : `${stack.stage}.${DOMAIN_NAME}`,
           validation:
