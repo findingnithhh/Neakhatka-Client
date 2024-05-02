@@ -10,7 +10,7 @@ const DOMAIN_NAME = "neakhatka.com";
 export default {
   config(_input) {
     return {
-      name: `prod-neakhatka`,
+      name: `neakhatka`,
       region: "us-east-1",
     };
   },
@@ -19,12 +19,9 @@ export default {
     app.stack(function Site({ stack }) {
       // LOOK UP HOSTED ZONE
       const hostedZone = HostedZone.fromLookup(stack, "HostedZone", {
-        domainName:
-          stack.stage === "prod"
-            ? ROOT_DOMAIN_NAME
-            : `${stack.stage}.${ROOT_DOMAIN_NAME}`,
+        domainName: ROOT_DOMAIN_NAME,
       });
-   console.log(stack.stage);
+      console.log(stack.stage, hostedZone);
       // CREATE A SSL CERTIFICATE LINKED TO THE HOSTED ZONE
       const certificate = new cdk.aws_certificatemanager.Certificate(
         stack,
@@ -32,7 +29,6 @@ export default {
         {
           domainName:
             stack.stage === "prod"
-          
               ? DOMAIN_NAME
               : `${stack.stage}.${DOMAIN_NAME}`,
           validation:
@@ -62,7 +58,10 @@ export default {
             stack.stage === "prod"
               ? DOMAIN_NAME
               : `${stack.stage}.${DOMAIN_NAME}`,
-          domainAlias: `www.${DOMAIN_NAME}`,
+          domainAlias:
+            stack.stage === "prod"
+              ? `www.${DOMAIN_NAME}`
+              : `www.${stack.stage}.${DOMAIN_NAME}`,
           cdk: {
             hostedZone,
             certificate,

@@ -1,32 +1,32 @@
 {
   "version": "36.0.0",
   "artifacts": {
-    "prod-prod-neakhatka-Site.assets": {
+    "prod-neakhatka-Site.assets": {
       "type": "cdk:asset-manifest",
       "properties": {
-        "file": "prod-prod-neakhatka-Site.assets.json",
+        "file": "prod-neakhatka-Site.assets.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
       }
     },
-    "prod-prod-neakhatka-Site": {
+    "prod-neakhatka-Site": {
       "type": "aws:cloudformation:stack",
       "environment": "aws://211125513237/us-east-1",
       "properties": {
-        "templateFile": "prod-prod-neakhatka-Site.template.json",
+        "templateFile": "prod-neakhatka-Site.template.json",
         "terminationProtection": false,
         "tags": {
-          "sst:app": "prod-neakhatka",
+          "sst:app": "neakhatka",
           "sst:stage": "prod"
         },
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::211125513237:role/cdk-hnb659fds-deploy-role-211125513237-us-east-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::211125513237:role/cdk-hnb659fds-cfn-exec-role-211125513237-us-east-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-211125513237-us-east-1/2f33c2ed8d8c6bd9ab673c200e328575e088f35b4060c2d5a6ff1c37ff60c641.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-211125513237-us-east-1/54d906c5c5022c57f24db8d7f7723adf4e52f3b4a5651741eec58aa5170c29ec.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
-          "prod-prod-neakhatka-Site.assets"
+          "prod-neakhatka-Site.assets"
         ],
         "lookupRole": {
           "arn": "arn:${AWS::Partition}:iam::211125513237:role/cdk-hnb659fds-lookup-role-211125513237-us-east-1",
@@ -35,16 +35,16 @@
         }
       },
       "dependencies": [
-        "prod-prod-neakhatka-Site.assets"
+        "prod-neakhatka-Site.assets"
       ],
       "metadata": {
-        "/prod-prod-neakhatka-Site": [
+        "/prod-neakhatka-Site": [
           {
             "type": "aws:cdk:stack-tags",
             "data": [
               {
                 "Key": "sst:app",
-                "Value": "prod-neakhatka"
+                "Value": "neakhatka"
               },
               {
                 "Key": "sst:stage",
@@ -53,410 +53,410 @@
             ]
           }
         ],
-        "/prod-prod-neakhatka-Site/CustomResourceHandler/ServiceRole/Resource": [
+        "/prod-neakhatka-Site/CustomResourceHandler/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CustomResourceHandlerServiceRole41AEC181"
           }
         ],
-        "/prod-prod-neakhatka-Site/CustomResourceHandler/Resource": [
+        "/prod-neakhatka-Site/CustomResourceHandler/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CustomResourceHandlerE8FB56BA"
           }
         ],
-        "/prod-prod-neakhatka-Site/Certificate/Resource": [
+        "/prod-neakhatka-Site/Certificate/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "Certificate4E7ABB08"
           }
         ],
-        "/prod-prod-neakhatka-Site/public/Bucket/Resource": [
+        "/prod-neakhatka-Site/public/Bucket/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "publicBucket5C3DBAB0"
           }
         ],
-        "/prod-prod-neakhatka-Site/public/Bucket/Policy/Resource": [
+        "/prod-neakhatka-Site/public/Bucket/Policy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "publicBucketPolicy24028FED"
           }
         ],
-        "/prod-prod-neakhatka-Site/public/Parameter_bucketName/Resource": [
+        "/prod-neakhatka-Site/public/Parameter_bucketName/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "publicParameterbucketName69D24DDB"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/S3Bucket/Resource": [
+        "/prod-neakhatka-Site/site/S3Bucket/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteS3Bucket2B2851F3"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/S3Bucket/Policy/Resource": [
+        "/prod-neakhatka-Site/site/S3Bucket/Policy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteS3BucketPolicyBB4DF05F"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/S3Bucket/AutoDeleteObjectsCustomResource/Default": [
+        "/prod-neakhatka-Site/site/S3Bucket/AutoDeleteObjectsCustomResource/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteS3BucketAutoDeleteObjectsCustomResource3E10A2DE"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/CloudFrontFunction/Resource": [
+        "/prod-neakhatka-Site/site/CloudFrontFunction/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteCloudFrontFunctionE91DD486"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/ServerFunction/AssetReplacerPolicy/Resource": [
+        "/prod-neakhatka-Site/site/ServerFunction/AssetReplacerPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteServerFunctionAssetReplacerPolicy304BF125"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/ServerFunction/AssetReplacer/Default": [
+        "/prod-neakhatka-Site/site/ServerFunction/AssetReplacer/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteServerFunctionAssetReplacer9A11D516"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/ServerFunction/ServerFunction/ServiceRole/Resource": [
+        "/prod-neakhatka-Site/site/ServerFunction/ServerFunction/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteServerFunctionServiceRole8328A688"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/ServerFunction/ServerFunction/ServiceRole/DefaultPolicy/Resource": [
+        "/prod-neakhatka-Site/site/ServerFunction/ServerFunction/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteServerFunctionServiceRoleDefaultPolicy6EA49472"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/ServerFunction/ServerFunction/Resource": [
+        "/prod-neakhatka-Site/site/ServerFunction/ServerFunction/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteServerFunction6DFA6F1B"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/ServerFunction/ServerFunction/LogRetention/Resource": [
+        "/prod-neakhatka-Site/site/ServerFunction/ServerFunction/LogRetention/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteServerFunctionLogRetention7123678D"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/ServerFunction/ServerFunction/FunctionUrl/Resource": [
+        "/prod-neakhatka-Site/site/ServerFunction/ServerFunction/FunctionUrl/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteServerFunctionFunctionUrl1B09C490"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/ServerFunction/ServerFunction/invoke-function-url": [
+        "/prod-neakhatka-Site/site/ServerFunction/ServerFunction/invoke-function-url": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteServerFunctioninvokefunctionurlEABB57E1"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/ImageFunction/ServiceRole/Resource": [
+        "/prod-neakhatka-Site/site/ImageFunction/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteImageFunctionServiceRoleAD5B95E2"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/ImageFunction/ServiceRole/DefaultPolicy/Resource": [
+        "/prod-neakhatka-Site/site/ImageFunction/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteImageFunctionServiceRoleDefaultPolicy39F33332"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/ImageFunction/Resource": [
+        "/prod-neakhatka-Site/site/ImageFunction/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteImageFunctionD6B403E9"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/ImageFunction/LogRetention/Resource": [
+        "/prod-neakhatka-Site/site/ImageFunction/LogRetention/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteImageFunctionLogRetentionD1B5BECE"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/ImageFunction/FunctionUrl/Resource": [
+        "/prod-neakhatka-Site/site/ImageFunction/FunctionUrl/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteImageFunctionFunctionUrl110B87E7"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/ImageFunction/invoke-function-url": [
+        "/prod-neakhatka-Site/site/ImageFunction/invoke-function-url": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteImageFunctioninvokefunctionurl443403A1"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/S3AssetUploaderPolicy/Resource": [
+        "/prod-neakhatka-Site/site/S3AssetUploaderPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteS3AssetUploaderPolicy41A1C581"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/S3AssetUploader/Default": [
+        "/prod-neakhatka-Site/site/S3AssetUploader/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteS3AssetUploader2482D9D3"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/ServerCache/Resource": [
+        "/prod-neakhatka-Site/site/ServerCache/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteServerCacheDD54ACDF"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/Distribution/Origin3/S3Origin/Resource": [
+        "/prod-neakhatka-Site/site/Distribution/Origin3/S3Origin/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteDistributionOrigin3S3Origin7C72BBD7"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/Distribution/Resource": [
+        "/prod-neakhatka-Site/site/Distribution/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteDistribution706F5265"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/AliasRecord/Resource": [
+        "/prod-neakhatka-Site/site/AliasRecord/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteAliasRecordD2C115B7"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/AliasRecordAAAA/Resource": [
+        "/prod-neakhatka-Site/site/AliasRecordAAAA/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteAliasRecordAAAA8C79A8E1"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/Resource": [
+        "/prod-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRedirectRedirectCertificateCertificateRequestorFunctionServiceRole131C2EB5"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/DefaultPolicy/Resource": [
+        "/prod-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRedirectRedirectCertificateCertificateRequestorFunctionServiceRoleDefaultPolicyCBF5AD5B"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/Resource": [
+        "/prod-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRedirectRedirectCertificateCertificateRequestorFunction2E544157"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorResource/Default": [
+        "/prod-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorResource/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRedirectRedirectCertificateCertificateRequestorResource56707D86"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/Redirect/RedirectBucket/Resource": [
+        "/prod-neakhatka-Site/site/Redirect/RedirectBucket/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRedirectRedirectBucketFF886B0F"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/Redirect/RedirectDistribution/CFDistribution": [
+        "/prod-neakhatka-Site/site/Redirect/RedirectDistribution/CFDistribution": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRedirectRedirectDistributionCFDistribution08638C9C"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/Redirect/RedirectAliasRecord981af1/Resource": [
+        "/prod-neakhatka-Site/site/Redirect/RedirectAliasRecord981af1/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRedirectRedirectAliasRecord981af1EAA52473"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/Redirect/RedirectAliasRecordSix981af1/Resource": [
+        "/prod-neakhatka-Site/site/Redirect/RedirectAliasRecordSix981af1/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRedirectRedirectAliasRecordSix981af13C1B75E5"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/ServerFunctionInvalidatorPolicy/Resource": [
+        "/prod-neakhatka-Site/site/ServerFunctionInvalidatorPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteServerFunctionInvalidatorPolicy004B2ED1"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/CloudFrontInvalidatorPolicy/Resource": [
+        "/prod-neakhatka-Site/site/CloudFrontInvalidatorPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteCloudFrontInvalidatorPolicyEE18C654"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/CloudFrontInvalidator/Default": [
+        "/prod-neakhatka-Site/site/CloudFrontInvalidator/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteCloudFrontInvalidator18BEA866"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/RevalidationQueue/Resource": [
+        "/prod-neakhatka-Site/site/RevalidationQueue/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRevalidationQueue355EB7DA"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/RevalidationFunction/ServiceRole/Resource": [
+        "/prod-neakhatka-Site/site/RevalidationFunction/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRevalidationFunctionServiceRole02D71DA1"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/RevalidationFunction/ServiceRole/DefaultPolicy/Resource": [
+        "/prod-neakhatka-Site/site/RevalidationFunction/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRevalidationFunctionServiceRoleDefaultPolicy57C55CA4"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/RevalidationFunction/Resource": [
+        "/prod-neakhatka-Site/site/RevalidationFunction/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRevalidationFunctionEB84F6D0"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/RevalidationFunction/SqsEventSource:prodprodneakhatkaSitesiteRevalidationQueue2F8946CA/Resource": [
+        "/prod-neakhatka-Site/site/RevalidationFunction/SqsEventSource:prodneakhatkaSitesiteRevalidationQueueDDB57CF7/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "siteRevalidationFunctionSqsEventSourceprodprodneakhatkaSitesiteRevalidationQueue2F8946CA2F03EF9A"
+            "data": "siteRevalidationFunctionSqsEventSourceprodneakhatkaSitesiteRevalidationQueueDDB57CF7A38EE8EA"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/RevalidationTable/Resource": [
+        "/prod-neakhatka-Site/site/RevalidationTable/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRevalidationTable79579F77"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/RevalidationInsertFunction/ServiceRole/Resource": [
+        "/prod-neakhatka-Site/site/RevalidationInsertFunction/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRevalidationInsertFunctionServiceRole5EAB97F1"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/RevalidationInsertFunction/ServiceRole/DefaultPolicy/Resource": [
+        "/prod-neakhatka-Site/site/RevalidationInsertFunction/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRevalidationInsertFunctionServiceRoleDefaultPolicy6656C2D6"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/RevalidationInsertFunction/Resource": [
+        "/prod-neakhatka-Site/site/RevalidationInsertFunction/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRevalidationInsertFunction4388DE95"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent/ServiceRole/Resource": [
+        "/prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRevalidationProviderframeworkonEventServiceRoleD8931DDF"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent/ServiceRole/DefaultPolicy/Resource": [
+        "/prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRevalidationProviderframeworkonEventServiceRoleDefaultPolicy2EE9A030"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent/Resource": [
+        "/prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRevalidationProviderframeworkonEvent86FF741C"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent/LogRetention/Resource": [
+        "/prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent/LogRetention/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRevalidationProviderframeworkonEventLogRetentionCDB525DA"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/RevalidationResource/Default": [
+        "/prod-neakhatka-Site/site/RevalidationResource/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteRevalidationResource8ECA617A"
           }
         ],
-        "/prod-prod-neakhatka-Site/site/Parameter_url/Resource": [
+        "/prod-neakhatka-Site/site/Parameter_url/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "siteParameterurl3D1716BC"
           }
         ],
-        "/prod-prod-neakhatka-Site/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+        "/prod-neakhatka-Site/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
           }
         ],
-        "/prod-prod-neakhatka-Site/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+        "/prod-neakhatka-Site/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
           }
         ],
-        "/prod-prod-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource": [
+        "/prod-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB"
           }
         ],
-        "/prod-prod-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource": [
+        "/prod-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB"
           }
         ],
-        "/prod-prod-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource": [
+        "/prod-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A"
           }
         ],
-        "/prod-prod-neakhatka-Site/AWSCloudFrontPartitionHostedZoneIdMap": [
+        "/prod-neakhatka-Site/AWSCloudFrontPartitionHostedZoneIdMap": [
           {
             "type": "aws:cdk:logicalId",
             "data": "AWSCloudFrontPartitionHostedZoneIdMap"
           }
         ],
-        "/prod-prod-neakhatka-Site/SSTStackOutputSiteUrl": [
+        "/prod-neakhatka-Site/SSTStackOutputSiteUrl": [
           {
             "type": "aws:cdk:logicalId",
             "data": "SiteUrl"
           }
         ],
-        "/prod-prod-neakhatka-Site/SSTStackOutputSSTMetadata": [
+        "/prod-neakhatka-Site/SSTStackOutputSSTMetadata": [
           {
             "type": "aws:cdk:logicalId",
             "data": "SSTMetadata"
           }
         ],
-        "/prod-prod-neakhatka-Site/BootstrapVersion": [
+        "/prod-neakhatka-Site/BootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
             "data": "BootstrapVersion"
           }
         ],
-        "/prod-prod-neakhatka-Site/CheckBootstrapVersion": [
+        "/prod-neakhatka-Site/CheckBootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CheckBootstrapVersion"
           }
         ]
       },
-      "displayName": "prod-prod-neakhatka-Site"
+      "displayName": "prod-neakhatka-Site"
     },
     "Tree": {
       "type": "cdk:tree",

@@ -3,13 +3,11 @@ import React from "react";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { FaUserFriends } from "react-icons/fa";
-import { MdOutlineWork } from "react-icons/md";
+import { MdOutlineWork } from "react-icons/md"; 	
 import { MdVerified } from "react-icons/md";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
