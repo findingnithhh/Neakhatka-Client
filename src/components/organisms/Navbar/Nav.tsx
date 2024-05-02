@@ -20,7 +20,7 @@ export default function Nav() {
   const { count } = useCount();
 
   const menuItems = [
-    { text: "Home", link: "/home" },
+    { text: "Home", link: "/" },
     { text: "Favorite", link: "/favorite" },
     { text: "Contact Us", link: "/contact_us" },
     { text: "About Us", link: "/about_us" },
@@ -36,7 +36,7 @@ export default function Nav() {
     >
       <NavbarContent>
         <NavbarBrand>
-          <Link href="/home">
+          <Link href="/">
             <Image src="/logo.svg" alt="logo" width={45} height={45} />
           </Link>
         </NavbarBrand>
@@ -44,7 +44,7 @@ export default function Nav() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link size="sm" color="foreground" href="/home">
+          <Link size="sm" color="foreground" href="/">
             Home
           </Link>
         </NavbarItem>
