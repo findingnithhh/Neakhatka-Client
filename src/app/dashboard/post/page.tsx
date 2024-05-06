@@ -1,13 +1,9 @@
 "use client";
 import React from "react";
 import { Editor, Typography } from "@/components";
-import { InputSearch } from "@/components";
 import { Input } from "@/components";
-import { FloatingButton } from "@/components";
 import { Button } from "@/components";
 import { useState } from "react";
-
-import Image from "next/image";
 
 const Postjob = () => {
   const [contentDescription, setContentDescription] = useState<string>("");
@@ -25,22 +21,9 @@ const Postjob = () => {
       <div className="container h-auto xl:max-w-[1200px] mx-auto px-5 md:px-10 py-6 border rounded-lg shadow-sm">
         {/* tile */}
         <div className="text-center mb-4">
-          <Typography fontSize="xl" className="text-center">
+          <Typography fontSize="xl" variant="bold" className="text-center my-5">
             Post New Job
           </Typography>
-        </div>
-        {/* image */}
-        <div className="flex items-center justify-center mb-4">
-          <div className="h-[100px] w-[100px] rounded-full bg-slate-500 mb-2"></div>
-        </div>
-        <div className="flex items-center justify-center mb-4">
-          <Button
-            colorScheme="secondary"
-            size="md"
-            className="text-white rounded-full"
-          >
-            Upload
-          </Button>
         </div>
 
         {/* input */}
@@ -58,11 +41,18 @@ const Postjob = () => {
           <div className="flex flex-col col-span-2 md:col-span-1">
             <label className="mb-2 text-sm">Position</label>
             <div className="flex justify-center">
-              <Input
-                type="text"
-                placeholder="Position"
-                className="text-sm w-full"
-              />
+              <select
+                id="countries"
+                className="border  text-gray-900 outline-none text-sm rounded-lg block w-full h-[35px]"
+              >
+                <option selected>
+                  Choose position
+                </option>
+                <option value="US">United States</option>
+                <option value="CA">Canada</option>
+                <option value="FR">France</option>
+                <option value="DE">Germany</option>
+              </select>
             </div>
           </div>
           <div className="flex flex-col col-span-2 md:col-span-1">

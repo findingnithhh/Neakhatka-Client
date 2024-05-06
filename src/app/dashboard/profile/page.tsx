@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { DetailCard } from "@/Types/DetailCard";
 import { useState } from "react";
 import Modal from "@/components/molecules/Modal/Modal";
+import EditEmployer from "@/app/dashboard/edit_employer/page";
 
 const Cardinfor: DetailCard[] = [
   {
@@ -67,10 +68,10 @@ const EmployerProfile = () => {
             </Button>
           </div>
         </div>
-        {/* <Modal
+        <Modal
           isOpen={isOpen}
           onClose={() => setIsOpen(false)}
-          size="md"
+          size="xl"
           corner="3xl"
         >
           <div className="bg-white p-8">
@@ -78,7 +79,7 @@ const EmployerProfile = () => {
               <EditEmployer />
             </h1>
           </div>
-        </Modal> */}
+        </Modal>
         {/* bottom */}
         <div className="flex flex-col md:flex-row justify-between mt-5">
           <div className="w-full">
