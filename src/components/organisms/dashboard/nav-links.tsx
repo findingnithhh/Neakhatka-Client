@@ -9,7 +9,7 @@ import clsx from 'clsx';
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
 const links = [
-  { name: "Home", href: "/dashboard", icon: BiSolidDashboard },
+  { name: "Dashboard", href: "/dashboard", icon: BiSolidDashboard },
   {
     name: "Post",
     href: "/dashboard/post",
@@ -31,7 +31,7 @@ export default function NavLinks() {
             className={clsx(
               "flex h-[48px] grow items-center justify-center rounded-md gap-2 bg-white text-black p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3",
               {
-                "bg-black text-white": pathname === link.href,
+                "bg-gray-800 text-white": pathname === link.href,
               }
             )}
           >

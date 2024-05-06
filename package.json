@@ -37,7 +37,8 @@
     "react-icons": "^5.0.1",
     "react-quill": "^2.0.0",
     "tailwind-merge": "^2.2.2",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.12",
