@@ -6,7 +6,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import Image from "next/legacy/image";
 import "../../globals.css";
@@ -68,6 +67,19 @@ const Signup = () => {
     setPasswordError("");
   };
 
+  const handleCompanyName = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCompanyname(e.target.value);
+  }
+
+  const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  }
+
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  }
+
+
   return (
     <div className="flex h-screen overflow-hidden">
       <div className="left hidden lg:block w-full h-full p-10 bg-[#18181B] flex-col justify-between rounded-r-2xl">
@@ -116,9 +128,10 @@ const Signup = () => {
                     ? "border-red-500"
                     : ""
                 }`}
-                onChange={(e) => setCompanyname(e.target.value)}
+                onChange={handleCompanyName}
                 value={companyname}
                 onFocus={handleCompanynameFocus}
+
               />
               {companynameError && (
                 <div className="text-red-500 text-xs mt-1">

@@ -23,6 +23,8 @@ const ForgotPassword = () => {
 
       // Redirect to reset_password page
       window.location.href = "/reset_password";
+      console.log('loggin in with:', {email});
+      
     } catch (error) {
       if (error instanceof Yup.ValidationError) {
         error.inner.forEach((e) => {

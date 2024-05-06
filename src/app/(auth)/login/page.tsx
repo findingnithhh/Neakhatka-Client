@@ -6,7 +6,6 @@ import Link from "next/link";
 import { LoginSchema } from "../../../validation/loginValidate";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import Image from "next/legacy/image";
 import "../../globals.css";
@@ -45,6 +44,14 @@ const Login = () => {
 
   const handlePasswordFocus = () => {
     setPasswordError("");
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
   };
 
   return (
@@ -94,7 +101,7 @@ const Login = () => {
                 type="email"
                 placeholder="example@gmail.com"
                 className={`w-[350px] ${emailError ? "border-red-500" : ""}`}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={handleEmailChange}
                 value={email}
                 onFocus={handleEmailFocus}
               />
@@ -109,7 +116,7 @@ const Login = () => {
                 type="password"
                 placeholder="password123"
                 className={`w-[350px] ${passwordError ? "border-red-500" : ""}`}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={handlePasswordChange}
                 value={password}
                 onFocus={handlePasswordFocus}
               />
