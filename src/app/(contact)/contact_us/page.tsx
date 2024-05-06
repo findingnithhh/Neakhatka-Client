@@ -26,9 +26,11 @@ const ContactUs = () => {
                   colorBackground="black"
                 />
               </div>
-              <div className="ml-5">
+              <div className="m-3">
                 <Typography>Email</Typography>
-                <Typography>matchinginternship@gmail.com</Typography>
+                <Typography className="text-sm md:text-base">
+                  matchinginternship@gmail.com
+                </Typography>
               </div>
             </div>
             <div className="flex items-center w-full bg-[#F8F9FA] p-5 rounded-xl mt-5">
@@ -39,9 +41,11 @@ const ContactUs = () => {
                   colorBackground="black"
                 />
               </div>
-              <div className="ml-5">
+              <div className="ml-3">
                 <Typography>Phone number</Typography>
-                <Typography>+855 96 57 74 927</Typography>
+                <Typography className="text-sm md:text-base">
+                  +855 96 57 74 927
+                </Typography>
               </div>
             </div>
             <div className="flex items-center w-full bg-[#F8F9FA] p-5 rounded-xl mt-5">
@@ -52,9 +56,11 @@ const ContactUs = () => {
                   colorBackground="black"
                 />
               </div>
-              <div className="ml-5">
+              <div className="ml-3  ">
                 <Typography>Address</Typography>
-                <Typography>2972 Westheimer Rd. Santa Ana </Typography>
+                <Typography className="text-sm md:text-base">
+                  2972 Westheimer Rd. Santa Ana{" "}
+                </Typography>
               </div>
             </div>
           </div>
@@ -74,7 +80,13 @@ const ContactUs = () => {
                 className="text-[14px] p-2 h-72 rounded-md mt-4 border md:mb-0 mb-10"
               />
               <div className="flex justify-end mt-4">
-                <Button colorScheme="primary" className="w-[150px] text-white" rounded="lg">Submit</Button>
+                <Button
+                  colorScheme="primary"
+                  className="w-[150px] text-white mb-10 md:mb-0"
+                  rounded="lg"
+                >
+                  Submit
+                </Button>
               </div>
             </div>
           </div>
