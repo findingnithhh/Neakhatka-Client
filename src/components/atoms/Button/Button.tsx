@@ -23,6 +23,7 @@ interface ButtonProps {
     | "3xl"
     | "full";
   onClick?: () => void; // Add onClick event handler
+  type?:  "button" | "submit" | "reset";
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -33,6 +34,7 @@ const Button: React.FC<ButtonProps> = ({
   colorScheme = "",
   colorOutline = "",
   onClick, // Destructure onClick
+  ...props
 }) => {
   const sizeButton = (size: string) => {
     switch (size) {

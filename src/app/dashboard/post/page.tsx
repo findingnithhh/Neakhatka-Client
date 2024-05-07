@@ -4,8 +4,20 @@ import { Editor, Typography } from "@/components";
 import { Input } from "@/components";
 import { Button } from "@/components";
 import { useState } from "react";
+import { format } from "date-fns";
+import { Calendar as CalendarIcon } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 const Postjob = () => {
+  const [date, setDate] = React.useState<Date>();
+
   const [contentDescription, setContentDescription] = useState<string>("");
   const [contentResponsibilities, setContentResponsibilities] =
     useState<string>("");
@@ -18,7 +30,7 @@ const Postjob = () => {
   };
   return (
     <>
-      <div className="container h-auto xl:max-w-[1200px] mx-auto px-5 md:px-10 py-6 border rounded-lg shadow-sm">
+      <div className="h-auto max-w-[1200px] mx-auto px-5 md:px-10 rounded-lg shadow-sm">
         {/* tile */}
         <div className="text-center mb-4">
           <Typography fontSize="xl" variant="bold" className="text-center my-5">
@@ -44,10 +56,8 @@ const Postjob = () => {
               <select
                 id="countries"
                 className="border  text-gray-900 outline-none text-sm rounded-lg block w-full h-[35px]"
+                value="US"
               >
-                <option selected>
-                  Choose position
-                </option>
                 <option value="US">United States</option>
                 <option value="CA">Canada</option>
                 <option value="FR">France</option>
@@ -76,6 +86,19 @@ const Postjob = () => {
             </div>
           </div>
           <div className="flex flex-col col-span-2 md:col-span-1">
+            <label className="mb-2 text-sm">Time</label>
+            <div className="flex justify-center">
+              <select
+                id="countries"
+                className="border  text-gray-900 outline-none text-sm rounded-lg block w-full h-[35px]"
+                value="All"
+              >
+                <option value="part-time">Full time</option>
+                <option value="full-time">Part time</option>
+              </select>
+            </div>
+          </div>
+          <div className="flex flex-col col-span-2 md:col-span-1">
             <label className="mb-2 text-sm">Work Place</label>
             <div className="flex justify-center">
               <Input
@@ -87,13 +110,14 @@ const Postjob = () => {
           </div>
           <div className="flex flex-col col-span-2 md:col-span-1">
             <label className="mb-2 text-sm">Duration</label>
-            <div className="flex justify-center">
-              <Input
-                type="email"
-                placeholder="Duration"
-                className="text-sm w-full"
-              />
-            </div>
+            <select
+              id="countries"
+              className="border  text-gray-900 outline-none text-sm rounded-lg block w-full h-[35px]"
+            >
+              <option value="1-3">1-3 months</option>
+              <option value="3-6">3-6 months</option>
+              <option value="6-9">6-9 months</option>
+            </select>
           </div>
           <div className="flex flex-col col-span-2 md:col-span-1">
             <label className="mb-2 text-sm">Location</label>
@@ -106,12 +130,20 @@ const Postjob = () => {
             </div>
           </div>
           <div className="flex flex-col col-span-2 md:col-span-1">
-            <label className="mb-2 text-sm">Deadline</label>
+            <label className="mb-2 text-sm">Start</label>
             <div className="flex justify-center">
-              <Input
-                type="text"
-                placeholder="Deadline"
-                className="text-sm w-full"
+              <input
+                type="date"
+                className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 mt-1 outline-none"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col col-span-2 md:col-span-1">
+            <label className="mb-2 text-sm">End</label>
+            <div className="flex justify-center">
+              <input
+                type="date"
+                className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 mt-1 outline-none"
               />
             </div>
           </div>
