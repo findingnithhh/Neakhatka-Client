@@ -35,6 +35,23 @@ const Cardinfor: DetailCard[] = [
 ];
 
 const EmployerProfile = () => {
+  const [employerData, setEmployerData] = useState({
+    id:"1",
+    companyName: "Sathapana Bank",
+    contactEmail: "sathapanabankinfo@gmail.com",
+    contactPhone: "0965774927",
+    contactPerson: "Sal Visal",
+    websiteLink: "https://www.saathapana.com.kh",
+    location: "Phnom Penh",
+    address: "8391 Elgin. St. Celina. Delaware 10",
+    
+  });
+
+  // Function to update employer data
+  const updateEmployerData = (updatedData: any) => {
+    setEmployerData(updatedData);
+  };
+
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
@@ -76,7 +93,7 @@ const EmployerProfile = () => {
         >
           <div className="bg-white p-8">
             <h1 className="flex justify-center flex-col items-center">
-              <EditEmployer />
+            <EditEmployer data={employerData} onUpdate={updateEmployerData} />
             </h1>
           </div>
         </Modal>
