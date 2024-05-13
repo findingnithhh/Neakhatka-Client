@@ -167,7 +167,6 @@ const EditEmployer = ({ data, onUpdate }: EditEmployerProps) => {
                   id="countries"
                   className="border text-[#424242] outline-none text-sm rounded-lg block w-full h-[35px]"
                 >
-                  <option selected>1-10</option>
                   <option value="10-20">10-20</option>
                   <option value="20-50">20-50</option>
                   <option value="100">&#x3e; 100</option>
