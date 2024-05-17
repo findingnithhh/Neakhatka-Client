@@ -15,13 +15,16 @@ const EditEmployer = ({ data, onUpdate }: EditEmployerProps) => {
   >(null);
 
   const handleCancel = () => {
-    setIsOpen(true);
+    setIsOpen(false);
     console.log(isOpen);
   };
   useEffect(() => {
+    console.log(isOpen); 
+  }, [isOpen]);
+  useEffect(() => {
     setFormData((prevFormData: any) => ({
       ...prevFormData,
-      ...data
+      ...data,
     }));
   }, [data]);
 
@@ -33,7 +36,7 @@ const EditEmployer = ({ data, onUpdate }: EditEmployerProps) => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prevState :any) => ({
+    setFormData((prevState: any) => ({
       ...prevState,
       [name]: value,
     }));
@@ -204,8 +207,8 @@ const EditEmployer = ({ data, onUpdate }: EditEmployerProps) => {
                 className="p-2 w-full text-sm text-gray-900 rounded-lg border border-gray-300 outline-none"
                 placeholder="Typing something..."
                 value={formData.decription}
-                  onChange={handleChange}
-                  name="decription"
+                onChange={handleChange}
+                name="decription"
               ></textarea>
             </div>
             <div className="flex justify-end">

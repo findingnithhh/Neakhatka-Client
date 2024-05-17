@@ -1,7 +1,7 @@
 'use client';
 import { BiSolidDashboard } from "react-icons/bi";
-import { FaUserEdit } from "react-icons/fa";
-import { FaUser } from "react-icons/fa6";
+import { FaUserEdit,FaUserFriends } from "react-icons/fa";
+import { FaUser,FaUserPlus } from "react-icons/fa6";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
@@ -16,6 +16,7 @@ const links = [
     icon: FaUserEdit,
   },
   { name: "Profile", href: "/dashboard/profile", icon: FaUser },
+  {name:"Candidates", href:"/dashboard/candidates",icon:FaUserFriends}
 ];
 
 export default function NavLinks() {
