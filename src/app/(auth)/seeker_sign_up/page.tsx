@@ -1,5 +1,5 @@
 // Signup.tsx
-'use client'
+"use client";
 import * as Yup from "yup";
 import React, { useState } from "react";
 import Link from "next/link";
@@ -10,6 +10,7 @@ import Image from "next/legacy/image";
 import "../../globals.css";
 import { Icon } from "@/components";
 import { SeekerSignUpSchema } from "../../../validation/seekerSignUp";
+import axios from "axios";
 
 const Signup = () => {
   const [signupError, setSignupError] = useState("");
@@ -17,23 +18,32 @@ const Signup = () => {
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const role = "user";
   const [firstnameError, setFirstnameError] = useState("");
   const [lastnameError, setLastnameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  async function handleSubmit(e: any) {
     e.preventDefault();
-
     try {
-      await SeekerSignUpSchema.validate(
-        { firstname, lastname, email, password },
+      const validationResult = await SeekerSignUpSchema.validate(
+        { firstname, lastname, email, password, role },
         { abortEarly: false }
       );
+      await axios.post("http://localhost:4000/v1/auth/signup", {
+        firstname,
+        lastname,
+        email,
+        password,
+        role,
+      });
+      console.log("Signup successful!"); // Log successful signup (if applicable)
+      alert("Submitted!"); // Alert user of successful submission
 
-      // Your signup logic goes here
-      console.log("Signing up with:", { firstname, lastname, email, password });
-    } catch (error) {
+      // Redirect to YouTube after successful signup
+      window.location.href = "https://neakhatka.com/"; // Change URL to desired YouTube URL
+    } catch (error: any | unknown) {
       if (error instanceof Yup.ValidationError) {
         error.inner.forEach((e) => {
           switch (e.path) {
@@ -53,11 +63,14 @@ const Signup = () => {
               break;
           }
         });
+        if (error instanceof axios) {
+          console.log("error :", error);
+        }
       } else {
         setSignupError("Error signing up. Please try again.");
       }
     }
-  };
+  }
 
   const handleFirstnameFocus = () => {
     setFirstnameError("");
@@ -113,7 +126,7 @@ const Signup = () => {
               Enter your email below to sign up with Matching Internship
             </p>
           </div>
-          <form onSubmit={handleSubmit} className="mt-5">
+          <form onSubmit={handleSubmit} className="mt-5" method="POST">
             <div className="relative">
               <Input
                 id="firstname"
@@ -121,9 +134,7 @@ const Signup = () => {
                 type="text"
                 placeholder="Your firstname"
                 className={`w-[350px] ${
-                  firstnameError
-                    ? "border-red-500"
-                    : ""
+                  firstnameError ? "border-red-500" : ""
                 }`}
                 onChange={(e) => setFirstname(e.target.value)}
                 value={firstname}
@@ -141,11 +152,7 @@ const Signup = () => {
                 name="lastname"
                 type="text"
                 placeholder="Your lastname"
-                className={`w-[350px] ${
-                  lastnameError
-                    ? "border-red-500"
-                    : ""
-                }`}
+                className={`w-[350px] ${lastnameError ? "border-red-500" : ""}`}
                 onChange={(e) => setLastname(e.target.value)}
                 value={lastname}
                 onFocus={handleLastnameFocus}
@@ -160,11 +167,7 @@ const Signup = () => {
                 name="email"
                 type="email"
                 placeholder="example@gmail.com"
-                className={`w-[350px] ${
-                  emailError
-                    ? "border-red-500"
-                    : ""
-                }`}
+                className={`w-[350px] ${emailError ? "border-red-500" : ""}`}
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 onFocus={handleEmailFocus}
@@ -179,11 +182,7 @@ const Signup = () => {
                 name="password"
                 type="password"
                 placeholder="password123"
-                className={`w-[350px] ${
-                  passwordError
-                    ? "border-red-500"
-                    : ""
-                }`}
+                className={`w-[350px] ${passwordError ? "border-red-500" : ""}`}
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 onFocus={handlePasswordFocus}
