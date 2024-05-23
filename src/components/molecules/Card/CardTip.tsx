@@ -6,8 +6,17 @@ import { Icon, Typography } from "@/components";
 export default function CardTip() {
   return (
     <>
-      <Typography align="center" className="text-18 mt-10">
-        Get Hired in<span className="text-green-600">4 Quick Easy Steps</span>
+      <Typography align="center" className="text-18 mt-24">
+        Get Hired in
+        <span className="text-green-600 gap-1">4 Quick Easy Steps</span>
+      </Typography>
+      <Typography
+        align="center"
+        className="mt-4 mx-80 text-gray-500"
+        fontSize="sm"
+      >
+        Update your resume, network effectively, prepare for interviews, and
+        follow up strategically to land your dream job.
       </Typography>
       <main className="container xl:w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5 my-10">
         <Card className="py-4 rounded-none">

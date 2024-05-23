@@ -24,7 +24,7 @@ export default function Home() {
         <Nav />
         <CardContext>
           <Banner />
-          <Filter />
+          {/* <Filter /> */}
           <CardTip />
           <CardList />
           <CardReview />

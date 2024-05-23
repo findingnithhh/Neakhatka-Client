@@ -75,6 +75,7 @@ const Favorite = () => {
 
   return (
     <main className="w-full container h-screen my-10 px-4 md:px-20">
+      <Typography className="mb-10 mt-6" fontSize="xl" >My Favorite :</Typography>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px]">
         {cards.map((job) => (
           <div key={job.id} className="card-container" onClick={(e) => {}}>
