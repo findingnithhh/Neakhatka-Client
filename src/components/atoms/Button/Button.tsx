@@ -22,8 +22,8 @@ interface ButtonProps {
     | "2xl"
     | "3xl"
     | "full";
-  onClick?: () => void; // Add onClick event handler
-  type?:  "button" | "submit" | "reset";
+  onClick?: (event: any) => void;
+  type?: "button" | "submit" | "reset";
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -33,7 +33,8 @@ const Button: React.FC<ButtonProps> = ({
   rounded = "base",
   colorScheme = "",
   colorOutline = "",
-  onClick, // Destructure onClick
+  onClick,
+  type = "button",
   ...props
 }) => {
   const sizeButton = (size: string) => {
@@ -112,12 +113,14 @@ const Button: React.FC<ButtonProps> = ({
   const getButtonRounded = ButtonRounded(rounded);
 
   return (
-    <div
+    <button
+      type={type}
       className={`flex justify-center items-center cursor-pointer ${getButtonRounded} ${colorSchemeStyle} ${sizeButtonStyle} ${colorButtonOutline} ${className}`}
-      onClick={onClick} // Add onClick event handler
+      onClick={onClick}
+      {...props}
     >
       {children}
-    </div>
+    </button>
   );
 };
 

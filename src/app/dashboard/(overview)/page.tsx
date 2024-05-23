@@ -9,9 +9,25 @@ import {
   CardPostJob,
   CardJobActive,
 } from "@/components";
+import { useEffect, useState } from "react";
+export default function Page() {
+  const [dataLoaded, setDataLoaded] = useState(false);
 
-export default async function Page() {
-  return (
+  useEffect(() => {
+    const fetchData = async () => {
+      // Fetch data asynchronously here
+      // const candidatesData = await fetchCandidatesData();
+      // const jobData = await fetchJobData();
+      
+      setDataLoaded(true);
+    };
+
+    fetchData();
+  }, []);
+
+
+
+  return dataLoaded ?(
     <main>
       <h1 className={`mb-4 text-xl`}>Dashboard</h1>
       <div>
@@ -26,5 +42,5 @@ export default async function Page() {
         </div>
       </div>
     </main>
-  );
+ ) : null;
 }

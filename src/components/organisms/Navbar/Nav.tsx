@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -15,11 +15,22 @@ import { Button } from "@/components/ui/button";
 import Image from "next/legacy/image";
 import { useCount } from "../../../contexts/CountContext";
 
+interface MenuItem {
+  text: string;
+  link: string;
+}
+
 export default function Nav() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState<string>("");
   const { count } = useCount();
 
-  const menuItems = [
+  useEffect(() => {
+    // Set the active link based on the current path
+    setActiveLink(window.location.pathname);
+  }, []);
+
+  const menuItems: MenuItem[] = [
     { text: "Home", link: "/" },
     { text: "Favorite", link: "/favorite" },
     { text: "Contact Us", link: "/contact_us" },
@@ -27,6 +38,8 @@ export default function Nav() {
     { text: "Sign Up", link: "/join" },
     { text: "Login", link: "/login" },
   ];
+
+  const isActive = (link: string) => activeLink === link;
 
   return (
     <Navbar
@@ -43,35 +56,34 @@ export default function Nav() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4 ml-16" justify="center">
-        <NavbarItem>
-          <Link size="sm" color="foreground" href="/">
-            Home
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link size="sm" color="foreground" href="favorite">
-            Favorite
-            {count > 0 && (
-              <Badge variant="destructive" className="-mt-3">
-                {count > 9 ? "9+" : count}
-              </Badge>
-            )}
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link size="sm" color="foreground" href="contact_us">
-            Contact Us
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link size="sm" color="foreground" href="about_us">
-            About Us
-          </Link>
-        </NavbarItem>
+        {menuItems.slice(0, 4).map((item) => (
+          <NavbarItem key={item.link}>
+            <Link
+              size="sm"
+              href={item.link}
+              className={`${
+                isActive(item.link) ? "text-green-500" : "text-gray-800"
+              }`}
+            >
+              {item.text}
+              {item.text === "Favorite" && count > 0 && (
+                <Badge variant="destructive" className="-mt-3">
+                  {count > 9 ? "9+" : count}
+                </Badge>
+              )}
+            </Link>
+          </NavbarItem>
+        ))}
       </NavbarContent>
+
       <NavbarContent className="ml-16" justify="end">
         <NavbarItem className="hidden sm:flex">
-          <Link href="/login" className="text-gray-800">
+          <Link
+            href="/login"
+            className={`${
+              isActive("/login") ? "text-green-500" : "text-gray-800"
+            }`}
+          >
             Login
           </Link>
         </NavbarItem>
@@ -85,19 +97,15 @@ export default function Nav() {
           className="sm:hidden"
         />
       </NavbarContent>
+
       <NavbarMenu style={{ background: isMenuOpen ? "#fff" : "#fff" }}>
         {menuItems.map((item, index) => (
           <NavbarMenuItem className="mt-5" key={`${item}-${index}`}>
             <Link
-              // color={
-              //   index === 0
-              //     // ? "primary"
-              //     // : index === menuItems.length - 1
-              //     ? "danger"
-              //     : "foreground"
-              // }
               color="foreground"
-              className="w-full"
+              className={`w-full ${
+                isActive(item.link) ? "text-green-500" : "text-gray-800"
+              }`}
               href={item.link}
               size="lg"
             >

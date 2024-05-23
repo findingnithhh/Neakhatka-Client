@@ -107,7 +107,10 @@ const Card: React.FC<CardProps> = ({
               {jobTitle}
             </Typography>
             <Typography className="text-gray-500" fontSize="sm">
-              {salary}
+              <div className="flex">
+                <Icon className="mr-1" label="Dollar" size="sm" />
+                {salary}
+              </div>
             </Typography>
             <div>
               <Typography className="mt-2" fontSize="sm">
@@ -136,7 +139,7 @@ const Card: React.FC<CardProps> = ({
             </Typography>
             <Typography className="text-gray-500" fontSize="sm">
               <div className="flex">
-                <Icon className="mr-2" label="Date" size="sm" />
+                <Icon className="mr-2" label="Calendar" size="sm" />
                 {DeadLine}
               </div>
             </Typography>
