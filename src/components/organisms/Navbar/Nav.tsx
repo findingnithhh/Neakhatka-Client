@@ -42,7 +42,7 @@ export default function Nav() {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className="hidden sm:flex gap-4 ml-16" justify="center">
         <NavbarItem>
           <Link size="sm" color="foreground" href="/">
             Home
