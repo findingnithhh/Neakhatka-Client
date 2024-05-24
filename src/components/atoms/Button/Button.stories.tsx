@@ -27,7 +27,7 @@ export const Default: Story = {
     size: "md",
     colorOutline: "none",
     rounded: "none",
-    textColor: "white"
+    textColor: "white",
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

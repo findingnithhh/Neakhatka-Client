@@ -23,6 +23,7 @@ const Card: React.FC<CardProps> = ({
 }) => {
   const {
     id,
+    companyLogo,
     companyName,
     peopleAmount,
     jobTitle,
@@ -71,7 +72,7 @@ const Card: React.FC<CardProps> = ({
           <div className="flex">
             <Image
               className="rounded-full"
-              src="/company.svg"
+              src={companyLogo}
               alt="company logo"
               width={48}
               height={48}
