@@ -7,7 +7,6 @@ import {
   Select,
   Search,
 } from "@/components";
-import { Promote } from "@/components";
 import Image from "next/legacy/image";
 const Banner = () => {
   return (
@@ -23,8 +22,8 @@ const Banner = () => {
         <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center backdrop-brightness-50">
           <span className="text-white">
             <Typography
-              fontSize="xl"
-              className="-mt-5 mb-5 flex justify-center items-center font-bold md:text-[40px] md:mt-5 lg:text-[48px]"
+              // fontSize="xl"
+              className="text-[250px] -mt-5 mb-5 flex justify-center items-center font-bold md:text-[40px] md:mt-5 lg:text-[48px]"
             >
               Find Your Dream
               <span className="text-[#5FAD74] mx-2">Internship</span>
@@ -43,11 +42,11 @@ const Banner = () => {
           </span>
         </div>
       </div>
-      <div className="flex justify-center items-center">
+      {/* <div className="flex justify-center items-center">
         <div className="absolute">
           <Promote />
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

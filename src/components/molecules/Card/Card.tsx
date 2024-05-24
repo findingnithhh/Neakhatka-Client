@@ -108,7 +108,7 @@ const Card: React.FC<CardProps> = ({
             </Typography>
             <Typography className="text-gray-500" fontSize="sm">
               <div className="flex">
-                <Icon className="mr-1" label="Dollar" size="sm" />
+                <Icon className="mr-0.5" label="Dollar" size="sm" />
                 {salary}
               </div>
             </Typography>

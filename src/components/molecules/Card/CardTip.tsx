@@ -6,13 +6,13 @@ import { Icon, Typography } from "@/components";
 export default function CardTip() {
   return (
     <>
-      <Typography align="center" className="text-18 mt-24">
+      <Typography align="center" className="text-[20px] mt-16">
         Get Hired in
         <span className="text-green-600 gap-1">4 Quick Easy Steps</span>
       </Typography>
       <Typography
         align="center"
-        className="mt-4 mx-80 text-gray-500"
+        className="my-4 mx-80 text-gray-500"
         fontSize="sm"
       >
         Update your resume, network effectively, prepare for interviews, and

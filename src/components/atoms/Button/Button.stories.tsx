@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "./Button";
 import { action } from "@storybook/addon-actions";
+import { userEvent, within } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 
 const meta: Meta<typeof Button> = {
   title: "Neakhatka/Atoms/Button",
@@ -25,13 +27,21 @@ export const Default: Story = {
     size: "md",
     colorOutline: "none",
     rounded: "none",
+    textColor: "white"
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = await canvas.getByRole("button", { name: /click Button/i });
+
+    // Simulate click and check if the button is still enabled
+    await userEvent.click(button);
+    expect(button).toBeEnabled();
   },
 };
 
 export const ClickAction: Story = {
   args: {
     ...Default.args,
-    children: "Click Button",
     onClick: action("Clicked!"),
   },
 };
