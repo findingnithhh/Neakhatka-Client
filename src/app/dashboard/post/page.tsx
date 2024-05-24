@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { Typography, Input, Button } from "@/components";
 import { FaTrash } from "react-icons/fa";
 import Modal from "@/components/molecules/Modal/Modal";
 import PostJob from "../edit_post/page";
@@ -50,18 +51,15 @@ const Dashboard: React.FC = () => {
   return (
     <div>
       <div className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl font-bold">Company Post Table</h1>
-        <button
-          onClick={() => setIsOpen(true)}
-          className="bg-blue-500 text-white px-4 py-2 rounded"
-        >
-          Add Information
-        </button>
+        <Typography fontSize="md">Company Post Table</Typography>
+        <Button onClick={() => setIsOpen(true)} colorScheme="primary" textColor="white" className="text-md px-4 py-2 rounded w-40 font-bold mb-4">
+        Add Information
+        </Button>
       </div>
       <table className="w-full border-collapse">
-        <thead>
-          <tr className="bg-gray-200">
-          <th className="py-2 px-4 border-b">Company Name</th>
+        <thead >
+          <tr className="bg-gray-200 text-sm">
+          <th className="py-2 px-4 border-b text-sm">Company Name</th>
             <th className="py-2 px-4 border-b">Position</th>
             <th className="py-2 px-4 border-b">Total Employees</th>
             <th className="py-2 px-4 border-b">Start Date</th>
@@ -76,27 +74,17 @@ const Dashboard: React.FC = () => {
               key={index}
               className={`border-b ${index % 2 === 0 ? "bg-gray-100" : ""}`}
             >
-              <td className="py-2 px-4 border-b">{company.name}</td>
-              <td className="py-2 px-4 border-b">{company.position}</td>
-              <td className="py-2 px-4 border-b">{company.totalEmployees}</td>
-              <td className="py-2 px-4 border-b">{company.startDate}</td>
-              <td className="py-2 px-4 border-b">{company.endDate}</td>
+              <td className="py-2 px-4 border-b text-sm">{company.name}</td>
+              <td className="py-2 px-4 border-b text-sm">{company.position}</td>
+              <td className="py-2 px-4 border-b text-sm">{company.totalEmployees}</td>
+              <td className="py-2 px-4 border-b text-sm">{company.startDate}</td>
+              <td className="py-2 px-4 border-b text-sm">{company.endDate}</td>
             
               <td className="py-2 px-4 border-b">
-                <button
-                
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
-                >
-                  Edit
-                </button>
+                <Button size="sm" colorScheme="primary" textColor="white" >Edit</Button>
               </td>
               <td className="py-2 px-4">
-                <button
-                  onClick={() => removeCandidate(index)}
-                  className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded"
-                >
-                  <FaTrash />
-                </button>
+                <Button onClick={() => removeCandidate(index)} colorScheme="danger" size="sm" className="text-white"> <FaTrash /></Button>
               </td>
             </tr>
           ))}

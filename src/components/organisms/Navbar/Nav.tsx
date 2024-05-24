@@ -26,11 +26,7 @@ interface MenuItem {
 }
 
 export default function Nav() {
-<<<<<<< HEAD
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-=======
   const [isMenuOpen, setIsMenuOpen] = useState(false);
->>>>>>> d7ee7017bf58f4748bc20f82b6d67b135dc188ee
   const [activeLink, setActiveLink] = useState<string>("");
   const { count } = useCount();
 
@@ -48,13 +44,7 @@ export default function Nav() {
     { text: "Login", link: "/login" },
   ];
 
-<<<<<<< HEAD
-  // const handleNavClick = (index: any) =>{
-  //   setActiveIndex (index);
-  // }
-=======
   const isActive = (link: string) => activeLink === link;
->>>>>>> d7ee7017bf58f4748bc20f82b6d67b135dc188ee
 
   return (
     <Navbar
@@ -70,16 +60,6 @@ export default function Nav() {
         </NavbarBrand>
       </NavbarContent>
 
-<<<<<<< HEAD
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        {menuItems.slice(0, 4).map((item, index) => (
-          <NavbarItem key={index}>
-            <Link
-              size="sm"
-              color={activeLink === item.link ? "success" : "foreground"}
-              href={item.link}
-              
-=======
       <NavbarContent className="hidden sm:flex gap-4 ml-16" justify="center">
         {menuItems.slice(0, 4).map((item) => (
           <NavbarItem key={item.link}>
@@ -89,7 +69,6 @@ export default function Nav() {
               className={`${
                 isActive(item.link) ? "text-green-500" : "text-gray-800"
               }`}
->>>>>>> d7ee7017bf58f4748bc20f82b6d67b135dc188ee
             >
               {item.text}
               {item.text === "Favorite" && count > 0 && (

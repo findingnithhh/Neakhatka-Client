@@ -20,12 +20,9 @@ import {
 import { PostJobSchema } from "../../../validation/postJob";
 import { ValidationError } from "yup";
 import { ChangeEvent } from "react";
-<<<<<<< HEAD
 interface PostJobFormProps {
   onCancel: () => void;
 }
-=======
->>>>>>> d7ee7017bf58f4748bc20f82b6d67b135dc188ee
 
 const PostJob: React.FC = () => {
   const [postError, setPostError] = useState<string>("");
@@ -363,7 +360,6 @@ const PostJob: React.FC = () => {
           </div>
           {/* buttons */}
           <div className=" flex justify-end items-end mt-14">
-<<<<<<< HEAD
           <Button
             colorOutline="danger"
             className="mr-3 w-24 rounded-lg"
@@ -371,11 +367,6 @@ const PostJob: React.FC = () => {
           >
             Cancel
           </Button>
-=======
-            <Button colorOutline="danger" className="mr-3 w-24 rounded-lg">
-              Cancel
-            </Button>
->>>>>>> d7ee7017bf58f4748bc20f82b6d67b135dc188ee
             <Button
               colorScheme="primary"
               className="w-24 text-white rounded-lg"
