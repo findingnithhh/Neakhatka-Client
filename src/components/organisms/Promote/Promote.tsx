@@ -10,7 +10,6 @@ import {
   Search,
   Banner,
 } from "@/components";
-import CountUp from "react-countup";
 
 const Promote = () => {   
   return (
@@ -21,14 +20,7 @@ const Promote = () => {
             variant="bold"
             className="text-[#4B9960] text-xs text-center md:text-[16px] lg:text-[18px] xl:text-[20px]"
           >
-            <CountUp
-              delay={0.2}
-              separator=" "
-              decimal=","
-              suffix=" +"
-              end={500}
-              duration={8}
-            />
+            500
           </Typography>
           <Typography fontSize="xs" className="text-[#4B9960] sm:text-[14px]">
             Internship
@@ -39,14 +31,7 @@ const Promote = () => {
             variant="bold"
             className="text-[#4B9960] text-xs text-center md:text-[16px] lg:text-[18px] xl:text-[20px]"
           >
-            <CountUp
-              delay={0.2}
-              separator=" "
-              decimal=","
-              suffix=" +"
-              end={50}
-              duration={8}
-            />
+            500
           </Typography>
           <Typography fontSize="xs" className="text-[#4B9960] sm:text-[14px]">
             Companies
@@ -57,13 +42,7 @@ const Promote = () => {
             variant="bold"
             className="text-[#4B9960] text-xs text-center md:text-[16px] lg:text-[18px] xl:text-[20px]"
           >
-            <CountUp
-              delay={0.2}
-              decimal=","
-              suffix=" +"
-              end={1200}
-              duration={8}
-            />
+            500
           </Typography>
           <Typography fontSize="xs" className="text-[#4B9960] sm:text-[14px]">
             Seekers

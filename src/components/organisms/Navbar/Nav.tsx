@@ -20,8 +20,17 @@ interface MenuItem {
 }
 
 
+interface MenuItem {
+  text: string;
+  link: string;
+}
+
 export default function Nav() {
+<<<<<<< HEAD
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+=======
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+>>>>>>> d7ee7017bf58f4748bc20f82b6d67b135dc188ee
   const [activeLink, setActiveLink] = useState<string>("");
   const { count } = useCount();
 
@@ -39,9 +48,13 @@ export default function Nav() {
     { text: "Login", link: "/login" },
   ];
 
+<<<<<<< HEAD
   // const handleNavClick = (index: any) =>{
   //   setActiveIndex (index);
   // }
+=======
+  const isActive = (link: string) => activeLink === link;
+>>>>>>> d7ee7017bf58f4748bc20f82b6d67b135dc188ee
 
   return (
     <Navbar
@@ -57,6 +70,7 @@ export default function Nav() {
         </NavbarBrand>
       </NavbarContent>
 
+<<<<<<< HEAD
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         {menuItems.slice(0, 4).map((item, index) => (
           <NavbarItem key={index}>
@@ -65,6 +79,17 @@ export default function Nav() {
               color={activeLink === item.link ? "success" : "foreground"}
               href={item.link}
               
+=======
+      <NavbarContent className="hidden sm:flex gap-4 ml-16" justify="center">
+        {menuItems.slice(0, 4).map((item) => (
+          <NavbarItem key={item.link}>
+            <Link
+              size="sm"
+              href={item.link}
+              className={`${
+                isActive(item.link) ? "text-green-500" : "text-gray-800"
+              }`}
+>>>>>>> d7ee7017bf58f4748bc20f82b6d67b135dc188ee
             >
               {item.text}
               {item.text === "Favorite" && count > 0 && (
@@ -76,9 +101,15 @@ export default function Nav() {
           </NavbarItem>
         ))}
       </NavbarContent>
+
       <NavbarContent className="ml-16" justify="end">
         <NavbarItem className="hidden sm:flex">
-          <Link href="/login" className="text-gray-800">
+          <Link
+            href="/login"
+            className={`${
+              isActive("/login") ? "text-green-500" : "text-gray-800"
+            }`}
+          >
             Login
           </Link>
         </NavbarItem>
@@ -92,19 +123,15 @@ export default function Nav() {
           className="sm:hidden"
         />
       </NavbarContent>
+
       <NavbarMenu style={{ background: isMenuOpen ? "#fff" : "#fff" }}>
         {menuItems.map((item, index) => (
           <NavbarMenuItem className="mt-5" key={`${item}-${index}`}>
             <Link
-              // color={
-              //   index === 0
-              //     // ? "primary"
-              //     // : index === menuItems.length - 1
-              //     ? "danger"
-              //     : "foreground"
-              // }
               color="foreground"
-              className="w-full"
+              className={`w-full ${
+                isActive(item.link) ? "text-green-500" : "text-gray-800"
+              }`}
               href={item.link}
               size="lg"
             >

@@ -12,15 +12,16 @@ import { Icon } from "@/components";
 import { SeekerSignUpSchema } from "../../../validation/seekerSignUp";
 import axios from "axios";
 
+
+
+
 const Signup = () => {
   const [signupError, setSignupError] = useState("");
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const role = "user";
-  const [firstnameError, setFirstnameError] = useState("");
-  const [lastnameError, setLastnameError] = useState("");
+  const [usernameError, setUsernameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
@@ -28,12 +29,11 @@ const Signup = () => {
     e.preventDefault();
     try {
       const validationResult = await SeekerSignUpSchema.validate(
-        { firstname, lastname, email, password, role },
+        { username, email, password, role },
         { abortEarly: false }
       );
       await axios.post("http://localhost:4000/v1/auth/signup", {
-        firstname,
-        lastname,
+        username,
         email,
         password,
         role,
@@ -47,11 +47,8 @@ const Signup = () => {
       if (error instanceof Yup.ValidationError) {
         error.inner.forEach((e) => {
           switch (e.path) {
-            case "firstname":
-              setFirstnameError(e.message);
-              break;
-            case "lastname":
-              setLastnameError(e.message);
+            case "username":
+              setUsernameError(e.message);
               break;
             case "email":
               setEmailError(e.message);
@@ -72,12 +69,8 @@ const Signup = () => {
     }
   }
 
-  const handleFirstnameFocus = () => {
-    setFirstnameError("");
-  };
-
-  const handleLastnameFocus = () => {
-    setLastnameError("");
+  const handleUsernameFocus = () => {
+    setUsernameError("");
   };
 
   const handleEmailFocus = () => {
@@ -129,36 +122,21 @@ const Signup = () => {
           <form onSubmit={handleSubmit} className="mt-5" method="POST">
             <div className="relative">
               <Input
-                id="firstname"
-                name="firstname"
+                id="username"
+                name="username"
                 type="text"
-                placeholder="Your firstname"
+                placeholder="username"
                 className={`w-[350px] ${
-                  firstnameError ? "border-red-500" : ""
+                  usernameError ? "border-red-500" : ""
                 }`}
-                onChange={(e) => setFirstname(e.target.value)}
-                value={firstname}
-                onFocus={handleFirstnameFocus}
+                onChange={(e) => setUsername(e.target.value)}
+                value={username}
+                onFocus={handleUsernameFocus}
               />
-              {firstnameError && (
+              {usernameError && (
                 <div className="text-red-500 text-xs mt-1">
-                  {firstnameError}
+                  {usernameError}
                 </div>
-              )}
-            </div>
-            <div className="relative mt-4">
-              <Input
-                id="lastname"
-                name="lastname"
-                type="text"
-                placeholder="Your lastname"
-                className={`w-[350px] ${lastnameError ? "border-red-500" : ""}`}
-                onChange={(e) => setLastname(e.target.value)}
-                value={lastname}
-                onFocus={handleLastnameFocus}
-              />
-              {lastnameError && (
-                <div className="text-red-500 text-xs mt-1">{lastnameError}</div>
               )}
             </div>
             <div className="relative mt-4">
