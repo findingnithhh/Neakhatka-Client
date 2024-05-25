@@ -1,1 +1,6 @@
-{}
+{
+  "hosted-zone:account=211125513237:domainName=neakhatka.com:region=us-east-1": {
+    "Id": "/hostedzone/Z00104253LY3NFP52H338",
+    "Name": "neakhatka.com."
+  }
+}

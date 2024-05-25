@@ -1,17 +1,88 @@
+// Signup.tsx
+"use client";
+import * as Yup from "yup";
+import React, { useState } from "react";
 import Link from "next/link";
-import React from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import Image from "next/legacy/image";
 import "../../globals.css";
 import { Icon } from "@/components";
+import { SeekerSignUpSchema } from "../../../validation/seekerSignUp";
+import axios from "axios";
+
+
+
 
 const Signup = () => {
+  const [signupError, setSignupError] = useState("");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const role = "user";
+  const [usernameError, setUsernameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+
+  async function handleSubmit(e: any) {
+    e.preventDefault();
+    try {
+      const validationResult = await SeekerSignUpSchema.validate(
+        { username, email, password, role },
+        { abortEarly: false }
+      );
+      await axios.post("http://localhost:4000/v1/auth/signup", {
+        username,
+        email,
+        password,
+        role,
+      });
+      console.log("Signup successful!"); // Log successful signup (if applicable)
+      alert("Submitted!"); // Alert user of successful submission
+
+      // Redirect to YouTube after successful signup
+      window.location.href = "https://neakhatka.com/"; // Change URL to desired YouTube URL
+    } catch (error: any | unknown) {
+      if (error instanceof Yup.ValidationError) {
+        error.inner.forEach((e) => {
+          switch (e.path) {
+            case "username":
+              setUsernameError(e.message);
+              break;
+            case "email":
+              setEmailError(e.message);
+              break;
+            case "password":
+              setPasswordError(e.message);
+              break;
+            default:
+              break;
+          }
+        });
+        if (error instanceof axios) {
+          console.log("error :", error);
+        }
+      } else {
+        setSignupError("Error signing up. Please try again.");
+      }
+    }
+  }
+
+  const handleUsernameFocus = () => {
+    setUsernameError("");
+  };
+
+  const handleEmailFocus = () => {
+    setEmailError("");
+  };
+
+  const handlePasswordFocus = () => {
+    setPasswordError("");
+  };
+
   return (
     <div className="flex h-screen overflow-hidden">
-      {" "}
       {/* Use flexbox to make it full height */}
       <div className="left hidden lg:block w-full h-full p-10 bg-[#18181B] flex-col justify-between rounded-r-2xl">
         {/* <div>⚛</div> */}
@@ -32,9 +103,8 @@ const Signup = () => {
           </Link>
         </div>
         <div className="flex flex-col justify-center items-center h-full">
-          {" "}
           {/* Use flexbox to make it full height */}
-          <Link href="/home">
+          <Link href="/">
             <Image
               src="/logo.svg"
               alt="logo"
@@ -49,31 +119,66 @@ const Signup = () => {
               Enter your email below to sign up with Matching Internship
             </p>
           </div>
-          <div className="mt-5">
-            <Input
-              accept="text"
-              placeholder="your firstname"
-              className="w-[350px]"
-            />
-            <Input
-              accept="text"
-              placeholder="your lastname"
-              className="w-[350px] mt-4"
-            />
-            <Input
-              accept="email"
-              placeholder="example@gmail.com"
-              className="w-[350px] mt-4"
-            />
-            <Input
-              accept="password"
-              placeholder="password123"
-              className="w-[350px] mt-4"
-            />
-            <Button className="mt-4 w-[350px] bg-[#343A40] hover:bg-[#4a535c]">
+          <form onSubmit={handleSubmit} className="mt-5" method="POST">
+            <div className="relative">
+              <Input
+                id="username"
+                name="username"
+                type="text"
+                placeholder="username"
+                className={`w-[350px] ${
+                  usernameError ? "border-red-500" : ""
+                }`}
+                onChange={(e) => setUsername(e.target.value)}
+                value={username}
+                onFocus={handleUsernameFocus}
+              />
+              {usernameError && (
+                <div className="text-red-500 text-xs mt-1">
+                  {usernameError}
+                </div>
+              )}
+            </div>
+            <div className="relative mt-4">
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="example@gmail.com"
+                className={`w-[350px] ${emailError ? "border-red-500" : ""}`}
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                onFocus={handleEmailFocus}
+              />
+              {emailError && (
+                <div className="text-red-500 text-xs mt-1">{emailError}</div>
+              )}
+            </div>
+            <div className="relative mt-4">
+              <Input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="password123"
+                className={`w-[350px] ${passwordError ? "border-red-500" : ""}`}
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                onFocus={handlePasswordFocus}
+              />
+              {passwordError && (
+                <div className="text-red-500 text-xs mt-1">{passwordError}</div>
+              )}
+            </div>
+            <Button
+              type="submit"
+              className="mt-4 w-[350px] bg-[#343A40] hover:bg-[#4a535c]"
+            >
               Sign Up
             </Button>
-          </div>
+            {signupError && (
+              <div className="text-red-500 text-xs mt-1">{signupError}</div>
+            )}
+          </form>
           <div className="mt-5">
             <span className="flex text-gray-300">or continue with</span>
           </div>
@@ -93,14 +198,6 @@ const Signup = () => {
               <FaFacebook className="-ml-6 mr-5 w-[22px] h-[22px] text-blue-600" />
               Continue with facebook
             </Button>
-          </div>
-          <div className="mt-5 text-sm text-center">
-            <p className="text-balance">
-              By clicking continue, you agree to our{" "}
-              <span className="underline">Terms</span> <br />
-              <span className="underline"> of Service</span> and{" "}
-              <span className="underline">Privacy Policy</span>.
-            </p>
           </div>
         </div>
       </div>

@@ -33,7 +33,7 @@ const Cardinfor: DetailCard[] = [
   },
 ];
 
-const employerProfile = () => {
+const EmployerProfile = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
@@ -151,4 +151,4 @@ const employerProfile = () => {
   );
 };
 
-export default employerProfile;
+export default EmployerProfile;

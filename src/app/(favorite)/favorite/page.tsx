@@ -14,7 +14,7 @@ const Cardinfor: DetailCard[] = [
     companyLogo: "/images.png",
     peopleAmount: "100+ people",
     jobTitle: "UX/UI Intership",
-    salary: "$150-$200",
+    salary: "150-200",
     location: "Phnom Penh",
     Emploment: "Full-Time",
     DeadLine: "01-01-2025",
@@ -25,7 +25,7 @@ const Cardinfor: DetailCard[] = [
     companyLogo: "/images.png",
     peopleAmount: "50+ people",
     jobTitle: "Vue Js Intership",
-    salary: "$100-$200",
+    salary: "100-200",
     location: "Phnom Penh",
     Emploment: "Full-Time",
     DeadLine: "09-08-2024",
@@ -36,7 +36,7 @@ const Cardinfor: DetailCard[] = [
     companyLogo: "/images.png",
     peopleAmount: "100+ people",
     jobTitle: "UX/UI Intership",
-    salary: "$150-$200",
+    salary: "150-200",
     location: "Phnom Penh",
     Emploment: "Full-Time",
     DeadLine: "01-01-2025",
@@ -47,7 +47,7 @@ const Cardinfor: DetailCard[] = [
     companyLogo: "/images.png",
     peopleAmount: "100+ people",
     jobTitle: "UX/UI Intership",
-    salary: "$150-$200",
+    salary: "150-200",
     location: "Phnom Penh",
     Emploment: "Full-Time",
     DeadLine: "01-01-2025",
@@ -75,6 +75,7 @@ const Favorite = () => {
 
   return (
     <main className="w-full container h-screen my-10 px-4 md:px-20">
+      <Typography className="mb-10 mt-6" fontSize="xl" >My Favorite :</Typography>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px]">
         {cards.map((job) => (
           <div key={job.id} className="card-container" onClick={(e) => {}}>

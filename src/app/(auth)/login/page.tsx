@@ -1,14 +1,59 @@
+'use client'
+import * as Yup from "yup";
+
+import React, { useState } from "react";
 import Link from "next/link";
-import React from "react";
+import { LoginSchema } from "../../../validation/loginValidate";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import Image from "next/legacy/image";
 import "../../globals.css";
 import { Icon } from "@/components";
 
 const Login = () => {
+  const [loginError, setLoginError] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      await LoginSchema.validate({ email, password }, { abortEarly: false });
+
+      // Your login logic goes here
+      console.log("Logging in with:", { email, password });
+    } catch (error) {
+      if (error instanceof Yup.ValidationError) {
+        error.inner.forEach((e) => {
+          if (e.path === "email") setEmailError(e.message);
+          if (e.path === "password") setPasswordError(e.message);
+        });
+      } else {
+        setLoginError("Invalid email or password");
+      }
+    }
+  };
+
+  const handleEmailFocus = () => {
+    setEmailError("");
+  };
+
+  const handlePasswordFocus = () => {
+    setPasswordError("");
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+  };
+
   return (
     <div className="flex h-screen mx-auto overflow-hidden">
       {/* Use flexbox to make it full height */}
@@ -33,7 +78,7 @@ const Login = () => {
         <div className="flex flex-col justify-center items-center h-full">
           {" "}
           {/* Use flexbox to make it full height */}
-          <Link href="/home">
+          <Link href="/">
             <Image
               src="/logo.svg"
               alt="logo"
@@ -48,17 +93,37 @@ const Login = () => {
               Enter your email below to create your account
             </p>
           </div>
-          <div className="mt-5">
-            <Input
-              accept="email"
-              placeholder="example@gmail.com"
-              className="w-[350px]"
-            />
-            <Input
-              accept="password"
-              placeholder="password123"
-              className="w-[350px] mt-4"
-            />
+          <form onSubmit={handleSubmit} className="mt-5">
+            <div className="relative">
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="example@gmail.com"
+                className={`w-[350px] ${emailError ? "border-red-500" : ""}`}
+                onChange={handleEmailChange}
+                value={email}
+                onFocus={handleEmailFocus}
+              />
+              {emailError && (
+                <div className="text-red-500 text-xs mt-1">{emailError}</div>
+              )}
+            </div>
+            <div className="relative mt-4">
+              <Input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="password123"
+                className={`w-[350px] ${passwordError ? "border-red-500" : ""}`}
+                onChange={handlePasswordChange}
+                value={password}
+                onFocus={handlePasswordFocus}
+              />
+              {passwordError && (
+                <div className="text-red-500 text-xs mt-1">{passwordError}</div>
+              )}
+            </div>
             <Link
               href="/forgot_password"
               className="flex justify-end text-blue-600 -mb-5 mt-2 text-sm underline"
@@ -66,8 +131,16 @@ const Login = () => {
               forgot password?
             </Link>
             <br />
-            <Button className="mt-4 w-[350px] bg-[#343A40] hover:bg-[#4a535c]">Login</Button>
-          </div>
+            {loginError && !emailError && !passwordError && (
+              <div className="text-red-500 text-xs mt-1">{loginError}</div>
+            )}
+            <Button
+              type="submit"
+              className="mt-4 w-[350px] bg-[#343A40] hover:bg-[#4a535c]"
+            >
+              Login
+            </Button>
+          </form>
           <div className="mt-5">
             <span className="flex text-gray-300">or continue with</span>
           </div>
@@ -88,14 +161,6 @@ const Login = () => {
               Continue with facebook
             </Button>
           </div>
-          <div className="mt-5 text-sm text-center">
-            <p className="text-balance">
-              By clicking continue, you agree to our{" "}
-              <span className="underline">Terms</span> <br />
-              <span className="underline"> of Service</span> and{" "}
-              <span className="underline">Privacy Policy</span>.
-            </p>
-          </div>
         </div>
       </div>
     </div>
@@ -103,3 +168,4 @@ const Login = () => {
 };
 
 export default Login;
+

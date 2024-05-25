@@ -4,6 +4,7 @@ interface ButtonProps {
   children: ReactNode;
   className?: string;
   size?: "sm" | "md" | "lg";
+  textColor?: "white" | "black";
   colorScheme?: "primary" | "secondary" | "warning" | "danger" | "success";
   colorOutline?:
     | "none"
@@ -22,7 +23,8 @@ interface ButtonProps {
     | "2xl"
     | "3xl"
     | "full";
-  onClick?: () => void; // Add onClick event handler
+  onClick?: (event: any) => void;
+  type?: "button" | "submit" | "reset";
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -32,8 +34,23 @@ const Button: React.FC<ButtonProps> = ({
   rounded = "base",
   colorScheme = "",
   colorOutline = "",
-  onClick, // Destructure onClick
+  onClick,
+  type = "button",
+  textColor = "black",
+  ...props
 }) => {
+
+  const textColorButton = (textColor: string) => {
+    switch(textColor) {
+      case "white":
+        return "text-white";
+      case "black":
+      return "text-black";
+      default:
+        return "text-black";
+    }
+  }
+
   const sizeButton = (size: string) => {
     switch (size) {
       case "sm":
@@ -104,18 +121,21 @@ const Button: React.FC<ButtonProps> = ({
     }
   };
 
+  const getColorTextStyle = textColorButton(textColor);
   const sizeButtonStyle = sizeButton(size);
   const colorSchemeStyle = getColorSchemeClass(colorScheme);
   const colorButtonOutline = buttonOutline(colorOutline);
   const getButtonRounded = ButtonRounded(rounded);
 
   return (
-    <div
-      className={`flex justify-center items-center cursor-pointer ${getButtonRounded} ${colorSchemeStyle} ${sizeButtonStyle} ${colorButtonOutline} ${className}`}
-      onClick={onClick} // Add onClick event handler
+    <button
+      type={type}
+      className={`flex justify-center items-center cursor-pointer ${getColorTextStyle} ${getButtonRounded} ${colorSchemeStyle} ${sizeButtonStyle} ${colorButtonOutline} ${className}`}
+      onClick={onClick}
+      {...props}
     >
       {children}
-    </div>
+    </button>
   );
 };
 

@@ -6,7 +6,6 @@ import {
   InputSearch,
   Icon,
   Select,
-  CardTips,
 } from "@/components";
 import Image from "next/legacy/image";
 const Search = () => {

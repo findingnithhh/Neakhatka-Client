@@ -10,7 +10,7 @@ const DOMAIN_NAME = "neakhatka.com";
 export default {
   config(_input) {
     return {
-      name: "neakhatka",
+      name: `neakhatka`,
       region: "us-east-1",
     };
   },
@@ -21,7 +21,7 @@ export default {
       const hostedZone = HostedZone.fromLookup(stack, "HostedZone", {
         domainName: ROOT_DOMAIN_NAME,
       });
-
+      console.log(stack.stage, hostedZone);
       // CREATE A SSL CERTIFICATE LINKED TO THE HOSTED ZONE
       const certificate = new cdk.aws_certificatemanager.Certificate(
         stack,
@@ -42,7 +42,10 @@ export default {
       const bucket = new Bucket(stack, "public", {
         cdk: {
           bucket: {
-            bucketName: "neakhatka-website",
+            bucketName:
+              stack.stage === "dev"
+                ? "neakhatka-website"
+                : `${stack.stage}-neakhatka-website`,
           },
         },
       });
@@ -55,7 +58,10 @@ export default {
             stack.stage === "prod"
               ? DOMAIN_NAME
               : `${stack.stage}.${DOMAIN_NAME}`,
-          domainAlias: `www.${DOMAIN_NAME}`,
+          domainAlias:
+            stack.stage === "prod"
+              ? `www.${DOMAIN_NAME}`
+              : `www.${stack.stage}.${DOMAIN_NAME}`,
           cdk: {
             hostedZone,
             certificate,

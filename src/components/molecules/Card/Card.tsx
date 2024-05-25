@@ -23,6 +23,7 @@ const Card: React.FC<CardProps> = ({
 }) => {
   const {
     id,
+    companyLogo,
     companyName,
     peopleAmount,
     jobTitle,
@@ -71,7 +72,7 @@ const Card: React.FC<CardProps> = ({
           <div className="flex">
             <Image
               className="rounded-full"
-              src="/company.svg"
+              src={companyLogo}
               alt="company logo"
               width={48}
               height={48}
@@ -107,7 +108,10 @@ const Card: React.FC<CardProps> = ({
               {jobTitle}
             </Typography>
             <Typography className="text-gray-500" fontSize="sm">
-              {salary}
+              <div className="flex">
+                <Icon className="mr-0.5" label="Dollar" size="sm" />
+                {salary}
+              </div>
             </Typography>
             <div>
               <Typography className="mt-2" fontSize="sm">
@@ -136,7 +140,7 @@ const Card: React.FC<CardProps> = ({
             </Typography>
             <Typography className="text-gray-500" fontSize="sm">
               <div className="flex">
-                <Icon className="mr-2" label="Date" size="sm" />
+                <Icon className="mr-2" label="Calendar" size="sm" />
                 {DeadLine}
               </div>
             </Typography>
