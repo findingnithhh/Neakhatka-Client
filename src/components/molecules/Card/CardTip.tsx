@@ -12,7 +12,7 @@ export default function CardTip() {
       </Typography>
       <Typography
         align="center"
-        className="my-4 mx-80 text-gray-500"
+        className= "my-4 mx-8 sm:mx-20 md:mx-40 lg:mx-60 xl:mx-80 text-gray-500"
         fontSize="sm"
       >
         Update your resume, network effectively, prepare for interviews, and

@@ -35,7 +35,7 @@ export const Default: Story = {
 
     // Simulate click and check if the button is still enabled
     await userEvent.click(button);
-    expect(button).toBeEnabled();
+    await expect(button).toBeEnabled();
   },
 };
 

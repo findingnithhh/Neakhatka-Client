@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react';
+import { Typography, Input, Button } from "@/components";
 import { FaTrash } from 'react-icons/fa';
 
 interface Candidate {
@@ -34,10 +35,10 @@ const Dashboard: React.FC = () => {
 
   return (
     <div >
-      <h1 className="text-2xl font-bold mb-4">Candidate Table</h1> 
+      <Typography fontSize='md' className='font-bold mb-4'>Candidate Table</Typography>
       <table className="w-full border-collapse">
         <thead>
-          <tr className="bg-gray-200">
+          <tr className="bg-gray-200 text-sm">
             <th className="py-2 px-4 text-left">Username</th>
             <th className="py-2 px-4 text-left">Email</th>
             <th className="py-2 px-4 text-left">Date</th>
@@ -51,24 +52,16 @@ const Dashboard: React.FC = () => {
               key={index}
               className={`border-b ${index % 2 === 0 ? 'bg-gray-100' : ''}`}
             >
-              <td className="py-2 px-4">{candidate.name}</td>
-              <td className="py-2 px-4">{candidate.email}</td>
-              <td className="py-2 px-4">{candidate.date}</td>
-              <td className="py-2 px-4">
-                <button
-                  onClick={() => viewCandidate(candidate)}
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
-                >
-                  View
-                </button>
+              <td className="py-2 px-4 text-sm">{candidate.name}</td>
+              <td className="py-2 px-4 text-sm">{candidate.email}</td>
+              <td className="py-2 px-4 text-sm">{candidate.date}</td>
+              <td className="py-2 px-4 text-sm">
+                <Button onClick={() => viewCandidate(candidate)} colorScheme='primary' size='sm' textColor='white'>
+                  view
+                </Button>
               </td>
               <td className="py-2 px-4">
-                <button
-                  onClick={() => removeCandidate(index)}
-                  className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded"
-                >
-                  <FaTrash />
-                </button>
+                <Button onClick={() => removeCandidate(index)} colorScheme='danger' size='sm' className="text-white"><FaTrash /></Button>
               </td>
             </tr>
           ))}

@@ -14,6 +14,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Image from "next/legacy/image";
 import { useCount } from "../../../contexts/CountContext";
+interface MenuItem {
+  text: string;
+  link: string;
+}
+
 
 interface MenuItem {
   text: string;
@@ -48,7 +53,7 @@ export default function Nav() {
       onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent>
-        <NavbarBrand>
+        <NavbarBrand >
           <Link href="/">
             <Image src="/logo.svg" alt="logo" width={45} height={45} />
           </Link>
