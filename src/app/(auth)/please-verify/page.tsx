@@ -1,9 +1,11 @@
-import { Button, Typography } from '@/components'
-import Image from 'next/image'
-import Link from 'next/link';
-import React from 'react'
+"use client";
+import { Button, Typography } from "@/components";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 const PleaseVerify = () => {
+
   return (
     <>
       <div className="container h-screen flex justify-center items-start flex-col">
@@ -55,6 +57,6 @@ const PleaseVerify = () => {
       </div>
     </>
   );
-}
+};
 
-export default PleaseVerify
+export default PleaseVerify;
