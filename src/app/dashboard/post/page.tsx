@@ -7,33 +7,30 @@ import PostJob from "../edit_post/page";
 
 interface Company {
   id: number;
-  name: string;
   position: string;
-  totalEmployees: string;
-  startDate: string;
-  endDate: string;
+  salary: string;
+  duration: string;
+  dateLine: string;
 }
 
 const Dashboard: React.FC = () => {
   const [companies, setCompanies] = useState<Company[]>([
     {
       id: 1,
-      name: "Tech Solutions",
       position: "Software Engineer",
-      totalEmployees: "5",
-      startDate: "2023-06-01",
-      endDate: "N/A",
+      salary: "$100-200",
+      duration: "3 months",
+      dateLine: "01-08-2024",
     },
     {
       id: 2,
-      name: "HealthCorp",
       position: "Data Analyst",
-      totalEmployees: "2",
-      startDate: "2023-08-15",
-      endDate: "N/A",
+      salary: "$100-200",
+      duration: "3 months",
+      dateLine: "01-08-2024",
     },
   ]);
-  
+
   const [isOpen, setIsOpen] = useState(false);
 
   const removeCandidate = (index: number) => {
@@ -42,55 +39,74 @@ const Dashboard: React.FC = () => {
     setCompanies(updatedCompanies);
   };
 
-  
-
   const closeModal = () => {
     setIsOpen(false);
   };
 
   return (
-    <div>
+    <div >
       <div className="flex justify-between items-center mb-4">
-        <Typography fontSize="md">Company Post Table</Typography>
-        <Button onClick={() => setIsOpen(true)} colorScheme="primary" textColor="white" className="text-md px-4 py-2 rounded w-40 font-bold mb-4">
-        Add Information
+        <Typography fontSize="md">Total Post</Typography>
+        <Button
+          onClick={() => setIsOpen(true)}
+          colorScheme="primary"
+          textColor="white"
+          className="text-md px-4 py-2 rounded mb-4 w-44"
+        >
+          Create Post
         </Button>
       </div>
-      <table className="w-full border-collapse">
-        <thead >
-          <tr className="bg-gray-200 text-sm">
-          <th className="py-2 px-4 border-b text-sm">Company Name</th>
-            <th className="py-2 px-4 border-b">Position</th>
-            <th className="py-2 px-4 border-b">Total Employees</th>
-            <th className="py-2 px-4 border-b">Start Date</th>
-            <th className="py-2 px-4 border-b">End Date</th>
-            <th className="py-2 px-4 border-b">Edit</th>
-            <th className="py-2 px-4 border-b">Actions</th>
+      <table className="w-full table-auto">
+        <thead className="bg-gray-200 text-sm font-normal">
+          <tr className="">
+            <th className="py-2 border-b font-normal">Position</th>
+            <th className="py-2 border-b font-normal">Salary</th>
+            <th className="py-2 border-b font-normal">Duration</th>
+            <th className="py-2 border-b font-normal">Date Line</th>
+            <th className="py-2 border-b font-normal">Edit</th>
+            <th className="py-2 border-b font-normal">Actions</th>
           </tr>
         </thead>
         <tbody>
-        {companies.map((company, index) => (
+          {companies.map((company, index) => (
             <tr
               key={index}
-              className={`border-b ${index % 2 === 0 ? "bg-gray-100" : ""}`}
+              className={`border-b ${index % 2 === 0 ? "bg-white" : ""}`}
             >
-              <td className="py-2 px-4 border-b text-sm">{company.name}</td>
-              <td className="py-2 px-4 border-b text-sm">{company.position}</td>
-              <td className="py-2 px-4 border-b text-sm">{company.totalEmployees}</td>
-              <td className="py-2 px-4 border-b text-sm">{company.startDate}</td>
-              <td className="py-2 px-4 border-b text-sm">{company.endDate}</td>
-            
-              <td className="py-2 px-4 border-b">
-                <Button size="sm" colorScheme="primary" textColor="white" >Edit</Button>
+              <td className="py-2  border-b text-sm">{company.position}</td>
+              <td className="py-2  border-b text-sm">{company.salary}</td>
+              <td className="py-2  border-b text-sm">{company.duration}</td>
+              <td className="py-2  border-b text-sm">{company.dateLine}</td>
+
+              <td className="py-2  border-b">
+                <Typography
+                  fontSize="sm"
+                  className="text-blue-500 cursor-pointer"
+                >
+                  Edit
+                </Typography>
               </td>
-              <td className="py-2 px-4">
-                <Button onClick={() => removeCandidate(index)} colorScheme="danger" size="sm" className="text-white"> <FaTrash /></Button>
+              <td className="py-2 ">
+                <Button
+                  onClick={() => removeCandidate(index)}
+                  colorScheme="danger"
+                  size="sm"
+                  className="text-white"
+                >
+                  {" "}
+                  <FaTrash />
+                </Button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} size="xl" corner="3xl">
+      <Modal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        size="xl"
+        corner="3xl"
+      >
         <div className="bg-white p-8">
           <PostJob />
         </div>
