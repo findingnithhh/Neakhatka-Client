@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Typography, Input, Button } from "@/components";
 import { FaTrash } from "react-icons/fa";
 import Modal from "@/components/molecules/Modal/Modal";
@@ -30,83 +30,91 @@ const Dashboard: React.FC = () => {
       dateLine: "01-08-2024",
     },
   ]);
-
+  
   const [isOpen, setIsOpen] = useState(false);
-
+  const [selectedRow, setSelectRow] = useState <number | null>(null);
+  const tableRef = useRef<HTMLDivElement>(null);
   const removeCandidate = (index: number) => {
     const updatedCompanies = [...companies];
     updatedCompanies.splice(index, 1);
     setCompanies(updatedCompanies);
+    setSelectRow(null);
   };
 
   const closeModal = () => {
     setIsOpen(false);
   };
+  const handleClick= (index:number)=>{
+    setSelectRow(index);
+  }
+  const handleRowDoubleClick =(id:number) =>{
+  window.location.href= `/dashboard/post/detail/${id}`;
+  }
+  const handleClickOutside = (event: MouseEvent) => {
+    if (tableRef.current && !tableRef.current.contains(event.target as Node)) {
+      setSelectRow(null);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
-    <div >
+    <div>
       <div className="flex justify-between items-center mb-4">
-        <Typography fontSize="md">Total Post</Typography>
-        <Button
-          onClick={() => setIsOpen(true)}
-          colorScheme="primary"
-          textColor="white"
-          className="text-md px-4 py-2 rounded mb-4 w-44"
-        >
-          Create Post
+        <Typography fontSize="md">Total Post </Typography>
+        <Button onClick={() => setIsOpen(true)} colorScheme="primary" textColor="white" className="w-40 text-md px-4 py-2 rounded" >
+        Create Post
         </Button>
-      </div>
-      <table className="w-full table-auto">
-        <thead className="bg-gray-200 text-sm font-normal">
-          <tr className="">
-            <th className="py-2 border-b font-normal">Position</th>
-            <th className="py-2 border-b font-normal">Salary</th>
-            <th className="py-2 border-b font-normal">Duration</th>
-            <th className="py-2 border-b font-normal">Date Line</th>
-            <th className="py-2 border-b font-normal">Edit</th>
-            <th className="py-2 border-b font-normal">Actions</th>
+      </div >
+      <div ref={tableRef} className="overflow-x-auto shadow-md">
+      <table className="min-w-full border-collapse">
+        <thead >
+          <tr className="bg-gray-200 text-sm ">
+          <th className="py-2 px-4 border-x text-left font-normal">Position</th>
+            <th className="py-2 px-4 border-x text-left font-normal">Salary</th>
+            <th className="py-2 px-4 border-x text-left font-normal">Duration</th>
+            <th className="py-2 px-4 border-x text-left font-normal">Date Line</th>
+            <th className="py-2 px-4 border-x font-normal">Actions</th>
           </tr>
         </thead>
-        <tbody>
-          {companies.map((company, index) => (
+        <tbody className="text-gray-500">
+        {companies.map((company, index) => (
             <tr
-              key={index}
-              className={`border-b ${index % 2 === 0 ? "bg-white" : ""}`}
+            key={index}
+            className={`border-x ${index === selectedRow ? "bg-gray-300" : ""}`}
+            onClick={() => handleClick(index)}
+            onDoubleClick={() => handleRowDoubleClick(company.id)}
             >
-              <td className="py-2  border-b text-sm">{company.position}</td>
-              <td className="py-2  border-b text-sm">{company.salary}</td>
-              <td className="py-2  border-b text-sm">{company.duration}</td>
-              <td className="py-2  border-b text-sm">{company.dateLine}</td>
-
-              <td className="py-2  border-b">
-                <Typography
-                  fontSize="sm"
-                  className="text-blue-500 cursor-pointer"
-                >
-                  Edit
-                </Typography>
-              </td>
-              <td className="py-2 ">
-                <Button
-                  onClick={() => removeCandidate(index)}
-                  colorScheme="danger"
-                  size="sm"
-                  className="text-white"
-                >
-                  {" "}
-                  <FaTrash />
-                </Button>
+              <td className="py-2 px-4  text-sm">{company.position}</td>
+              <td className="py-2 px-4  text-sm">{company.salary}</td>
+              <td className="py-2 px-4  text-sm">{company.duration}</td>
+              <td className="py-2 px-4  text-sm">{company.dateLine}</td>
+            
+              <td className="py-2 px-4 flex justify-center items-center space-x-4">
+              <div className="text-blue-500 cursor-pointer">
+                    <Typography fontSize="sm">Edit</Typography>
+                  </div>
+                  <div
+                    className="text-red-500 cursor-pointer"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      removeCandidate(index);
+                    }}
+                  >
+                    <Typography fontSize="sm">Delete</Typography>
+                  </div>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <Modal
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-        size="xl"
-        corner="3xl"
-      >
+      </div>
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} size="xl" corner="3xl">
         <div className="bg-white p-8">
           <PostJob />
         </div>
