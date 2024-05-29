@@ -1,42 +1,15 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import { Card, Icon } from "@/components";
+import { Icon } from "@/components";
 import { Typography } from "../../../components/atoms/Typography";
 import { Button } from "@/components/ui/button";
-import { DetailCard } from "@/Types/DetailCard";
-import { useState } from "react";
 import Modal from "@/components/molecules/Modal/Modal";
 import EditEmployer from "@/app/dashboard/edit_employer/page";
 
-const Cardinfor: DetailCard[] = [
-  {
-    id: "1",
-    companyName: "Wing Bank",
-    companyLogo: "/images.png",
-    peopleAmount: "100+ people",
-    jobTitle: "UX/UI Intership",
-    salary: "$150-$200",
-    location: "Phnom Penh",
-    Emploment: "Full-Time",
-    DeadLine: "01-01-2025",
-  },
-  {
-    id: "2",
-    companyName: "",
-    companyLogo: "",
-    peopleAmount: "",
-    jobTitle: "",
-    salary: "",
-    location: "",
-    Emploment: "",
-    DeadLine: "",
-  },
-];
-
-const EmployerProfile = () => {
+const EmployerProfile: React.FC = () => {
   const [employerData, setEmployerData] = useState({
-    id:"1",
+    id: "1",
     companyName: "Sathapana Bank",
     contactEmail: "sathapanabankinfo@gmail.com",
     contactPhone: "0965774927",
@@ -44,19 +17,21 @@ const EmployerProfile = () => {
     websiteLink: "https://www.saathapana.com.kh",
     location: "Phnom Penh",
     address: "8391 Elgin. St. Celina. Delaware 10",
-    
+    totalEmployees: "10-20",
+    description:
+      "SATHAPANA Limited was originally established as a non-government organization (NGO) in 1995, and at the time of acquisition, it had become a deposit-taking microfinance institution providing funds to the low income people throughout the country with a strong contribution track record in Cambodia economic development.",
   });
 
-  // Function to update employer data
+  const [isOpen, setIsOpen] = useState(false);
+
   const updateEmployerData = (updatedData: any) => {
     setEmployerData(updatedData);
+    setIsOpen(false);
   };
 
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <div className="container xl:max-w-[1200px] bg-[#F8F9FA] rounded-xl mt-5 px-10 py-5">
-        {/* top */}
         <div className="w-full flex md:flex-row justify-between items-center">
           <div className="flex items-center mb-4 md:mb-0">
             <Image
@@ -68,10 +43,10 @@ const EmployerProfile = () => {
             />
             <div className="ml-4 md:ml-6">
               <Typography className="mb-1 md:mb-2 text-[18px] md:text-[20px]">
-                Sathapana Bank
+                {employerData.companyName}
               </Typography>
               <Typography className="text-gray-400 text-[12px] md:text-[16px]">
-                sathapanabankinfo@gmail.com
+                {employerData.contactEmail}
               </Typography>
             </div>
           </div>
@@ -93,78 +68,49 @@ const EmployerProfile = () => {
         >
           <div className="bg-white p-8">
             <h1 className="flex justify-center flex-col items-center">
-            <EditEmployer data={employerData} onUpdate={updateEmployerData} />
+              <EditEmployer />
             </h1>
           </div>
         </Modal>
-        {/* bottom */}
         <div className="flex flex-col md:flex-row justify-between mt-5">
           <div className="w-full">
             <div className="my-[25px]">
               <Typography fontSize="lg">Contact Email</Typography>
-              <Typography>sathapanabankinfo@gmail.com</Typography>
+              <Typography>{employerData.contactEmail}</Typography>
             </div>
             <div className="my-[25px]">
               <Typography fontSize="lg">Contact Number</Typography>
-              <Typography>0965774927</Typography>
+              <Typography>{employerData.contactPhone}</Typography>
             </div>
             <div className="my-[25px]">
               <Typography fontSize="lg">Contact Person</Typography>
-              <Typography>San Visal</Typography>
+              <Typography>{employerData.contactPerson}</Typography>
             </div>
             <div className="my-[25px]">
               <Typography fontSize="lg">Website</Typography>
-              <Typography>https://www.sathapana.com.kh</Typography>
+              <Typography>{employerData.websiteLink}</Typography>
             </div>
             <div className="my-[25px]">
               <Typography fontSize="lg">Employees</Typography>
-              <Typography>10-20 people</Typography>
+              <Typography>{employerData.totalEmployees}</Typography>
             </div>
           </div>
           <div className="w-full">
             <div className="my-[25px]">
               <Typography fontSize="lg">Location</Typography>
-              <Typography>Phnom Penh</Typography>
+              <Typography>{employerData.location}</Typography>
             </div>
             <div className="my-[25px]">
               <Typography fontSize="lg">Address</Typography>
-              <Typography>
-                2972 Westheimer Rd. Santa Ana, Illinois 85486
-              </Typography>
+              <Typography>{employerData.address}</Typography>
             </div>
             <div className="my-[25px]">
               <Typography fontSize="lg">Company Description</Typography>
-              <Typography>
-                SATHAPANA Limited was originally established as a non-government
-                organization (NGO) in 1995, and at the time of acquisition, it
-                had become a deposit-taking microfinance institution providing
-                funds to the low income people throughout the country with a
-                strong contribution track record in Cambodia economic
-                development.
-              </Typography>
+              <Typography>{employerData.description}</Typography>
             </div>
           </div>
         </div>
       </div>
-      {/* card */}
-      {/* <CardList cards={detailCard} /> */}
-
-      <main className="w-full mx-auto xl:max-w-[1200px] my-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px]">
-          {Cardinfor.map((job) => (
-            <div key={job.id} className="card-container">
-              {job.id === "2" && !job.companyName ? (
-                <div className="bg-[#F8F9FA] rounded-lg p-6 flex items-center justify-center h-full shadow-lg cursor-pointer">
-                  <Icon label="Plus" />
-                </div>
-              ) : (
-                <Card className="w-full h-auto" data={job} />
-              )}
-            </div>
-          ))}
-        </div>
-      </main>
-      {/* <CardList /> */}
     </>
   );
 };

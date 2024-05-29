@@ -7,55 +7,55 @@ import { DetailCard } from "@/Types/DetailCard";
 import Modal from "@/components/molecules/Modal/Modal";
 import { PiWarningCircleFill } from "react-icons/pi";
 
-const Cardinfor: DetailCard[] = [
-  {
-    id: "1",
-    companyName: "Wing Bank",
-    companyLogo: "/images.png",
-    peopleAmount: "100+ people",
-    jobTitle: "UX/UI Intership",
-    salary: "150-200",
-    location: "Phnom Penh",
-    Emploment: "Full-Time",
-    DeadLine: "01-01-2025",
-  },
-  {
-    id: "2",
-    companyName: "Sathapana Bank",
-    companyLogo: "/images.png",
-    peopleAmount: "50+ people",
-    jobTitle: "Vue Js Intership",
-    salary: "100-200",
-    location: "Phnom Penh",
-    Emploment: "Full-Time",
-    DeadLine: "09-08-2024",
-  },
-  {
-    id: "3",
-    companyName: "Wing Bank",
-    companyLogo: "/images.png",
-    peopleAmount: "100+ people",
-    jobTitle: "UX/UI Intership",
-    salary: "150-200",
-    location: "Phnom Penh",
-    Emploment: "Full-Time",
-    DeadLine: "01-01-2025",
-  },
-  {
-    id: "4",
-    companyName: "Wing Bank",
-    companyLogo: "/images.png",
-    peopleAmount: "100+ people",
-    jobTitle: "UX/UI Intership",
-    salary: "150-200",
-    location: "Phnom Penh",
-    Emploment: "Full-Time",
-    DeadLine: "01-01-2025",
-  },
-];
+// const Cardinfor: DetailCard[] = [
+//   {
+//     id: "1",
+//     companyName: "Wing Bank",
+//     companyLogo: "/images.png",
+//     peopleAmount: "100+ people",
+//     jobTitle: "UX/UI Intership",
+//     salary: "150-200",
+//     location: "Phnom Penh",
+//     Emploment: "Full-Time",
+//     DeadLine: "01-01-2025",
+//   },
+//   {
+//     id: "2",
+//     companyName: "Sathapana Bank",
+//     companyLogo: "/images.png",
+//     peopleAmount: "50+ people",
+//     jobTitle: "Vue Js Intership",
+//     salary: "100-200",
+//     location: "Phnom Penh",
+//     Emploment: "Full-Time",
+//     DeadLine: "09-08-2024",
+//   },
+//   {
+//     id: "3",
+//     companyName: "Wing Bank",
+//     companyLogo: "/images.png",
+//     peopleAmount: "100+ people",
+//     jobTitle: "UX/UI Intership",
+//     salary: "150-200",
+//     location: "Phnom Penh",
+//     Emploment: "Full-Time",
+//     DeadLine: "01-01-2025",
+//   },
+//   {
+//     id: "4",
+//     companyName: "Wing Bank",
+//     companyLogo: "/images.png",
+//     peopleAmount: "100+ people",
+//     jobTitle: "UX/UI Intership",
+//     salary: "150-200",
+//     location: "Phnom Penh",
+//     Emploment: "Full-Time",
+//     DeadLine: "01-01-2025",
+//   },
+// ];
 
 const Favorite = () => {
-  const [cards, setCards] = useState([...Cardinfor]);
+  const [cards, setCards] = useState();
   const [selectedCardId, setSelectedCardId] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
@@ -64,10 +64,10 @@ const Favorite = () => {
     setIsOpen(true);
   };
 
-  const handleConfirmDelete = () => {
-    setCards(cards.filter((card) => card.id !== selectedCardId));
-    setIsOpen(false);
-  };
+  // const handleConfirmDelete = () => {
+  //   setCards(cards.filter((card) => card.id !== selectedCardId));
+  //   setIsOpen(false);
+  // };
 
   const handleCancelDelete = () => {
     setIsOpen(false);
@@ -77,7 +77,7 @@ const Favorite = () => {
     <main className="w-full container h-screen my-10 px-4 md:px-20">
       <Typography className="mb-10 mt-6" fontSize="xl" >My Favorite :</Typography>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px]">
-        {cards.map((job) => (
+        {/* {cards.map((job) => (
           <div key={job.id} className="card-container" onClick={(e) => {}}>
             <Card
               className="w-full h-auto"
@@ -86,7 +86,7 @@ const Favorite = () => {
               onDelete={() => handleDeleteCard(job.id)}
             />
           </div>
-        ))}
+        ))} */}
       </div>
 
       <Modal
@@ -113,7 +113,7 @@ const Favorite = () => {
                 Cancel
               </Button>
               <Button
-                onClick={handleConfirmDelete}
+                // onClick={handleConfirmDelete}
                 className="bg-[#C33025] hover:bg-[#af2a21] hover:transition-all rounded-lg text-white"
               >
                 Remove

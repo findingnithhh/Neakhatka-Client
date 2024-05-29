@@ -1,5 +1,5 @@
 // Signup.tsx
-'use client'
+"use client";
 import * as Yup from "yup";
 
 import React, { useState } from "react";
@@ -32,6 +32,7 @@ const Signup = () => {
 
       // Your signup logic goes here
       console.log("Signing up with:", { companyname, email, password });
+      window.location.href = "/SignupSuccess";
     } catch (error) {
       if (error instanceof Yup.ValidationError) {
         error.inner.forEach((e) => {
@@ -69,16 +70,15 @@ const Signup = () => {
 
   const handleCompanyName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCompanyname(e.target.value);
-  }
+  };
 
   const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
-  }
+  };
 
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  }
-
+    setPassword(e.target.value);
+  };
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -124,14 +124,11 @@ const Signup = () => {
                 type="text"
                 placeholder="Company name"
                 className={`w-[350px] ${
-                  companynameError
-                    ? "border-red-500"
-                    : ""
+                  companynameError ? "border-red-500" : ""
                 }`}
                 onChange={handleCompanyName}
                 value={companyname}
                 onFocus={handleCompanynameFocus}
-
               />
               {companynameError && (
                 <div className="text-red-500 text-xs mt-1">
@@ -145,12 +142,8 @@ const Signup = () => {
                 name="email"
                 type="email"
                 placeholder="example@gmail.com"
-                className={`w-[350px] ${
-                  emailError
-                    ? "border-red-500"
-                    : ""
-                }`}
-                onChange={(e) => setEmail(e.target.value)}
+                className={`w-[350px] ${emailError ? "border-red-500" : ""}`}
+                onChange={handleEmail}
                 value={email}
                 onFocus={handleEmailFocus}
               />
@@ -164,12 +157,8 @@ const Signup = () => {
                 name="password"
                 type="password"
                 placeholder="password123"
-                className={`w-[350px] ${
-                  passwordError
-                    ? "border-red-500"
-                    : ""
-                }`}
-                onChange={(e) => setPassword(e.target.value)}
+                className={`w-[350px] ${passwordError ? "border-red-500" : ""}`}
+                onChange={handlePasswordChange}
                 value={password}
                 onFocus={handlePasswordFocus}
               />

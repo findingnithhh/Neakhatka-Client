@@ -35,7 +35,7 @@ const Sidebar = () => {
             Candidates
           </a>
         </div>
-        <div className="w-full px-4 py-3 flex items-center rounded-lg">
+        <div className="w-full px-4 py-3 flex items-center rounded-lg ">
           <PiSignOut className="mx-2" />
           <a href="/dashboard/" className="ml-2">
             Sign Out

@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import NavLinks from './nav-links';
-import Image from 'next/image';
 function SideNav() {
   return (
     <div className="flex h-full flex-col bg-white px-5 border-r-1 border-gray-200">
@@ -19,7 +18,7 @@ function SideNav() {
         <NavLinks />
         <div className="hidden h-auto w-full grow rounded-md bg-white md:block"></div>
         <form>
-          <button className="flex h-[48px] w-full grow items-center justify-center gap-2 bg-white p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3">
+          <button className="flex h-[48px] w-full grow items-center justify-center text-red-700 bg-red-100 p-3 text-sm font-medium md:flex-none md:justify-center md:p-2 md:px-3 rounded-lg">
             {/* <PowerIcon className="w-6" /> */}
             <div className="hidden md:block">Sign Out</div>
           </button>
