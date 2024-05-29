@@ -95,7 +95,11 @@ const Signup = () => {
       </div>
       <div className="right w-full p-10">
         <div className="text-end">
-          <Link href="/login" color="primary" className="text-sm">
+          <Link
+            href="/login"
+            color="primary"
+            className="text-sm text-blue-500 underline"
+          >
             Login
           </Link>
         </div>

@@ -67,7 +67,7 @@ const Dashboard: React.FC = () => {
     <div>
       <div className="flex justify-between items-center mb-4">
         <Typography fontSize="md">Total Post </Typography>
-        <Button onClick={() => setIsOpen(true)} colorScheme="primary" textColor="white" className="w-40 text-md px-4 py-2 rounded" >
+        <Button onClick={() => setIsOpen(true)} colorScheme="primary" textColor="white" size="sm" className="text-md px-4 py-2 rounded" >
         Create Post
         </Button>
       </div >

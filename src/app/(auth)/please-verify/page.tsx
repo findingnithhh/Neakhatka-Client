@@ -8,7 +8,7 @@ const PleaseVerify = () => {
 
   return (
     <>
-      <div className="container h-screen flex justify-center items-start flex-col">
+      <div className="w-full lg:container h-screen flex justify-center items-start flex-col">
         <div className="container my-10 -mt-32">
           <Link href="/">
             <Image src="/logo.svg" alt="please verify" width={60} height={60} />

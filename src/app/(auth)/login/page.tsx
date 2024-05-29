@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import * as Yup from "yup";
 
 import React, { useState } from "react";
@@ -71,7 +71,7 @@ const Login = () => {
       </div>
       <div className="right w-full p-10">
         <div className="text-end">
-          <Link href="/join" color="primary" className="text-sm">
+          <Link href="/join" color="primary" className="text-sm text-blue-500 underline">
             Sign Up
           </Link>
         </div>
@@ -168,4 +168,3 @@ const Login = () => {
 };
 
 export default Login;
-
