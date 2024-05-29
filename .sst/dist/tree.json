@@ -4,21 +4,21 @@
     "id": "App",
     "path": "",
     "children": {
-      "dev-neakhatka-Site": {
-        "id": "dev-neakhatka-Site",
-        "path": "dev-neakhatka-Site",
+      "prod-neakhatka-Site": {
+        "id": "prod-neakhatka-Site",
+        "path": "prod-neakhatka-Site",
         "children": {
           "CustomResourceHandler": {
             "id": "CustomResourceHandler",
-            "path": "dev-neakhatka-Site/CustomResourceHandler",
+            "path": "prod-neakhatka-Site/CustomResourceHandler",
             "children": {
               "ServiceRole": {
                 "id": "ServiceRole",
-                "path": "dev-neakhatka-Site/CustomResourceHandler/ServiceRole",
+                "path": "prod-neakhatka-Site/CustomResourceHandler/ServiceRole",
                 "children": {
                   "ImportServiceRole": {
                     "id": "ImportServiceRole",
-                    "path": "dev-neakhatka-Site/CustomResourceHandler/ServiceRole/ImportServiceRole",
+                    "path": "prod-neakhatka-Site/CustomResourceHandler/ServiceRole/ImportServiceRole",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.Resource",
                       "version": "2.132.1"
@@ -26,7 +26,7 @@
                   },
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-neakhatka-Site/CustomResourceHandler/ServiceRole/Resource",
+                    "path": "prod-neakhatka-Site/CustomResourceHandler/ServiceRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -63,7 +63,7 @@
                           },
                           {
                             "key": "sst:stage",
-                            "value": "dev"
+                            "value": "prod"
                           }
                         ]
                       }
@@ -81,11 +81,11 @@
               },
               "Code": {
                 "id": "Code",
-                "path": "dev-neakhatka-Site/CustomResourceHandler/Code",
+                "path": "prod-neakhatka-Site/CustomResourceHandler/Code",
                 "children": {
                   "Stage": {
                     "id": "Stage",
-                    "path": "dev-neakhatka-Site/CustomResourceHandler/Code/Stage",
+                    "path": "prod-neakhatka-Site/CustomResourceHandler/Code/Stage",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.AssetStaging",
                       "version": "2.132.1"
@@ -93,7 +93,7 @@
                   },
                   "AssetBucket": {
                     "id": "AssetBucket",
-                    "path": "dev-neakhatka-Site/CustomResourceHandler/Code/AssetBucket",
+                    "path": "prod-neakhatka-Site/CustomResourceHandler/Code/AssetBucket",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                       "version": "2.132.1"
@@ -107,13 +107,13 @@
               },
               "Resource": {
                 "id": "Resource",
-                "path": "dev-neakhatka-Site/CustomResourceHandler/Resource",
+                "path": "prod-neakhatka-Site/CustomResourceHandler/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                   "aws:cdk:cloudformation:props": {
                     "code": {
                       "s3Bucket": "cdk-hnb659fds-assets-211125513237-us-east-1",
-                      "s3Key": "f78e20f8b67acb5d855832cd94de96b5b82a800f29eb5f20398ffb1218a27430.zip"
+                      "s3Key": "4b8124b2ca20eab9b730f397850fe93bd099862409751a6523ddb91d1ffeff18.zip"
                     },
                     "handler": "index.handler",
                     "memorySize": 1024,
@@ -131,7 +131,7 @@
                       },
                       {
                         "key": "sst:stage",
-                        "value": "dev"
+                        "value": "prod"
                       }
                     ],
                     "timeout": 900
@@ -150,7 +150,7 @@
           },
           "HostedZone": {
             "id": "HostedZone",
-            "path": "dev-neakhatka-Site/HostedZone",
+            "path": "prod-neakhatka-Site/HostedZone",
             "constructInfo": {
               "fqn": "aws-cdk-lib.Resource",
               "version": "2.132.1"
@@ -158,25 +158,25 @@
           },
           "Certificate": {
             "id": "Certificate",
-            "path": "dev-neakhatka-Site/Certificate",
+            "path": "prod-neakhatka-Site/Certificate",
             "children": {
               "Resource": {
                 "id": "Resource",
-                "path": "dev-neakhatka-Site/Certificate/Resource",
+                "path": "prod-neakhatka-Site/Certificate/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::CertificateManager::Certificate",
                   "aws:cdk:cloudformation:props": {
-                    "domainName": "dev.neakhatka.com",
+                    "domainName": "neakhatka.com",
                     "domainValidationOptions": [
                       {
-                        "domainName": "dev.neakhatka.com",
+                        "domainName": "neakhatka.com",
                         "hostedZoneId": "Z00104253LY3NFP52H338"
                       }
                     ],
                     "tags": [
                       {
                         "key": "Name",
-                        "value": "dev-neakhatka-Site/Certificate"
+                        "value": "prod-neakhatka-Site/Certificate"
                       },
                       {
                         "key": "sst:app",
@@ -184,7 +184,7 @@
                       },
                       {
                         "key": "sst:stage",
-                        "value": "dev"
+                        "value": "prod"
                       }
                     ],
                     "validationMethod": "DNS"
@@ -203,19 +203,19 @@
           },
           "public": {
             "id": "public",
-            "path": "dev-neakhatka-Site/public",
+            "path": "prod-neakhatka-Site/public",
             "children": {
               "Bucket": {
                 "id": "Bucket",
-                "path": "dev-neakhatka-Site/public/Bucket",
+                "path": "prod-neakhatka-Site/public/Bucket",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-neakhatka-Site/public/Bucket/Resource",
+                    "path": "prod-neakhatka-Site/public/Bucket/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
                       "aws:cdk:cloudformation:props": {
-                        "bucketName": "neakhatka-website",
+                        "bucketName": "prod-neakhatka-website",
                         "corsConfiguration": {
                           "corsRules": [
                             {
@@ -253,7 +253,7 @@
                           },
                           {
                             "key": "sst:stage",
-                            "value": "dev"
+                            "value": "prod"
                           }
                         ]
                       }
@@ -265,11 +265,11 @@
                   },
                   "Policy": {
                     "id": "Policy",
-                    "path": "dev-neakhatka-Site/public/Bucket/Policy",
+                    "path": "prod-neakhatka-Site/public/Bucket/Policy",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "dev-neakhatka-Site/public/Bucket/Policy/Resource",
+                        "path": "prod-neakhatka-Site/public/Bucket/Policy/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::S3::BucketPolicy",
                           "aws:cdk:cloudformation:props": {
@@ -336,18 +336,18 @@
               },
               "Parameter_bucketName": {
                 "id": "Parameter_bucketName",
-                "path": "dev-neakhatka-Site/public/Parameter_bucketName",
+                "path": "prod-neakhatka-Site/public/Parameter_bucketName",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-neakhatka-Site/public/Parameter_bucketName/Resource",
+                    "path": "prod-neakhatka-Site/public/Parameter_bucketName/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
                       "aws:cdk:cloudformation:props": {
-                        "name": "/sst/neakhatka/dev/Bucket/public/bucketName",
+                        "name": "/sst/neakhatka/prod/Bucket/public/bucketName",
                         "tags": {
                           "sst:app": "neakhatka",
-                          "sst:stage": "dev"
+                          "sst:stage": "prod"
                         },
                         "type": "String",
                         "value": {
@@ -374,15 +374,15 @@
           },
           "site": {
             "id": "site",
-            "path": "dev-neakhatka-Site/site",
+            "path": "prod-neakhatka-Site/site",
             "children": {
               "S3Bucket": {
                 "id": "S3Bucket",
-                "path": "dev-neakhatka-Site/site/S3Bucket",
+                "path": "prod-neakhatka-Site/site/S3Bucket",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-neakhatka-Site/site/S3Bucket/Resource",
+                    "path": "prod-neakhatka-Site/site/S3Bucket/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
                       "aws:cdk:cloudformation:props": {
@@ -403,7 +403,7 @@
                           },
                           {
                             "key": "sst:stage",
-                            "value": "dev"
+                            "value": "prod"
                           }
                         ]
                       }
@@ -415,11 +415,11 @@
                   },
                   "Policy": {
                     "id": "Policy",
-                    "path": "dev-neakhatka-Site/site/S3Bucket/Policy",
+                    "path": "prod-neakhatka-Site/site/S3Bucket/Policy",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "dev-neakhatka-Site/site/S3Bucket/Policy/Resource",
+                        "path": "prod-neakhatka-Site/site/S3Bucket/Policy/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::S3::BucketPolicy",
                           "aws:cdk:cloudformation:props": {
@@ -545,11 +545,11 @@
                   },
                   "AutoDeleteObjectsCustomResource": {
                     "id": "AutoDeleteObjectsCustomResource",
-                    "path": "dev-neakhatka-Site/site/S3Bucket/AutoDeleteObjectsCustomResource",
+                    "path": "prod-neakhatka-Site/site/S3Bucket/AutoDeleteObjectsCustomResource",
                     "children": {
                       "Default": {
                         "id": "Default",
-                        "path": "dev-neakhatka-Site/site/S3Bucket/AutoDeleteObjectsCustomResource/Default",
+                        "path": "prod-neakhatka-Site/site/S3Bucket/AutoDeleteObjectsCustomResource/Default",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnResource",
                           "version": "2.132.1"
@@ -569,7 +569,7 @@
               },
               "SSTExtension": {
                 "id": "SSTExtension",
-                "path": "dev-neakhatka-Site/site/SSTExtension",
+                "path": "prod-neakhatka-Site/site/SSTExtension",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.Resource",
                   "version": "2.132.1"
@@ -577,21 +577,21 @@
               },
               "CloudFrontFunction": {
                 "id": "CloudFrontFunction",
-                "path": "dev-neakhatka-Site/site/CloudFrontFunction",
+                "path": "prod-neakhatka-Site/site/CloudFrontFunction",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-neakhatka-Site/site/CloudFrontFunction/Resource",
+                    "path": "prod-neakhatka-Site/site/CloudFrontFunction/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::CloudFront::Function",
                       "aws:cdk:cloudformation:props": {
                         "autoPublish": true,
                         "functionCode": "function handler(r){var e=r.request;return e.headers[\"x-forwarded-host\"]=e.headers.host,e.cookies.__prerender_bypass&&(e.headers[\"x-prerender-bypass\"]={value:\"true\"}),e}\n",
                         "functionConfig": {
-                          "comment": "us-east-1devneakhatkaSitesiteCloudFrontFunctionA0E1ED61",
+                          "comment": "us-east-1prodneakhatkaSitesiteCloudFrontFunction423DABB0",
                           "runtime": "cloudfront-js-1.0"
                         },
-                        "name": "us-east-1devneakhatkaSitesiteCloudFrontFunctionA0E1ED61"
+                        "name": "us-east-1prodneakhatkaSitesiteCloudFrontFunction423DABB0"
                       }
                     },
                     "constructInfo": {
@@ -607,15 +607,15 @@
               },
               "ServerFunction": {
                 "id": "ServerFunction",
-                "path": "dev-neakhatka-Site/site/ServerFunction",
+                "path": "prod-neakhatka-Site/site/ServerFunction",
                 "children": {
                   "AssetReplacerPolicy": {
                     "id": "AssetReplacerPolicy",
-                    "path": "dev-neakhatka-Site/site/ServerFunction/AssetReplacerPolicy",
+                    "path": "prod-neakhatka-Site/site/ServerFunction/AssetReplacerPolicy",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "dev-neakhatka-Site/site/ServerFunction/AssetReplacerPolicy/Resource",
+                        "path": "prod-neakhatka-Site/site/ServerFunction/AssetReplacerPolicy/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                           "aws:cdk:cloudformation:props": {
@@ -664,11 +664,11 @@
                   },
                   "AssetReplacer": {
                     "id": "AssetReplacer",
-                    "path": "dev-neakhatka-Site/site/ServerFunction/AssetReplacer",
+                    "path": "prod-neakhatka-Site/site/ServerFunction/AssetReplacer",
                     "children": {
                       "Default": {
                         "id": "Default",
-                        "path": "dev-neakhatka-Site/site/ServerFunction/AssetReplacer/Default",
+                        "path": "prod-neakhatka-Site/site/ServerFunction/AssetReplacer/Default",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnResource",
                           "version": "2.132.1"
@@ -682,7 +682,7 @@
                   },
                   "IServerFunctionBucket": {
                     "id": "IServerFunctionBucket",
-                    "path": "dev-neakhatka-Site/site/ServerFunction/IServerFunctionBucket",
+                    "path": "prod-neakhatka-Site/site/ServerFunction/IServerFunctionBucket",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                       "version": "2.132.1"
@@ -690,15 +690,15 @@
                   },
                   "ServerFunction": {
                     "id": "ServerFunction",
-                    "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction",
+                    "path": "prod-neakhatka-Site/site/ServerFunction/ServerFunction",
                     "children": {
                       "ServiceRole": {
                         "id": "ServiceRole",
-                        "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/ServiceRole",
+                        "path": "prod-neakhatka-Site/site/ServerFunction/ServerFunction/ServiceRole",
                         "children": {
                           "ImportServiceRole": {
                             "id": "ImportServiceRole",
-                            "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/ServiceRole/ImportServiceRole",
+                            "path": "prod-neakhatka-Site/site/ServerFunction/ServerFunction/ServiceRole/ImportServiceRole",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.Resource",
                               "version": "2.132.1"
@@ -706,7 +706,7 @@
                           },
                           "Resource": {
                             "id": "Resource",
-                            "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/ServiceRole/Resource",
+                            "path": "prod-neakhatka-Site/site/ServerFunction/ServerFunction/ServiceRole/Resource",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                               "aws:cdk:cloudformation:props": {
@@ -743,7 +743,7 @@
                                   },
                                   {
                                     "key": "sst:stage",
-                                    "value": "dev"
+                                    "value": "prod"
                                   }
                                 ]
                               }
@@ -755,11 +755,11 @@
                           },
                           "DefaultPolicy": {
                             "id": "DefaultPolicy",
-                            "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/ServiceRole/DefaultPolicy",
+                            "path": "prod-neakhatka-Site/site/ServerFunction/ServerFunction/ServiceRole/DefaultPolicy",
                             "children": {
                               "Resource": {
                                 "id": "Resource",
-                                "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/ServiceRole/DefaultPolicy/Resource",
+                                "path": "prod-neakhatka-Site/site/ServerFunction/ServerFunction/ServiceRole/DefaultPolicy/Resource",
                                 "attributes": {
                                   "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                                   "aws:cdk:cloudformation:props": {
@@ -911,7 +911,7 @@
                       },
                       "Resource": {
                         "id": "Resource",
-                        "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/Resource",
+                        "path": "prod-neakhatka-Site/site/ServerFunction/ServerFunction/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                           "aws:cdk:cloudformation:props": {
@@ -920,7 +920,7 @@
                             ],
                             "code": {
                               "s3Bucket": "cdk-hnb659fds-assets-211125513237-us-east-1",
-                              "s3Key": "6dba3e0c4f9745e76d0a7659f6f78427eb481a37a3c2d50670d106be4a4463a1.zip"
+                              "s3Key": "1105cc14fba69c01a72778bc563e22e232ffc58bc6217b08f1e07c79a24b456f.zip"
                             },
                             "description": "Next.js server",
                             "environment": {
@@ -931,8 +931,8 @@
                                 "CACHE_BUCKET_KEY_PREFIX": "_cache",
                                 "CACHE_BUCKET_REGION": "us-east-1",
                                 "SST_APP": "neakhatka",
-                                "SST_STAGE": "dev",
-                                "SST_SSM_PREFIX": "/sst/neakhatka/dev/",
+                                "SST_STAGE": "prod",
+                                "SST_SSM_PREFIX": "/sst/neakhatka/prod/",
                                 "SST_Bucket_bucketName_public": {
                                   "Ref": "publicBucket5C3DBAB0"
                                 },
@@ -964,7 +964,7 @@
                               },
                               {
                                 "key": "sst:stage",
-                                "value": "dev"
+                                "value": "prod"
                               }
                             ],
                             "timeout": 10
@@ -977,11 +977,11 @@
                       },
                       "LogRetention": {
                         "id": "LogRetention",
-                        "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/LogRetention",
+                        "path": "prod-neakhatka-Site/site/ServerFunction/ServerFunction/LogRetention",
                         "children": {
                           "Resource": {
                             "id": "Resource",
-                            "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/LogRetention/Resource",
+                            "path": "prod-neakhatka-Site/site/ServerFunction/ServerFunction/LogRetention/Resource",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.CfnResource",
                               "version": "2.132.1"
@@ -995,7 +995,7 @@
                       },
                       "LogGroup": {
                         "id": "LogGroup",
-                        "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/LogGroup",
+                        "path": "prod-neakhatka-Site/site/ServerFunction/ServerFunction/LogGroup",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
                           "version": "2.132.1"
@@ -1003,11 +1003,11 @@
                       },
                       "FunctionUrl": {
                         "id": "FunctionUrl",
-                        "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/FunctionUrl",
+                        "path": "prod-neakhatka-Site/site/ServerFunction/ServerFunction/FunctionUrl",
                         "children": {
                           "Resource": {
                             "id": "Resource",
-                            "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/FunctionUrl/Resource",
+                            "path": "prod-neakhatka-Site/site/ServerFunction/ServerFunction/FunctionUrl/Resource",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::Lambda::Url",
                               "aws:cdk:cloudformation:props": {
@@ -1034,7 +1034,7 @@
                       },
                       "invoke-function-url": {
                         "id": "invoke-function-url",
-                        "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/invoke-function-url",
+                        "path": "prod-neakhatka-Site/site/ServerFunction/ServerFunction/invoke-function-url",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
                           "aws:cdk:cloudformation:props": {
@@ -1056,11 +1056,11 @@
                       },
                       "Code": {
                         "id": "Code",
-                        "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/Code",
+                        "path": "prod-neakhatka-Site/site/ServerFunction/ServerFunction/Code",
                         "children": {
                           "Stage": {
                             "id": "Stage",
-                            "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/Code/Stage",
+                            "path": "prod-neakhatka-Site/site/ServerFunction/ServerFunction/Code/Stage",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.AssetStaging",
                               "version": "2.132.1"
@@ -1068,7 +1068,7 @@
                           },
                           "AssetBucket": {
                             "id": "AssetBucket",
-                            "path": "dev-neakhatka-Site/site/ServerFunction/ServerFunction/Code/AssetBucket",
+                            "path": "prod-neakhatka-Site/site/ServerFunction/ServerFunction/Code/AssetBucket",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                               "version": "2.132.1"
@@ -1094,15 +1094,15 @@
               },
               "ImageFunction": {
                 "id": "ImageFunction",
-                "path": "dev-neakhatka-Site/site/ImageFunction",
+                "path": "prod-neakhatka-Site/site/ImageFunction",
                 "children": {
                   "ServiceRole": {
                     "id": "ServiceRole",
-                    "path": "dev-neakhatka-Site/site/ImageFunction/ServiceRole",
+                    "path": "prod-neakhatka-Site/site/ImageFunction/ServiceRole",
                     "children": {
                       "ImportServiceRole": {
                         "id": "ImportServiceRole",
-                        "path": "dev-neakhatka-Site/site/ImageFunction/ServiceRole/ImportServiceRole",
+                        "path": "prod-neakhatka-Site/site/ImageFunction/ServiceRole/ImportServiceRole",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
                           "version": "2.132.1"
@@ -1110,7 +1110,7 @@
                       },
                       "Resource": {
                         "id": "Resource",
-                        "path": "dev-neakhatka-Site/site/ImageFunction/ServiceRole/Resource",
+                        "path": "prod-neakhatka-Site/site/ImageFunction/ServiceRole/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                           "aws:cdk:cloudformation:props": {
@@ -1147,7 +1147,7 @@
                               },
                               {
                                 "key": "sst:stage",
-                                "value": "dev"
+                                "value": "prod"
                               }
                             ]
                           }
@@ -1159,11 +1159,11 @@
                       },
                       "DefaultPolicy": {
                         "id": "DefaultPolicy",
-                        "path": "dev-neakhatka-Site/site/ImageFunction/ServiceRole/DefaultPolicy",
+                        "path": "prod-neakhatka-Site/site/ImageFunction/ServiceRole/DefaultPolicy",
                         "children": {
                           "Resource": {
                             "id": "Resource",
-                            "path": "dev-neakhatka-Site/site/ImageFunction/ServiceRole/DefaultPolicy/Resource",
+                            "path": "prod-neakhatka-Site/site/ImageFunction/ServiceRole/DefaultPolicy/Resource",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                               "aws:cdk:cloudformation:props": {
@@ -1217,11 +1217,11 @@
                   },
                   "Code": {
                     "id": "Code",
-                    "path": "dev-neakhatka-Site/site/ImageFunction/Code",
+                    "path": "prod-neakhatka-Site/site/ImageFunction/Code",
                     "children": {
                       "Stage": {
                         "id": "Stage",
-                        "path": "dev-neakhatka-Site/site/ImageFunction/Code/Stage",
+                        "path": "prod-neakhatka-Site/site/ImageFunction/Code/Stage",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.AssetStaging",
                           "version": "2.132.1"
@@ -1229,7 +1229,7 @@
                       },
                       "AssetBucket": {
                         "id": "AssetBucket",
-                        "path": "dev-neakhatka-Site/site/ImageFunction/Code/AssetBucket",
+                        "path": "prod-neakhatka-Site/site/ImageFunction/Code/AssetBucket",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                           "version": "2.132.1"
@@ -1243,7 +1243,7 @@
                   },
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-neakhatka-Site/site/ImageFunction/Resource",
+                    "path": "prod-neakhatka-Site/site/ImageFunction/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                       "aws:cdk:cloudformation:props": {
@@ -1252,7 +1252,7 @@
                         ],
                         "code": {
                           "s3Bucket": "cdk-hnb659fds-assets-211125513237-us-east-1",
-                          "s3Key": "707f7ccb88472ed6cb2945c5f270552789c4b1e288f212a0c7f481de7a74869f.zip"
+                          "s3Key": "61550760650abe11d64aedd5a1cf24d4af614e14b1e924fbe98a18cfa4acf100.zip"
                         },
                         "description": "Next.js image optimizer",
                         "environment": {
@@ -1279,7 +1279,7 @@
                           },
                           {
                             "key": "sst:stage",
-                            "value": "dev"
+                            "value": "prod"
                           }
                         ],
                         "timeout": 25
@@ -1292,11 +1292,11 @@
                   },
                   "LogRetention": {
                     "id": "LogRetention",
-                    "path": "dev-neakhatka-Site/site/ImageFunction/LogRetention",
+                    "path": "prod-neakhatka-Site/site/ImageFunction/LogRetention",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "dev-neakhatka-Site/site/ImageFunction/LogRetention/Resource",
+                        "path": "prod-neakhatka-Site/site/ImageFunction/LogRetention/Resource",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnResource",
                           "version": "2.132.1"
@@ -1310,7 +1310,7 @@
                   },
                   "LogGroup": {
                     "id": "LogGroup",
-                    "path": "dev-neakhatka-Site/site/ImageFunction/LogGroup",
+                    "path": "prod-neakhatka-Site/site/ImageFunction/LogGroup",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.Resource",
                       "version": "2.132.1"
@@ -1318,11 +1318,11 @@
                   },
                   "FunctionUrl": {
                     "id": "FunctionUrl",
-                    "path": "dev-neakhatka-Site/site/ImageFunction/FunctionUrl",
+                    "path": "prod-neakhatka-Site/site/ImageFunction/FunctionUrl",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "dev-neakhatka-Site/site/ImageFunction/FunctionUrl/Resource",
+                        "path": "prod-neakhatka-Site/site/ImageFunction/FunctionUrl/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::Lambda::Url",
                           "aws:cdk:cloudformation:props": {
@@ -1348,7 +1348,7 @@
                   },
                   "invoke-function-url": {
                     "id": "invoke-function-url",
-                    "path": "dev-neakhatka-Site/site/ImageFunction/invoke-function-url",
+                    "path": "prod-neakhatka-Site/site/ImageFunction/invoke-function-url",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
                       "aws:cdk:cloudformation:props": {
@@ -1376,11 +1376,11 @@
               },
               "Asset0": {
                 "id": "Asset0",
-                "path": "dev-neakhatka-Site/site/Asset0",
+                "path": "prod-neakhatka-Site/site/Asset0",
                 "children": {
                   "Stage": {
                     "id": "Stage",
-                    "path": "dev-neakhatka-Site/site/Asset0/Stage",
+                    "path": "prod-neakhatka-Site/site/Asset0/Stage",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.AssetStaging",
                       "version": "2.132.1"
@@ -1388,7 +1388,7 @@
                   },
                   "AssetBucket": {
                     "id": "AssetBucket",
-                    "path": "dev-neakhatka-Site/site/Asset0/AssetBucket",
+                    "path": "prod-neakhatka-Site/site/Asset0/AssetBucket",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                       "version": "2.132.1"
@@ -1402,11 +1402,11 @@
               },
               "S3AssetUploaderPolicy": {
                 "id": "S3AssetUploaderPolicy",
-                "path": "dev-neakhatka-Site/site/S3AssetUploaderPolicy",
+                "path": "prod-neakhatka-Site/site/S3AssetUploaderPolicy",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-neakhatka-Site/site/S3AssetUploaderPolicy/Resource",
+                    "path": "prod-neakhatka-Site/site/S3AssetUploaderPolicy/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                       "aws:cdk:cloudformation:props": {
@@ -1492,11 +1492,11 @@
               },
               "S3AssetUploader": {
                 "id": "S3AssetUploader",
-                "path": "dev-neakhatka-Site/site/S3AssetUploader",
+                "path": "prod-neakhatka-Site/site/S3AssetUploader",
                 "children": {
                   "Default": {
                     "id": "Default",
-                    "path": "dev-neakhatka-Site/site/S3AssetUploader/Default",
+                    "path": "prod-neakhatka-Site/site/S3AssetUploader/Default",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CfnResource",
                       "version": "2.132.1"
@@ -1510,16 +1510,16 @@
               },
               "ServerCache": {
                 "id": "ServerCache",
-                "path": "dev-neakhatka-Site/site/ServerCache",
+                "path": "prod-neakhatka-Site/site/ServerCache",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-neakhatka-Site/site/ServerCache/Resource",
+                    "path": "prod-neakhatka-Site/site/ServerCache/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::CloudFront::CachePolicy",
                       "aws:cdk:cloudformation:props": {
                         "cachePolicyConfig": {
-                          "name": "devneakhatkaSitesiteServerCacheA6C32A31-us-east-1",
+                          "name": "prodneakhatkaSitesiteServerCacheA1053C77-us-east-1",
                           "comment": "SST server response cache policy",
                           "minTtl": 0,
                           "maxTtl": 31536000,
@@ -1562,7 +1562,7 @@
               },
               "ServerOriginRequestPolicy": {
                 "id": "ServerOriginRequestPolicy",
-                "path": "dev-neakhatka-Site/site/ServerOriginRequestPolicy",
+                "path": "prod-neakhatka-Site/site/ServerOriginRequestPolicy",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.Resource",
                   "version": "2.132.1"
@@ -1570,7 +1570,7 @@
               },
               "CDN": {
                 "id": "CDN",
-                "path": "dev-neakhatka-Site/site/CDN",
+                "path": "prod-neakhatka-Site/site/CDN",
                 "constructInfo": {
                   "fqn": "constructs.Construct",
                   "version": "10.3.0"
@@ -1578,11 +1578,11 @@
               },
               "Distribution": {
                 "id": "Distribution",
-                "path": "dev-neakhatka-Site/site/Distribution",
+                "path": "prod-neakhatka-Site/site/Distribution",
                 "children": {
                   "Origin1": {
                     "id": "Origin1",
-                    "path": "dev-neakhatka-Site/site/Distribution/Origin1",
+                    "path": "prod-neakhatka-Site/site/Distribution/Origin1",
                     "constructInfo": {
                       "fqn": "constructs.Construct",
                       "version": "10.3.0"
@@ -1590,7 +1590,7 @@
                   },
                   "Origin2": {
                     "id": "Origin2",
-                    "path": "dev-neakhatka-Site/site/Distribution/Origin2",
+                    "path": "prod-neakhatka-Site/site/Distribution/Origin2",
                     "constructInfo": {
                       "fqn": "constructs.Construct",
                       "version": "10.3.0"
@@ -1598,20 +1598,20 @@
                   },
                   "Origin3": {
                     "id": "Origin3",
-                    "path": "dev-neakhatka-Site/site/Distribution/Origin3",
+                    "path": "prod-neakhatka-Site/site/Distribution/Origin3",
                     "children": {
                       "S3Origin": {
                         "id": "S3Origin",
-                        "path": "dev-neakhatka-Site/site/Distribution/Origin3/S3Origin",
+                        "path": "prod-neakhatka-Site/site/Distribution/Origin3/S3Origin",
                         "children": {
                           "Resource": {
                             "id": "Resource",
-                            "path": "dev-neakhatka-Site/site/Distribution/Origin3/S3Origin/Resource",
+                            "path": "prod-neakhatka-Site/site/Distribution/Origin3/S3Origin/Resource",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
                               "aws:cdk:cloudformation:props": {
                                 "cloudFrontOriginAccessIdentityConfig": {
-                                  "comment": "Identity for devneakhatkaSitesiteDistributionOrigin3E75CB331"
+                                  "comment": "Identity for prodneakhatkaSitesiteDistributionOrigin3BD4E5A75"
                                 }
                               }
                             },
@@ -1634,7 +1634,7 @@
                   },
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-neakhatka-Site/site/Distribution/Resource",
+                    "path": "prod-neakhatka-Site/site/Distribution/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::CloudFront::Distribution",
                       "aws:cdk:cloudformation:props": {
@@ -1668,7 +1668,7 @@
                                   }
                                 ]
                               },
-                              "id": "devneakhatkaSitesiteDistributionOrigin1D946927D",
+                              "id": "prodneakhatkaSitesiteDistributionOrigin10B3FD659",
                               "customOriginConfig": {
                                 "originSslProtocols": [
                                   "TLSv1.2"
@@ -1704,7 +1704,7 @@
                                   }
                                 ]
                               },
-                              "id": "devneakhatkaSitesiteDistributionOrigin20CB07E60",
+                              "id": "prodneakhatkaSitesiteDistributionOrigin2784C683B",
                               "customOriginConfig": {
                                 "originSslProtocols": [
                                   "TLSv1.2"
@@ -1719,7 +1719,7 @@
                                   "RegionalDomainName"
                                 ]
                               },
-                              "id": "devneakhatkaSitesiteDistributionOrigin3E75CB331",
+                              "id": "prodneakhatkaSitesiteDistributionOrigin3BD4E5A75",
                               "originPath": "/_assets",
                               "s3OriginConfig": {
                                 "originAccessIdentity": {
@@ -1738,7 +1738,7 @@
                           ],
                           "defaultCacheBehavior": {
                             "pathPattern": "*",
-                            "targetOriginId": "devneakhatkaSitesiteDistributionOrigin1D946927D",
+                            "targetOriginId": "prodneakhatkaSitesiteDistributionOrigin10B3FD659",
                             "allowedMethods": [
                               "GET",
                               "HEAD",
@@ -1773,12 +1773,12 @@
                             "lambdaFunctionAssociations": []
                           },
                           "aliases": [
-                            "dev.neakhatka.com"
+                            "neakhatka.com"
                           ],
                           "cacheBehaviors": [
                             {
                               "pathPattern": "api/*",
-                              "targetOriginId": "devneakhatkaSitesiteDistributionOrigin1D946927D",
+                              "targetOriginId": "prodneakhatkaSitesiteDistributionOrigin10B3FD659",
                               "allowedMethods": [
                                 "GET",
                                 "HEAD",
@@ -1814,7 +1814,7 @@
                             },
                             {
                               "pathPattern": "_next/data/*",
-                              "targetOriginId": "devneakhatkaSitesiteDistributionOrigin1D946927D",
+                              "targetOriginId": "prodneakhatkaSitesiteDistributionOrigin10B3FD659",
                               "allowedMethods": [
                                 "GET",
                                 "HEAD",
@@ -1850,7 +1850,7 @@
                             },
                             {
                               "pathPattern": "_next/image*",
-                              "targetOriginId": "devneakhatkaSitesiteDistributionOrigin20CB07E60",
+                              "targetOriginId": "prodneakhatkaSitesiteDistributionOrigin2784C683B",
                               "allowedMethods": [
                                 "GET",
                                 "HEAD",
@@ -1886,7 +1886,7 @@
                             },
                             {
                               "pathPattern": "about/*",
-                              "targetOriginId": "devneakhatkaSitesiteDistributionOrigin3E75CB331",
+                              "targetOriginId": "prodneakhatkaSitesiteDistributionOrigin3BD4E5A75",
                               "allowedMethods": [
                                 "GET",
                                 "HEAD",
@@ -1903,7 +1903,7 @@
                             },
                             {
                               "pathPattern": "auth/*",
-                              "targetOriginId": "devneakhatkaSitesiteDistributionOrigin3E75CB331",
+                              "targetOriginId": "prodneakhatkaSitesiteDistributionOrigin3BD4E5A75",
                               "allowedMethods": [
                                 "GET",
                                 "HEAD",
@@ -1920,7 +1920,7 @@
                             },
                             {
                               "pathPattern": "banner-work.svg",
-                              "targetOriginId": "devneakhatkaSitesiteDistributionOrigin3E75CB331",
+                              "targetOriginId": "prodneakhatkaSitesiteDistributionOrigin3BD4E5A75",
                               "allowedMethods": [
                                 "GET",
                                 "HEAD",
@@ -1937,7 +1937,7 @@
                             },
                             {
                               "pathPattern": "banner.svg",
-                              "targetOriginId": "devneakhatkaSitesiteDistributionOrigin3E75CB331",
+                              "targetOriginId": "prodneakhatkaSitesiteDistributionOrigin3BD4E5A75",
                               "allowedMethods": [
                                 "GET",
                                 "HEAD",
@@ -1954,7 +1954,24 @@
                             },
                             {
                               "pathPattern": "BUILD_ID",
-                              "targetOriginId": "devneakhatkaSitesiteDistributionOrigin3E75CB331",
+                              "targetOriginId": "prodneakhatkaSitesiteDistributionOrigin3BD4E5A75",
+                              "allowedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                              ],
+                              "cachedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                              ],
+                              "cachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+                              "compress": true,
+                              "viewerProtocolPolicy": "redirect-to-https"
+                            },
+                            {
+                              "pathPattern": "company/*",
+                              "targetOriginId": "prodneakhatkaSitesiteDistributionOrigin3BD4E5A75",
                               "allowedMethods": [
                                 "GET",
                                 "HEAD",
@@ -1971,7 +1988,7 @@
                             },
                             {
                               "pathPattern": "company.svg",
-                              "targetOriginId": "devneakhatkaSitesiteDistributionOrigin3E75CB331",
+                              "targetOriginId": "prodneakhatkaSitesiteDistributionOrigin3BD4E5A75",
                               "allowedMethods": [
                                 "GET",
                                 "HEAD",
@@ -1988,7 +2005,7 @@
                             },
                             {
                               "pathPattern": "contact/*",
-                              "targetOriginId": "devneakhatkaSitesiteDistributionOrigin3E75CB331",
+                              "targetOriginId": "prodneakhatkaSitesiteDistributionOrigin3BD4E5A75",
                               "allowedMethods": [
                                 "GET",
                                 "HEAD",
@@ -2005,7 +2022,7 @@
                             },
                             {
                               "pathPattern": "favicon.ico",
-                              "targetOriginId": "devneakhatkaSitesiteDistributionOrigin3E75CB331",
+                              "targetOriginId": "prodneakhatkaSitesiteDistributionOrigin3BD4E5A75",
                               "allowedMethods": [
                                 "GET",
                                 "HEAD",
@@ -2022,7 +2039,7 @@
                             },
                             {
                               "pathPattern": "logo.svg",
-                              "targetOriginId": "devneakhatkaSitesiteDistributionOrigin3E75CB331",
+                              "targetOriginId": "prodneakhatkaSitesiteDistributionOrigin3BD4E5A75",
                               "allowedMethods": [
                                 "GET",
                                 "HEAD",
@@ -2039,7 +2056,7 @@
                             },
                             {
                               "pathPattern": "next.svg",
-                              "targetOriginId": "devneakhatkaSitesiteDistributionOrigin3E75CB331",
+                              "targetOriginId": "prodneakhatkaSitesiteDistributionOrigin3BD4E5A75",
                               "allowedMethods": [
                                 "GET",
                                 "HEAD",
@@ -2056,7 +2073,7 @@
                             },
                             {
                               "pathPattern": "userProfile/*",
-                              "targetOriginId": "devneakhatkaSitesiteDistributionOrigin3E75CB331",
+                              "targetOriginId": "prodneakhatkaSitesiteDistributionOrigin3BD4E5A75",
                               "allowedMethods": [
                                 "GET",
                                 "HEAD",
@@ -2073,7 +2090,7 @@
                             },
                             {
                               "pathPattern": "vercel.svg",
-                              "targetOriginId": "devneakhatkaSitesiteDistributionOrigin3E75CB331",
+                              "targetOriginId": "prodneakhatkaSitesiteDistributionOrigin3BD4E5A75",
                               "allowedMethods": [
                                 "GET",
                                 "HEAD",
@@ -2090,7 +2107,7 @@
                             },
                             {
                               "pathPattern": "_next/*",
-                              "targetOriginId": "devneakhatkaSitesiteDistributionOrigin3E75CB331",
+                              "targetOriginId": "prodneakhatkaSitesiteDistributionOrigin3BD4E5A75",
                               "allowedMethods": [
                                 "GET",
                                 "HEAD",
@@ -2124,7 +2141,7 @@
                           },
                           {
                             "key": "sst:stage",
-                            "value": "dev"
+                            "value": "prod"
                           }
                         ]
                       }
@@ -2142,11 +2159,11 @@
               },
               "AliasRecord": {
                 "id": "AliasRecord",
-                "path": "dev-neakhatka-Site/site/AliasRecord",
+                "path": "prod-neakhatka-Site/site/AliasRecord",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-neakhatka-Site/site/AliasRecord/Resource",
+                    "path": "prod-neakhatka-Site/site/AliasRecord/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::Route53::RecordSet",
                       "aws:cdk:cloudformation:props": {
@@ -2168,7 +2185,7 @@
                           }
                         },
                         "hostedZoneId": "Z00104253LY3NFP52H338",
-                        "name": "dev.neakhatka.com.",
+                        "name": "neakhatka.com.",
                         "type": "A"
                       }
                     },
@@ -2185,11 +2202,11 @@
               },
               "AliasRecordAAAA": {
                 "id": "AliasRecordAAAA",
-                "path": "dev-neakhatka-Site/site/AliasRecordAAAA",
+                "path": "prod-neakhatka-Site/site/AliasRecordAAAA",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-neakhatka-Site/site/AliasRecordAAAA/Resource",
+                    "path": "prod-neakhatka-Site/site/AliasRecordAAAA/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::Route53::RecordSet",
                       "aws:cdk:cloudformation:props": {
@@ -2211,7 +2228,7 @@
                           }
                         },
                         "hostedZoneId": "Z00104253LY3NFP52H338",
-                        "name": "dev.neakhatka.com.",
+                        "name": "neakhatka.com.",
                         "type": "AAAA"
                       }
                     },
@@ -2228,23 +2245,23 @@
               },
               "Redirect": {
                 "id": "Redirect",
-                "path": "dev-neakhatka-Site/site/Redirect",
+                "path": "prod-neakhatka-Site/site/Redirect",
                 "children": {
                   "RedirectCertificate": {
                     "id": "RedirectCertificate",
-                    "path": "dev-neakhatka-Site/site/Redirect/RedirectCertificate",
+                    "path": "prod-neakhatka-Site/site/Redirect/RedirectCertificate",
                     "children": {
                       "CertificateRequestorFunction": {
                         "id": "CertificateRequestorFunction",
-                        "path": "dev-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction",
+                        "path": "prod-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction",
                         "children": {
                           "ServiceRole": {
                             "id": "ServiceRole",
-                            "path": "dev-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole",
+                            "path": "prod-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole",
                             "children": {
                               "ImportServiceRole": {
                                 "id": "ImportServiceRole",
-                                "path": "dev-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/ImportServiceRole",
+                                "path": "prod-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/ImportServiceRole",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.Resource",
                                   "version": "2.132.1"
@@ -2252,7 +2269,7 @@
                               },
                               "Resource": {
                                 "id": "Resource",
-                                "path": "dev-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/Resource",
+                                "path": "prod-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/Resource",
                                 "attributes": {
                                   "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                                   "aws:cdk:cloudformation:props": {
@@ -2289,7 +2306,7 @@
                                       },
                                       {
                                         "key": "sst:stage",
-                                        "value": "dev"
+                                        "value": "prod"
                                       }
                                     ]
                                   }
@@ -2301,11 +2318,11 @@
                               },
                               "DefaultPolicy": {
                                 "id": "DefaultPolicy",
-                                "path": "dev-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/DefaultPolicy",
+                                "path": "prod-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/DefaultPolicy",
                                 "children": {
                                   "Resource": {
                                     "id": "Resource",
-                                    "path": "dev-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/DefaultPolicy/Resource",
+                                    "path": "prod-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/ServiceRole/DefaultPolicy/Resource",
                                     "attributes": {
                                       "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                                       "aws:cdk:cloudformation:props": {
@@ -2339,8 +2356,8 @@
                                                 },
                                                 "ForAllValues:StringLike": {
                                                   "route53:ChangeResourceRecordSetsNormalizedRecordNames": [
-                                                    "*.www.dev.neakhatka.com",
-                                                    "*.www.dev.neakhatka.com"
+                                                    "*.www.neakhatka.com",
+                                                    "*.www.neakhatka.com"
                                                   ]
                                                 }
                                               },
@@ -2388,11 +2405,11 @@
                           },
                           "Code": {
                             "id": "Code",
-                            "path": "dev-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/Code",
+                            "path": "prod-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/Code",
                             "children": {
                               "Stage": {
                                 "id": "Stage",
-                                "path": "dev-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/Code/Stage",
+                                "path": "prod-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/Code/Stage",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.AssetStaging",
                                   "version": "2.132.1"
@@ -2400,7 +2417,7 @@
                               },
                               "AssetBucket": {
                                 "id": "AssetBucket",
-                                "path": "dev-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/Code/AssetBucket",
+                                "path": "prod-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/Code/AssetBucket",
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                                   "version": "2.132.1"
@@ -2414,7 +2431,7 @@
                           },
                           "Resource": {
                             "id": "Resource",
-                            "path": "dev-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/Resource",
+                            "path": "prod-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorFunction/Resource",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                               "aws:cdk:cloudformation:props": {
@@ -2437,7 +2454,7 @@
                                   },
                                   {
                                     "key": "sst:stage",
-                                    "value": "dev"
+                                    "value": "prod"
                                   }
                                 ],
                                 "timeout": 900
@@ -2456,11 +2473,11 @@
                       },
                       "CertificateRequestorResource": {
                         "id": "CertificateRequestorResource",
-                        "path": "dev-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorResource",
+                        "path": "prod-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorResource",
                         "children": {
                           "Default": {
                             "id": "Default",
-                            "path": "dev-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorResource/Default",
+                            "path": "prod-neakhatka-Site/site/Redirect/RedirectCertificate/CertificateRequestorResource/Default",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.CfnResource",
                               "version": "2.132.1"
@@ -2480,11 +2497,11 @@
                   },
                   "RedirectBucket": {
                     "id": "RedirectBucket",
-                    "path": "dev-neakhatka-Site/site/Redirect/RedirectBucket",
+                    "path": "prod-neakhatka-Site/site/Redirect/RedirectBucket",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "dev-neakhatka-Site/site/Redirect/RedirectBucket/Resource",
+                        "path": "prod-neakhatka-Site/site/Redirect/RedirectBucket/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
                           "aws:cdk:cloudformation:props": {
@@ -2501,12 +2518,12 @@
                               },
                               {
                                 "key": "sst:stage",
-                                "value": "dev"
+                                "value": "prod"
                               }
                             ],
                             "websiteConfiguration": {
                               "redirectAllRequestsTo": {
-                                "hostName": "dev.neakhatka.com",
+                                "hostName": "neakhatka.com",
                                 "protocol": "https"
                               }
                             }
@@ -2525,16 +2542,16 @@
                   },
                   "RedirectDistribution": {
                     "id": "RedirectDistribution",
-                    "path": "dev-neakhatka-Site/site/Redirect/RedirectDistribution",
+                    "path": "prod-neakhatka-Site/site/Redirect/RedirectDistribution",
                     "children": {
                       "CFDistribution": {
                         "id": "CFDistribution",
-                        "path": "dev-neakhatka-Site/site/Redirect/RedirectDistribution/CFDistribution",
+                        "path": "prod-neakhatka-Site/site/Redirect/RedirectDistribution/CFDistribution",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::CloudFront::Distribution",
                           "aws:cdk:cloudformation:props": {
                             "distributionConfig": {
-                              "comment": "Redirect to dev.neakhatka.com from www.dev.neakhatka.com",
+                              "comment": "Redirect to neakhatka.com from www.neakhatka.com",
                               "enabled": true,
                               "defaultRootObject": "",
                               "httpVersion": "http2",
@@ -2593,7 +2610,7 @@
                                 "viewerProtocolPolicy": "redirect-to-https"
                               },
                               "aliases": [
-                                "www.dev.neakhatka.com"
+                                "www.neakhatka.com"
                               ],
                               "viewerCertificate": {
                                 "acmCertificateArn": {
@@ -2612,7 +2629,7 @@
                               },
                               {
                                 "key": "sst:stage",
-                                "value": "dev"
+                                "value": "prod"
                               }
                             ]
                           }
@@ -2628,13 +2645,13 @@
                       "version": "2.132.1"
                     }
                   },
-                  "RedirectAliasRecord3d78dd": {
-                    "id": "RedirectAliasRecord3d78dd",
-                    "path": "dev-neakhatka-Site/site/Redirect/RedirectAliasRecord3d78dd",
+                  "RedirectAliasRecord981af1": {
+                    "id": "RedirectAliasRecord981af1",
+                    "path": "prod-neakhatka-Site/site/Redirect/RedirectAliasRecord981af1",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "dev-neakhatka-Site/site/Redirect/RedirectAliasRecord3d78dd/Resource",
+                        "path": "prod-neakhatka-Site/site/Redirect/RedirectAliasRecord981af1/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::Route53::RecordSet",
                           "aws:cdk:cloudformation:props": {
@@ -2656,7 +2673,7 @@
                               }
                             },
                             "hostedZoneId": "Z00104253LY3NFP52H338",
-                            "name": "www.dev.neakhatka.com.",
+                            "name": "www.neakhatka.com.",
                             "type": "A"
                           }
                         },
@@ -2671,13 +2688,13 @@
                       "version": "2.132.1"
                     }
                   },
-                  "RedirectAliasRecordSix3d78dd": {
-                    "id": "RedirectAliasRecordSix3d78dd",
-                    "path": "dev-neakhatka-Site/site/Redirect/RedirectAliasRecordSix3d78dd",
+                  "RedirectAliasRecordSix981af1": {
+                    "id": "RedirectAliasRecordSix981af1",
+                    "path": "prod-neakhatka-Site/site/Redirect/RedirectAliasRecordSix981af1",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "dev-neakhatka-Site/site/Redirect/RedirectAliasRecordSix3d78dd/Resource",
+                        "path": "prod-neakhatka-Site/site/Redirect/RedirectAliasRecordSix981af1/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::Route53::RecordSet",
                           "aws:cdk:cloudformation:props": {
@@ -2699,7 +2716,7 @@
                               }
                             },
                             "hostedZoneId": "Z00104253LY3NFP52H338",
-                            "name": "www.dev.neakhatka.com.",
+                            "name": "www.neakhatka.com.",
                             "type": "AAAA"
                           }
                         },
@@ -2722,11 +2739,11 @@
               },
               "ServerFunctionInvalidatorPolicy": {
                 "id": "ServerFunctionInvalidatorPolicy",
-                "path": "dev-neakhatka-Site/site/ServerFunctionInvalidatorPolicy",
+                "path": "prod-neakhatka-Site/site/ServerFunctionInvalidatorPolicy",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-neakhatka-Site/site/ServerFunctionInvalidatorPolicy/Resource",
+                    "path": "prod-neakhatka-Site/site/ServerFunctionInvalidatorPolicy/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                       "aws:cdk:cloudformation:props": {
@@ -2775,11 +2792,11 @@
               },
               "CloudFrontInvalidatorPolicy": {
                 "id": "CloudFrontInvalidatorPolicy",
-                "path": "dev-neakhatka-Site/site/CloudFrontInvalidatorPolicy",
+                "path": "prod-neakhatka-Site/site/CloudFrontInvalidatorPolicy",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-neakhatka-Site/site/CloudFrontInvalidatorPolicy/Resource",
+                    "path": "prod-neakhatka-Site/site/CloudFrontInvalidatorPolicy/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                       "aws:cdk:cloudformation:props": {
@@ -2831,11 +2848,11 @@
               },
               "CloudFrontInvalidator": {
                 "id": "CloudFrontInvalidator",
-                "path": "dev-neakhatka-Site/site/CloudFrontInvalidator",
+                "path": "prod-neakhatka-Site/site/CloudFrontInvalidator",
                 "children": {
                   "Default": {
                     "id": "Default",
-                    "path": "dev-neakhatka-Site/site/CloudFrontInvalidator/Default",
+                    "path": "prod-neakhatka-Site/site/CloudFrontInvalidator/Default",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CfnResource",
                       "version": "2.132.1"
@@ -2849,11 +2866,11 @@
               },
               "RevalidationQueue": {
                 "id": "RevalidationQueue",
-                "path": "dev-neakhatka-Site/site/RevalidationQueue",
+                "path": "prod-neakhatka-Site/site/RevalidationQueue",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-neakhatka-Site/site/RevalidationQueue/Resource",
+                    "path": "prod-neakhatka-Site/site/RevalidationQueue/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::SQS::Queue",
                       "aws:cdk:cloudformation:props": {
@@ -2866,7 +2883,7 @@
                           },
                           {
                             "key": "sst:stage",
-                            "value": "dev"
+                            "value": "prod"
                           }
                         ]
                       }
@@ -2884,15 +2901,15 @@
               },
               "RevalidationFunction": {
                 "id": "RevalidationFunction",
-                "path": "dev-neakhatka-Site/site/RevalidationFunction",
+                "path": "prod-neakhatka-Site/site/RevalidationFunction",
                 "children": {
                   "ServiceRole": {
                     "id": "ServiceRole",
-                    "path": "dev-neakhatka-Site/site/RevalidationFunction/ServiceRole",
+                    "path": "prod-neakhatka-Site/site/RevalidationFunction/ServiceRole",
                     "children": {
                       "ImportServiceRole": {
                         "id": "ImportServiceRole",
-                        "path": "dev-neakhatka-Site/site/RevalidationFunction/ServiceRole/ImportServiceRole",
+                        "path": "prod-neakhatka-Site/site/RevalidationFunction/ServiceRole/ImportServiceRole",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
                           "version": "2.132.1"
@@ -2900,7 +2917,7 @@
                       },
                       "Resource": {
                         "id": "Resource",
-                        "path": "dev-neakhatka-Site/site/RevalidationFunction/ServiceRole/Resource",
+                        "path": "prod-neakhatka-Site/site/RevalidationFunction/ServiceRole/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                           "aws:cdk:cloudformation:props": {
@@ -2937,7 +2954,7 @@
                               },
                               {
                                 "key": "sst:stage",
-                                "value": "dev"
+                                "value": "prod"
                               }
                             ]
                           }
@@ -2949,11 +2966,11 @@
                       },
                       "DefaultPolicy": {
                         "id": "DefaultPolicy",
-                        "path": "dev-neakhatka-Site/site/RevalidationFunction/ServiceRole/DefaultPolicy",
+                        "path": "prod-neakhatka-Site/site/RevalidationFunction/ServiceRole/DefaultPolicy",
                         "children": {
                           "Resource": {
                             "id": "Resource",
-                            "path": "dev-neakhatka-Site/site/RevalidationFunction/ServiceRole/DefaultPolicy/Resource",
+                            "path": "prod-neakhatka-Site/site/RevalidationFunction/ServiceRole/DefaultPolicy/Resource",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                               "aws:cdk:cloudformation:props": {
@@ -3005,11 +3022,11 @@
                   },
                   "Code": {
                     "id": "Code",
-                    "path": "dev-neakhatka-Site/site/RevalidationFunction/Code",
+                    "path": "prod-neakhatka-Site/site/RevalidationFunction/Code",
                     "children": {
                       "Stage": {
                         "id": "Stage",
-                        "path": "dev-neakhatka-Site/site/RevalidationFunction/Code/Stage",
+                        "path": "prod-neakhatka-Site/site/RevalidationFunction/Code/Stage",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.AssetStaging",
                           "version": "2.132.1"
@@ -3017,7 +3034,7 @@
                       },
                       "AssetBucket": {
                         "id": "AssetBucket",
-                        "path": "dev-neakhatka-Site/site/RevalidationFunction/Code/AssetBucket",
+                        "path": "prod-neakhatka-Site/site/RevalidationFunction/Code/AssetBucket",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                           "version": "2.132.1"
@@ -3031,13 +3048,13 @@
                   },
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-neakhatka-Site/site/RevalidationFunction/Resource",
+                    "path": "prod-neakhatka-Site/site/RevalidationFunction/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                       "aws:cdk:cloudformation:props": {
                         "code": {
                           "s3Bucket": "cdk-hnb659fds-assets-211125513237-us-east-1",
-                          "s3Key": "851c68a0826dc2fd6c16aab45f4ece58ba97bcb33168b4dc5b11a5f70485ed25.zip"
+                          "s3Key": "d45e6fa07c43cd98635537c5429224885cbac590ce07e6bc81ae3b51de12e220.zip"
                         },
                         "description": "Next.js revalidator",
                         "handler": "index.handler",
@@ -3055,7 +3072,7 @@
                           },
                           {
                             "key": "sst:stage",
-                            "value": "dev"
+                            "value": "prod"
                           }
                         ],
                         "timeout": 30
@@ -3066,13 +3083,13 @@
                       "version": "2.132.1"
                     }
                   },
-                  "SqsEventSource:devneakhatkaSitesiteRevalidationQueue9D743F06": {
-                    "id": "SqsEventSource:devneakhatkaSitesiteRevalidationQueue9D743F06",
-                    "path": "dev-neakhatka-Site/site/RevalidationFunction/SqsEventSource:devneakhatkaSitesiteRevalidationQueue9D743F06",
+                  "SqsEventSource:prodneakhatkaSitesiteRevalidationQueueDDB57CF7": {
+                    "id": "SqsEventSource:prodneakhatkaSitesiteRevalidationQueueDDB57CF7",
+                    "path": "prod-neakhatka-Site/site/RevalidationFunction/SqsEventSource:prodneakhatkaSitesiteRevalidationQueueDDB57CF7",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "dev-neakhatka-Site/site/RevalidationFunction/SqsEventSource:devneakhatkaSitesiteRevalidationQueue9D743F06/Resource",
+                        "path": "prod-neakhatka-Site/site/RevalidationFunction/SqsEventSource:prodneakhatkaSitesiteRevalidationQueueDDB57CF7/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::Lambda::EventSourceMapping",
                           "aws:cdk:cloudformation:props": {
@@ -3107,11 +3124,11 @@
               },
               "RevalidationTable": {
                 "id": "RevalidationTable",
-                "path": "dev-neakhatka-Site/site/RevalidationTable",
+                "path": "prod-neakhatka-Site/site/RevalidationTable",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-neakhatka-Site/site/RevalidationTable/Resource",
+                    "path": "prod-neakhatka-Site/site/RevalidationTable/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::DynamoDB::GlobalTable",
                       "aws:cdk:cloudformation:props": {
@@ -3186,15 +3203,15 @@
               },
               "RevalidationInsertFunction": {
                 "id": "RevalidationInsertFunction",
-                "path": "dev-neakhatka-Site/site/RevalidationInsertFunction",
+                "path": "prod-neakhatka-Site/site/RevalidationInsertFunction",
                 "children": {
                   "ServiceRole": {
                     "id": "ServiceRole",
-                    "path": "dev-neakhatka-Site/site/RevalidationInsertFunction/ServiceRole",
+                    "path": "prod-neakhatka-Site/site/RevalidationInsertFunction/ServiceRole",
                     "children": {
                       "ImportServiceRole": {
                         "id": "ImportServiceRole",
-                        "path": "dev-neakhatka-Site/site/RevalidationInsertFunction/ServiceRole/ImportServiceRole",
+                        "path": "prod-neakhatka-Site/site/RevalidationInsertFunction/ServiceRole/ImportServiceRole",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
                           "version": "2.132.1"
@@ -3202,7 +3219,7 @@
                       },
                       "Resource": {
                         "id": "Resource",
-                        "path": "dev-neakhatka-Site/site/RevalidationInsertFunction/ServiceRole/Resource",
+                        "path": "prod-neakhatka-Site/site/RevalidationInsertFunction/ServiceRole/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                           "aws:cdk:cloudformation:props": {
@@ -3239,7 +3256,7 @@
                               },
                               {
                                 "key": "sst:stage",
-                                "value": "dev"
+                                "value": "prod"
                               }
                             ]
                           }
@@ -3251,11 +3268,11 @@
                       },
                       "DefaultPolicy": {
                         "id": "DefaultPolicy",
-                        "path": "dev-neakhatka-Site/site/RevalidationInsertFunction/ServiceRole/DefaultPolicy",
+                        "path": "prod-neakhatka-Site/site/RevalidationInsertFunction/ServiceRole/DefaultPolicy",
                         "children": {
                           "Resource": {
                             "id": "Resource",
-                            "path": "dev-neakhatka-Site/site/RevalidationInsertFunction/ServiceRole/DefaultPolicy/Resource",
+                            "path": "prod-neakhatka-Site/site/RevalidationInsertFunction/ServiceRole/DefaultPolicy/Resource",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                               "aws:cdk:cloudformation:props": {
@@ -3305,11 +3322,11 @@
                   },
                   "Code": {
                     "id": "Code",
-                    "path": "dev-neakhatka-Site/site/RevalidationInsertFunction/Code",
+                    "path": "prod-neakhatka-Site/site/RevalidationInsertFunction/Code",
                     "children": {
                       "Stage": {
                         "id": "Stage",
-                        "path": "dev-neakhatka-Site/site/RevalidationInsertFunction/Code/Stage",
+                        "path": "prod-neakhatka-Site/site/RevalidationInsertFunction/Code/Stage",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.AssetStaging",
                           "version": "2.132.1"
@@ -3317,7 +3334,7 @@
                       },
                       "AssetBucket": {
                         "id": "AssetBucket",
-                        "path": "dev-neakhatka-Site/site/RevalidationInsertFunction/Code/AssetBucket",
+                        "path": "prod-neakhatka-Site/site/RevalidationInsertFunction/Code/AssetBucket",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                           "version": "2.132.1"
@@ -3331,13 +3348,13 @@
                   },
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-neakhatka-Site/site/RevalidationInsertFunction/Resource",
+                    "path": "prod-neakhatka-Site/site/RevalidationInsertFunction/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                       "aws:cdk:cloudformation:props": {
                         "code": {
                           "s3Bucket": "cdk-hnb659fds-assets-211125513237-us-east-1",
-                          "s3Key": "5f7bb686911c6b2caa188ed9eee3a3ecf9b6589a62ea5039fee26bd3d97785aa.zip"
+                          "s3Key": "b7e20bc84f39530f8d526d04d9a1c422916dafc616541bad3d101157a871051c.zip"
                         },
                         "description": "Next.js revalidation data insert",
                         "environment": {
@@ -3363,7 +3380,7 @@
                           },
                           {
                             "key": "sst:stage",
-                            "value": "dev"
+                            "value": "prod"
                           }
                         ],
                         "timeout": 900
@@ -3382,19 +3399,19 @@
               },
               "RevalidationProvider": {
                 "id": "RevalidationProvider",
-                "path": "dev-neakhatka-Site/site/RevalidationProvider",
+                "path": "prod-neakhatka-Site/site/RevalidationProvider",
                 "children": {
                   "framework-onEvent": {
                     "id": "framework-onEvent",
-                    "path": "dev-neakhatka-Site/site/RevalidationProvider/framework-onEvent",
+                    "path": "prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent",
                     "children": {
                       "ServiceRole": {
                         "id": "ServiceRole",
-                        "path": "dev-neakhatka-Site/site/RevalidationProvider/framework-onEvent/ServiceRole",
+                        "path": "prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent/ServiceRole",
                         "children": {
                           "ImportServiceRole": {
                             "id": "ImportServiceRole",
-                            "path": "dev-neakhatka-Site/site/RevalidationProvider/framework-onEvent/ServiceRole/ImportServiceRole",
+                            "path": "prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent/ServiceRole/ImportServiceRole",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.Resource",
                               "version": "2.132.1"
@@ -3402,7 +3419,7 @@
                           },
                           "Resource": {
                             "id": "Resource",
-                            "path": "dev-neakhatka-Site/site/RevalidationProvider/framework-onEvent/ServiceRole/Resource",
+                            "path": "prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent/ServiceRole/Resource",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                               "aws:cdk:cloudformation:props": {
@@ -3439,7 +3456,7 @@
                                   },
                                   {
                                     "key": "sst:stage",
-                                    "value": "dev"
+                                    "value": "prod"
                                   }
                                 ]
                               }
@@ -3451,11 +3468,11 @@
                           },
                           "DefaultPolicy": {
                             "id": "DefaultPolicy",
-                            "path": "dev-neakhatka-Site/site/RevalidationProvider/framework-onEvent/ServiceRole/DefaultPolicy",
+                            "path": "prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent/ServiceRole/DefaultPolicy",
                             "children": {
                               "Resource": {
                                 "id": "Resource",
-                                "path": "dev-neakhatka-Site/site/RevalidationProvider/framework-onEvent/ServiceRole/DefaultPolicy/Resource",
+                                "path": "prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent/ServiceRole/DefaultPolicy/Resource",
                                 "attributes": {
                                   "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                                   "aws:cdk:cloudformation:props": {
@@ -3517,11 +3534,11 @@
                       },
                       "Code": {
                         "id": "Code",
-                        "path": "dev-neakhatka-Site/site/RevalidationProvider/framework-onEvent/Code",
+                        "path": "prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent/Code",
                         "children": {
                           "Stage": {
                             "id": "Stage",
-                            "path": "dev-neakhatka-Site/site/RevalidationProvider/framework-onEvent/Code/Stage",
+                            "path": "prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent/Code/Stage",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.AssetStaging",
                               "version": "2.132.1"
@@ -3529,7 +3546,7 @@
                           },
                           "AssetBucket": {
                             "id": "AssetBucket",
-                            "path": "dev-neakhatka-Site/site/RevalidationProvider/framework-onEvent/Code/AssetBucket",
+                            "path": "prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent/Code/AssetBucket",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                               "version": "2.132.1"
@@ -3543,7 +3560,7 @@
                       },
                       "Resource": {
                         "id": "Resource",
-                        "path": "dev-neakhatka-Site/site/RevalidationProvider/framework-onEvent/Resource",
+                        "path": "prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                           "aws:cdk:cloudformation:props": {
@@ -3551,7 +3568,7 @@
                               "s3Bucket": "cdk-hnb659fds-assets-211125513237-us-east-1",
                               "s3Key": "3542be390685e0c8353d92ccb5796d343cd93ca946b6b0de798004206a199adc.zip"
                             },
-                            "description": "AWS CDK resource provider framework - onEvent (dev-neakhatka-Site/site/RevalidationProvider)",
+                            "description": "AWS CDK resource provider framework - onEvent (prod-neakhatka-Site/site/RevalidationProvider)",
                             "environment": {
                               "variables": {
                                 "USER_ON_EVENT_FUNCTION_ARN": {
@@ -3577,7 +3594,7 @@
                               },
                               {
                                 "key": "sst:stage",
-                                "value": "dev"
+                                "value": "prod"
                               }
                             ],
                             "timeout": 900
@@ -3590,11 +3607,11 @@
                       },
                       "LogRetention": {
                         "id": "LogRetention",
-                        "path": "dev-neakhatka-Site/site/RevalidationProvider/framework-onEvent/LogRetention",
+                        "path": "prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent/LogRetention",
                         "children": {
                           "Resource": {
                             "id": "Resource",
-                            "path": "dev-neakhatka-Site/site/RevalidationProvider/framework-onEvent/LogRetention/Resource",
+                            "path": "prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent/LogRetention/Resource",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.CfnResource",
                               "version": "2.132.1"
@@ -3608,7 +3625,7 @@
                       },
                       "LogGroup": {
                         "id": "LogGroup",
-                        "path": "dev-neakhatka-Site/site/RevalidationProvider/framework-onEvent/LogGroup",
+                        "path": "prod-neakhatka-Site/site/RevalidationProvider/framework-onEvent/LogGroup",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
                           "version": "2.132.1"
@@ -3628,11 +3645,11 @@
               },
               "RevalidationResource": {
                 "id": "RevalidationResource",
-                "path": "dev-neakhatka-Site/site/RevalidationResource",
+                "path": "prod-neakhatka-Site/site/RevalidationResource",
                 "children": {
                   "Default": {
                     "id": "Default",
-                    "path": "dev-neakhatka-Site/site/RevalidationResource/Default",
+                    "path": "prod-neakhatka-Site/site/RevalidationResource/Default",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CfnResource",
                       "version": "2.132.1"
@@ -3646,21 +3663,21 @@
               },
               "Parameter_url": {
                 "id": "Parameter_url",
-                "path": "dev-neakhatka-Site/site/Parameter_url",
+                "path": "prod-neakhatka-Site/site/Parameter_url",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-neakhatka-Site/site/Parameter_url/Resource",
+                    "path": "prod-neakhatka-Site/site/Parameter_url/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
                       "aws:cdk:cloudformation:props": {
-                        "name": "/sst/neakhatka/dev/NextjsSite/site/url",
+                        "name": "/sst/neakhatka/prod/NextjsSite/site/url",
                         "tags": {
                           "sst:app": "neakhatka",
-                          "sst:stage": "dev"
+                          "sst:stage": "prod"
                         },
                         "type": "String",
-                        "value": "https://dev.neakhatka.com"
+                        "value": "https://neakhatka.com"
                       }
                     },
                     "constructInfo": {
@@ -3682,11 +3699,11 @@
           },
           "Custom::S3AutoDeleteObjectsCustomResourceProvider": {
             "id": "Custom::S3AutoDeleteObjectsCustomResourceProvider",
-            "path": "dev-neakhatka-Site/Custom::S3AutoDeleteObjectsCustomResourceProvider",
+            "path": "prod-neakhatka-Site/Custom::S3AutoDeleteObjectsCustomResourceProvider",
             "children": {
               "Staging": {
                 "id": "Staging",
-                "path": "dev-neakhatka-Site/Custom::S3AutoDeleteObjectsCustomResourceProvider/Staging",
+                "path": "prod-neakhatka-Site/Custom::S3AutoDeleteObjectsCustomResourceProvider/Staging",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.AssetStaging",
                   "version": "2.132.1"
@@ -3694,7 +3711,7 @@
               },
               "Role": {
                 "id": "Role",
-                "path": "dev-neakhatka-Site/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role",
+                "path": "prod-neakhatka-Site/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnResource",
                   "version": "2.132.1"
@@ -3702,7 +3719,7 @@
               },
               "Handler": {
                 "id": "Handler",
-                "path": "dev-neakhatka-Site/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler",
+                "path": "prod-neakhatka-Site/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnResource",
                   "version": "2.132.1"
@@ -3716,15 +3733,15 @@
           },
           "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a": {
             "id": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a",
-            "path": "dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a",
+            "path": "prod-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a",
             "children": {
               "Code": {
                 "id": "Code",
-                "path": "dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code",
+                "path": "prod-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code",
                 "children": {
                   "Stage": {
                     "id": "Stage",
-                    "path": "dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/Stage",
+                    "path": "prod-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/Stage",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.AssetStaging",
                       "version": "2.132.1"
@@ -3732,7 +3749,7 @@
                   },
                   "AssetBucket": {
                     "id": "AssetBucket",
-                    "path": "dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/AssetBucket",
+                    "path": "prod-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/AssetBucket",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                       "version": "2.132.1"
@@ -3746,11 +3763,11 @@
               },
               "ServiceRole": {
                 "id": "ServiceRole",
-                "path": "dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole",
+                "path": "prod-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole",
                 "children": {
                   "ImportServiceRole": {
                     "id": "ImportServiceRole",
-                    "path": "dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/ImportServiceRole",
+                    "path": "prod-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/ImportServiceRole",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.Resource",
                       "version": "2.132.1"
@@ -3758,7 +3775,7 @@
                   },
                   "Resource": {
                     "id": "Resource",
-                    "path": "dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource",
+                    "path": "prod-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -3795,7 +3812,7 @@
                           },
                           {
                             "key": "sst:stage",
-                            "value": "dev"
+                            "value": "prod"
                           }
                         ]
                       }
@@ -3807,11 +3824,11 @@
                   },
                   "DefaultPolicy": {
                     "id": "DefaultPolicy",
-                    "path": "dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy",
+                    "path": "prod-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource",
+                        "path": "prod-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                           "aws:cdk:cloudformation:props": {
@@ -3855,7 +3872,7 @@
               },
               "Resource": {
                 "id": "Resource",
-                "path": "dev-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource",
+                "path": "prod-neakhatka-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnResource",
                   "version": "2.132.1"
@@ -3869,7 +3886,7 @@
           },
           "AWSCloudFrontPartitionHostedZoneIdMap": {
             "id": "AWSCloudFrontPartitionHostedZoneIdMap",
-            "path": "dev-neakhatka-Site/AWSCloudFrontPartitionHostedZoneIdMap",
+            "path": "prod-neakhatka-Site/AWSCloudFrontPartitionHostedZoneIdMap",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnMapping",
               "version": "2.132.1"
@@ -3877,7 +3894,7 @@
           },
           "SSTStackOutputSiteUrl": {
             "id": "SSTStackOutputSiteUrl",
-            "path": "dev-neakhatka-Site/SSTStackOutputSiteUrl",
+            "path": "prod-neakhatka-Site/SSTStackOutputSiteUrl",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
               "version": "2.132.1"
@@ -3885,7 +3902,7 @@
           },
           "SSTStackOutputSSTMetadata": {
             "id": "SSTStackOutputSSTMetadata",
-            "path": "dev-neakhatka-Site/SSTStackOutputSSTMetadata",
+            "path": "prod-neakhatka-Site/SSTStackOutputSSTMetadata",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
               "version": "2.132.1"
@@ -3893,7 +3910,7 @@
           },
           "BootstrapVersion": {
             "id": "BootstrapVersion",
-            "path": "dev-neakhatka-Site/BootstrapVersion",
+            "path": "prod-neakhatka-Site/BootstrapVersion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnParameter",
               "version": "2.132.1"
@@ -3901,7 +3918,7 @@
           },
           "CheckBootstrapVersion": {
             "id": "CheckBootstrapVersion",
-            "path": "dev-neakhatka-Site/CheckBootstrapVersion",
+            "path": "prod-neakhatka-Site/CheckBootstrapVersion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnRule",
               "version": "2.132.1"

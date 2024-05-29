@@ -14,6 +14,5 @@
     salary:string,
     Emploment:string
     location:string,
-    DeadLine:string,
-    
+    DeadLine:string,    
 }

@@ -5,7 +5,6 @@ import { Card } from './Card'
 
 const CardList = () => {
   const {CardInfo} = useContext(MyContext)
-  // console.log(CardInfo)
   return (
     <div>
       <main className="max-w-[1200px] mx-auto my-10">

@@ -8,9 +8,21 @@ import { DetailCard } from "@/Types/DetailCard";
 import { useCount } from "../../../contexts/CountContext";
 // import { toast } from "sonner";
 
+interface CardData {
+  id: string;
+  companyLogo: string;
+  companyName?: string;
+  peopleAmount: string;
+  jobTitle: string;
+  salary: string;
+  Emploment: string;
+  location: string;
+  DeadLine: string;
+}
+
 interface CardProps {
   className?: string;
-  data: DetailCard;
+  data: CardData; // Use the new interface
   iconType?: "star" | "close";
   onDelete?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
@@ -44,17 +56,15 @@ const Card: React.FC<CardProps> = ({
   };
 
   const handleStarClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    e.preventDefault(); // To prevent default behavior of link
-    e.stopPropagation(); // To prevent redirect when star icon is clicked
+    e.preventDefault();
+    e.stopPropagation();
 
-    setIsFavorited((prev) => !prev); // Toggle favorite
+    setIsFavorited((prev) => !prev);
 
     if (iconType === "star") {
       if (isFavorited) {
-        // If already favorited, decrement
         descrement();
       } else {
-        // If not favorited, increment
         increment();
       }
     }
@@ -84,7 +94,6 @@ const Card: React.FC<CardProps> = ({
               </Typography>
             </div>
           </div>
-          {/* favorite */}
           <div onClick={handleStarClick}>
             {iconType === "star" ? (
               <button>
@@ -93,7 +102,7 @@ const Card: React.FC<CardProps> = ({
             ) : (
               <button
                 onClick={(e) => {
-                  e.preventDefault(); // Prevent default button behavior
+                  e.preventDefault();
                   handleDelete(e);
                 }}
               >
