@@ -60,7 +60,7 @@ const SeekerReview: React.FC = () => {
         </div>
         <div className="flex justify-center items-center">
           <div className="w-[450px] h-[500px] flex justify-center items-center">
-            <div className="ml-0 lg:ml-10 -mt-40 w-[350px] lg:w-[500px] lg:mt-0">
+            <div className="text-[14px] lg:text-[16px] ml-0 lg:ml-10 -mt-40 w-[350px] lg:w-[500px] lg:mt-0">
               <q>{selectedDescription}</q>
             </div>
           </div>

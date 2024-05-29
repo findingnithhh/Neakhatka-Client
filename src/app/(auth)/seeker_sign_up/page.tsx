@@ -98,7 +98,11 @@ const Signup = () => {
       </div>
       <div className="right w-full p-10">
         <div className="text-end">
-          <Link href="/login" color="primary" className="text-sm">
+          <Link
+            href="/login"
+            color="primary"
+            className="text-sm text-blue-500 underline"
+          >
             Login
           </Link>
         </div>
@@ -126,17 +130,13 @@ const Signup = () => {
                 name="username"
                 type="text"
                 placeholder="username"
-                className={`w-[350px] ${
-                  usernameError ? "border-red-500" : ""
-                }`}
+                className={`w-[350px] ${usernameError ? "border-red-500" : ""}`}
                 onChange={(e) => setUsername(e.target.value)}
                 value={username}
                 onFocus={handleUsernameFocus}
               />
               {usernameError && (
-                <div className="text-red-500 text-xs mt-1">
-                  {usernameError}
-                </div>
+                <div className="text-red-500 text-xs mt-1">{usernameError}</div>
               )}
             </div>
             <div className="relative mt-4">

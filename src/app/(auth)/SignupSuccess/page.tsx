@@ -31,7 +31,7 @@ const SignupSuccess = () => {
           transition={{ duration: 1, ease: "easeInOut" }}
           className="text-2xl"
         >
-          <Typography fontSize="5xl" variant="bold">
+          <Typography className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[28px] text-center">
             CONGRATULATIONS, YOU HAVE SUCCESSFULLY SIGNUP!
           </Typography>
         </motion.h1>

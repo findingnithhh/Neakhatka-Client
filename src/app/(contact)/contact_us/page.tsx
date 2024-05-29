@@ -21,7 +21,7 @@ const ContactUs = () => {
             <div className="flex items-center w-full bg-[#F8F9FA] p-5 rounded-xl mt-5">
               <div className="flex">
                 <Icon
-                  label="Email"
+                  label="Email_Black"
                   className="p-3 rounded-full w-auto bg-[#DEE2E6]"
                   colorBackground="black"
                 />
@@ -77,7 +77,7 @@ const ContactUs = () => {
               <Input accept="email" placeholder="Your email" className="mt-4" />
               <textarea
                 placeholder="Typing somethig..."
-                className="text-[14px] p-2 h-72 rounded-md mt-4 border md:mb-0 mb-10"
+                className="text-[14px] p-2 h-72 rounded-md mt-4 border md:mb-0 mb-10 focus:outline-[#4B9960]"
               />
               <div className="flex justify-end mt-4">
                 <Button
