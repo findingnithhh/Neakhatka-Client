@@ -66,20 +66,20 @@ const Dashboard: React.FC = () => {
   return (
     <div>
       <div className="flex justify-between items-center mb-4">
-        <Typography fontSize="md">Total Post </Typography>
+        <Typography fontSize="2xl">Total Post </Typography>
         <Button onClick={() => setIsOpen(true)} colorScheme="primary" textColor="white" size="sm" className="text-md px-4 py-2 rounded" >
         Create Post
         </Button>
       </div >
-      <div ref={tableRef} className="overflow-x-auto shadow-md">
+      <div ref={tableRef} className="overflow-x-auto shadow-md rounded-lg">
       <table className="min-w-full border-collapse">
         <thead >
-          <tr className="bg-gray-200 text-sm ">
-          <th className="py-2 px-4 border-x text-left font-normal">Position</th>
-            <th className="py-2 px-4 border-x text-left font-normal">Salary</th>
-            <th className="py-2 px-4 border-x text-left font-normal">Duration</th>
-            <th className="py-2 px-4 border-x text-left font-normal">Date Line</th>
-            <th className="py-2 px-4 border-x font-normal">Actions</th>
+          <tr className="bg-gray-200 text-sm rounded-lg">
+          <th className="py-4 px-6 border-x text-left font-normal">Position</th>
+            <th className="py-4 px-6 border-x text-left font-normal">Salary</th>
+            <th className="py-4 px-6 border-x text-left font-normal">Duration</th>
+            <th className="py-4 px-6 border-x text-left font-normal">Date Line</th>
+            <th className="py-4 px-6 border-x font-normal">Actions</th>
           </tr>
         </thead>
         <tbody className="text-gray-500">
@@ -90,12 +90,12 @@ const Dashboard: React.FC = () => {
             onClick={() => handleClick(index)}
             onDoubleClick={() => handleRowDoubleClick(company.id)}
             >
-              <td className="py-2 px-4  text-sm">{company.position}</td>
-              <td className="py-2 px-4  text-sm">{company.salary}</td>
-              <td className="py-2 px-4  text-sm">{company.duration}</td>
-              <td className="py-2 px-4  text-sm">{company.dateLine}</td>
+              <td className="py-4 px-6  text-sm">{company.position}</td>
+              <td className="py-4 px-6  text-sm">{company.salary}</td>
+              <td className="py-4 px-6  text-sm">{company.duration}</td>
+              <td className="py-4 px-6  text-sm">{company.dateLine}</td>
             
-              <td className="py-2 px-4 flex justify-center items-center space-x-4">
+              <td className="py-4 px-6 flex justify-center items-center space-x-4">
               <div className="text-blue-500 cursor-pointer">
                     <Typography fontSize="sm">Edit</Typography>
                   </div>
