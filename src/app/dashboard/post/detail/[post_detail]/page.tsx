@@ -1,40 +1,19 @@
-import React from 'react'
-import Image from 'next/image'
-import { Card, Icon} from '@/components'
-import { Typography } from "../../../components/atoms/Typography";
-import Link from "next/link";
-import CardList from "@/components/molecules/Card/CardList";
+"use client"
+import { useParams } from "next/navigation";
+import React from 'react';
+import { Typography } from "@/components";
+import Image from "next/image";
+import { Card, Icon } from "@/components";
+import { Button } from "@/components/ui/button";
+import Modal from "@/components/molecules/Modal/Modal";
+import EditEmployer from "@/app/dashboard/edit_employer/page";
 
-import { Button } from '@/components/ui/button';
-import { DetailCard } from '@/Types/DetailCard';
-const Cardinfor: DetailCard[] = [
-  {
-    id: "1",
-    companyName: "Wing Bank",
-    companyLogo: "/images.png",
-    peopleAmount: "100+ people",
-    jobTitle: "UX/UI Intership",
-    salary: "150-200",
-    location: "Phnom Penh",
-    Emploment: "Full-Time",
-    DeadLine: "01-01-2025",
-  },
-  {
-    id: "2",
-    companyName: "Sathapana Bank",
-    companyLogo: "/images.png",
-    peopleAmount: "50+ people",
-    jobTitle: "Vue Js Intership",
-    salary: "100-200",
-    location: "Phnom Penh",
-    Emploment: "Full-Time",
-    DeadLine: "09-08-2024",
-  }];
+const PostDetail: React.FC = () => {
+  const { id } = useParams();
 
-const anynomousEmp = () => {
   return (
-    <>
-      <div className="container xl:max-w-[1200px] bg-[#F8F9FA] rounded-xl mt-5 md:mt-10 p-5 md:px-24 md:py-10">
+    <div>
+       <div className="container xl:max-w-[1200px] bg-[#F8F9FA] rounded-xl mt-5 px-10 py-5">
         {/* top */}
         <div className="w-full flex md:flex-row justify-between items-center">
           <div className="flex items-center mb-4 md:mb-0">
@@ -54,13 +33,8 @@ const anynomousEmp = () => {
               </Typography>
             </div>
           </div>
-          {/* <div className="flex items-center">
-            <Button className="bg-[#4B9960] rounded-full flex items-center justify-center gap-2 px-4 md:px-6 py-2">
-              <Icon label="Edit" className="flex items-center justify-center" />
-              <span className="hidden md:block">Edit profile</span>
-            </Button>
-          </div> */}
         </div>
+       
         {/* bottom */}
         <div className="flex flex-col md:flex-row justify-between mt-5">
           <div className="w-full">
@@ -107,30 +81,11 @@ const anynomousEmp = () => {
                 development.
               </Typography>
             </div>
-            
           </div>
-         
         </div>
-        
       </div>
-      {/* card */}
-      {/* <CardList cards={detailCard} /> */}
-      
-       
-      <main className="w-full mx-auto xl:max-w-[1200px] my-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px]">
-          {Cardinfor.map((job) => (
-            <div key={job.id} className="card-container">
-              <Card className="w-full h-auto" data={job} />
-            </div>
-          ))}
-        </div>
-      </main>
-      {/* <CardList /> */}
-
-     
-    </>
+    </div>
   );
-}
+};
 
-export default anynomousEmp
+export default PostDetail;

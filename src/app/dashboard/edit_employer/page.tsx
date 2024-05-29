@@ -2,13 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Typography, Input, Button } from "@/components";
 
-interface EditEmployerProps {
-  data: any;
-  onUpdate: (formData: any) => void;
-}
-
-const EditEmployer: React.FC<EditEmployerProps> = ({ data, onUpdate }) => {
-  const [formData, setFormData] = useState(data);
+const EditEmployer = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<
     string | ArrayBuffer | null
@@ -16,30 +10,6 @@ const EditEmployer: React.FC<EditEmployerProps> = ({ data, onUpdate }) => {
 
   const handleCancel = () => {
     setIsOpen(false);
-  };
-
-  useEffect(() => {
-    setFormData((prevFormData: any) => ({
-      ...prevFormData,
-      ...data,
-    }));
-  }, [data]);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onUpdate(formData);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prevState: any) => ({
-      ...prevState,
-      [name]: value,
-    }));
   };
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,7 +28,7 @@ const EditEmployer: React.FC<EditEmployerProps> = ({ data, onUpdate }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <div className="w-full flex justify-center items-center mx-auto">
         <div className="max-w-[880px] mx-auto rounded-lg shadow-sm">
           <Typography fontSize="xl" className="text-center">
@@ -115,8 +85,6 @@ const EditEmployer: React.FC<EditEmployerProps> = ({ data, onUpdate }) => {
                 type="text"
                 placeholder="Company name"
                 className="text-sm w-full"
-                value={formData.companyName}
-                onChange={handleChange}
                 name="companyName"
               />
             </div>
@@ -126,8 +94,6 @@ const EditEmployer: React.FC<EditEmployerProps> = ({ data, onUpdate }) => {
                 type="email"
                 placeholder="sathapanabankinfo@gmail.com"
                 className="text-sm w-full"
-                value={formData.contactEmail}
-                onChange={handleChange}
                 name="contactEmail"
               />
             </div>
@@ -137,8 +103,6 @@ const EditEmployer: React.FC<EditEmployerProps> = ({ data, onUpdate }) => {
                 type="tel"
                 placeholder="0965774927"
                 className="text-sm w-full"
-                value={formData.contactPhone}
-                onChange={handleChange}
                 name="contactPhone"
               />
             </div>
@@ -148,8 +112,6 @@ const EditEmployer: React.FC<EditEmployerProps> = ({ data, onUpdate }) => {
                 type="text"
                 placeholder="Sal Visal"
                 className="text-sm w-full"
-                value={formData.contactPerson}
-                onChange={handleChange}
                 name="contactPerson"
               />
             </div>
@@ -159,8 +121,6 @@ const EditEmployer: React.FC<EditEmployerProps> = ({ data, onUpdate }) => {
                 type="url"
                 placeholder="https://www.saathapana.com.kh"
                 className="text-sm w-full"
-                value={formData.websiteLink}
-                onChange={handleChange}
                 name="websiteLink"
               />
             </div>
@@ -170,8 +130,6 @@ const EditEmployer: React.FC<EditEmployerProps> = ({ data, onUpdate }) => {
                 id="totalEmployees"
                 className="border text-[#424242] outline-none text-sm rounded-lg block w-full h-[35px]"
                 name="totalEmployees"
-                value={formData.totalEmployees}
-                onChange={handleChange}
               >
                 <option value="10-20">10-20</option>
                 <option value="20-50">20-50</option>
@@ -184,8 +142,6 @@ const EditEmployer: React.FC<EditEmployerProps> = ({ data, onUpdate }) => {
                 type="text"
                 placeholder="Phnom Penh"
                 className="text-sm w-full"
-                value={formData.location}
-                onChange={handleChange}
                 name="location"
               />
             </div>
@@ -195,8 +151,6 @@ const EditEmployer: React.FC<EditEmployerProps> = ({ data, onUpdate }) => {
                 type="text"
                 placeholder="8391 Elgin. St. Celina. Delaware 10"
                 className="text-sm w-full"
-                value={formData.address}
-                onChange={handleChange}
                 name="address"
               />
             </div>
@@ -208,8 +162,6 @@ const EditEmployer: React.FC<EditEmployerProps> = ({ data, onUpdate }) => {
               rows={4}
               className="p-2 w-full text-sm text-gray-900 rounded-lg border border-gray-300 outline-none"
               placeholder="Typing something..."
-              value={formData.description}
-              onChange={handleChange}
               name="description"
             />
           </div>

@@ -68,7 +68,7 @@ const EmployerProfile: React.FC = () => {
         >
           <div className="bg-white p-8">
             <h1 className="flex justify-center flex-col items-center">
-              <EditEmployer data={employerData} onUpdate={updateEmployerData} />
+              <EditEmployer />
             </h1>
           </div>
         </Modal>
