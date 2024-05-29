@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Typography, Input, Button } from "@/components";
 import { FaTrash } from 'react-icons/fa';
+import CandidatesTable from '../candidates-table/page';
 
 interface Candidate {
   name: string;
@@ -34,40 +35,7 @@ const Dashboard: React.FC = () => {
 
 
   return (
-    <div >
-      <Typography fontSize='md' className='font-bold mb-4'>Candidate Table</Typography>
-      <table className="w-full border-collapse">
-        <thead>
-          <tr className="bg-gray-200 text-sm">
-            <th className="py-2 px-4 text-left">Username</th>
-            <th className="py-2 px-4 text-left">Email</th>
-            <th className="py-2 px-4 text-left">Date</th>
-            <th className="py-2 px-4 text-left">CV</th>
-            <th className="py-2 px-4 text-left">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {candidates.map((candidate, index) => (
-            <tr
-              key={index}
-              className={`border-b ${index % 2 === 0 ? 'bg-gray-100' : ''}`}
-            >
-              <td className="py-2 px-4 text-sm">{candidate.name}</td>
-              <td className="py-2 px-4 text-sm">{candidate.email}</td>
-              <td className="py-2 px-4 text-sm">{candidate.date}</td>
-              <td className="py-2 px-4 text-sm">
-                <Button onClick={() => viewCandidate(candidate)} colorScheme='primary' size='sm' textColor='white'>
-                  view
-                </Button>
-              </td>
-              <td className="py-2 px-4">
-                <Button onClick={() => removeCandidate(index)} colorScheme='danger' size='sm' className="text-white"><FaTrash /></Button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <CandidatesTable />
   );
 };
 

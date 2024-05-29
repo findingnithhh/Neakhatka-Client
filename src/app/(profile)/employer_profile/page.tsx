@@ -8,30 +8,6 @@ import { DetailCard } from "@/Types/DetailCard";
 import { useState } from "react";
 import Modal from "@/components/molecules/Modal/Modal";
 
-const Cardinfor: DetailCard[] = [
-  {
-    id: "1",
-    companyName: "Wing Bank",
-    companyLogo: "/images.png",
-    peopleAmount: "100+ people",
-    jobTitle: "UX/UI Intership",
-    salary: "$150-$200",
-    location: "Phnom Penh",
-    Emploment: "Full-Time",
-    DeadLine: "01-01-2025",
-  },
-  {
-    id: "2",
-    companyName: "",
-    companyLogo: "",
-    peopleAmount: "",
-    jobTitle: "",
-    salary: "",
-    location: "",
-    Emploment: "",
-    DeadLine: "",
-  },
-];
 
 const EmployerProfile = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -131,7 +107,7 @@ const EmployerProfile = () => {
       {/* card */}
       {/* <CardList cards={detailCard} /> */}
 
-      <main className="w-full mx-auto xl:max-w-[1200px] my-10">
+      {/* <main className="w-full mx-auto xl:max-w-[1200px] my-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px]">
           {Cardinfor.map((job) => (
             <div key={job.id} className="card-container">
@@ -145,7 +121,7 @@ const EmployerProfile = () => {
             </div>
           ))}
         </div>
-      </main>
+      </main> */}
       {/* <CardList /> */}
     </>
   );

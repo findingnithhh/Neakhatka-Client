@@ -1,11 +1,12 @@
-2024-05-25T11:09:57.457Z    +96ms [debug] Config loaded {"version":"2.41.5","cdkVersion":"2.132.1","constructsVersion":"10.3.0","config":{"name":"neakhatka","region":"us-east-1","stage":"prod","ssmPrefix":"/sst/neakhatka/prod/"},"metafile":{"inputs":{"sst.config.ts":{"bytes":390,"imports":[{"path":"aws-cdk-lib/aws-route53","kind":"import-statement","external":true},{"path":"sst","kind":"import-statement","external":true},{"path":"sst/constructs","kind":"import-statement","external":true},{"path":"aws-cdk-lib","kind":"import-statement","external":true}],"format":"esm"}},"outputs":{".sst.config.1716635397377.mjs":{"imports":[],"exports":["default"],"entryPoint":"sst.config.ts","inputs":{"sst.config.ts":{"bytesInOutput":124}},"bytes":306}}},"paths":{"config":"D:\\SabaiCode\\next js\\product\\matching-internship-storybook -new\\sst.config.ts","root":"D:\\SabaiCode\\next js\\product\\matching-internship-storybook -new","out":"D:\\SabaiCode\\next js\\product\\matching-internship-storybook -new\\.sst","artifacts":"D:\\SabaiCode\\next js\\product\\matching-internship-storybook -new\\.sst\\artifacts"}}
-2024-05-25T11:09:58.210Z   +753ms [debug] Using AWS profile 
-2024-05-25T11:09:58.214Z     +4ms [debug] Created AWS client STSClient
-2024-05-25T11:09:58.215Z     +1ms [debug] Fetching app metadata
-2024-05-25T11:09:58.215Z     +0ms [debug] Initializing bootstrap context
-2024-05-25T11:09:58.216Z     +1ms [debug] Created AWS client CloudFormationClient
-2024-05-25T11:09:59.561Z  +1345ms [debug] Using identity Account: 211125513237 User: AIDATCKAPVQKS7XF2QQU5
-2024-05-25T11:09:59.791Z   +230ms [debug] Loaded bootstrap status
-2024-05-25T11:09:59.791Z     +0ms [debug] Bootstrap context initialized {"status":"ready","version":"7.3","bucket":"sstbootstrap-useast124d14e4b-e5e7a403sogh"}
-2024-05-25T11:10:03.649Z  +3858ms [debug] Synthesizing stacks...
-2024-05-25T11:10:03.662Z    +13ms [debug] Generating types in D:\SabaiCode\next js\product\matching-internship-storybook -new\.sst\types
+2024-05-29T03:37:59.759Z   +776ms [debug] Config loaded {"version":"2.41.5","cdkVersion":"2.132.1","constructsVersion":"10.3.0","config":{"name":"neakhatka","region":"us-east-1","stage":"prod","ssmPrefix":"/sst/neakhatka/prod/"},"metafile":{"inputs":{"sst.config.ts":{"bytes":390,"imports":[{"path":"aws-cdk-lib/aws-route53","kind":"import-statement","external":true},{"path":"sst","kind":"import-statement","external":true},{"path":"sst/constructs","kind":"import-statement","external":true},{"path":"aws-cdk-lib","kind":"import-statement","external":true}],"format":"esm"}},"outputs":{".sst.config.1716953879002.mjs":{"imports":[],"exports":["default"],"entryPoint":"sst.config.ts","inputs":{"sst.config.ts":{"bytesInOutput":124}},"bytes":306}}},"paths":{"config":"D:\\SabaiCode\\next js\\product\\matching-internship-storybook -new\\sst.config.ts","root":"D:\\SabaiCode\\next js\\product\\matching-internship-storybook -new","out":"D:\\SabaiCode\\next js\\product\\matching-internship-storybook -new\\.sst","artifacts":"D:\\SabaiCode\\next js\\product\\matching-internship-storybook -new\\.sst\\artifacts"}}
+2024-05-29T03:38:01.561Z  +1802ms [debug] Using AWS profile 
+2024-05-29T03:38:01.565Z     +4ms [debug] Created AWS client STSClient
+2024-05-29T03:38:01.567Z     +2ms [debug] Fetching app metadata
+2024-05-29T03:38:01.567Z     +0ms [debug] Initializing bootstrap context
+2024-05-29T03:38:01.568Z     +1ms [debug] Created AWS client CloudFormationClient
+2024-05-29T03:38:03.187Z  +1619ms [debug] Loaded bootstrap status
+2024-05-29T03:38:03.187Z     +0ms [debug] Bootstrap context initialized {"status":"ready","version":"7.3","bucket":"sstbootstrap-useast124d14e4b-e5e7a403sogh"}
+2024-05-29T03:38:03.215Z    +28ms [debug] Using identity Account: 211125513237 User: AIDATCKAPVQKS7XF2QQU5
+2024-05-29T03:38:08.326Z  +5111ms [debug] Synthesizing stacks...
+2024-05-29T03:38:08.344Z    +18ms [debug] Generating types in D:\SabaiCode\next js\product\matching-internship-storybook -new\.sst\types
+2024-05-29T03:38:08.571Z   +227ms [debug] Running "npx --yes open-next@2.3.8 build" script
