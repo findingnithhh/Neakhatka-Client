@@ -36,7 +36,7 @@ export const Default: Story = {
     await userEvent.type(input, "Write to testing input");
 
     // Check if the input value has changed
-    expect(input).toHaveValue("Write to testing input");
+    await expect(input).toHaveValue("Write to testing input");
   },
 };
 

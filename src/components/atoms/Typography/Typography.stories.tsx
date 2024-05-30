@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Typography } from "./Typography";
-import { action } from "@storybook/addon-actions";
-import { userEvent, within } from "@storybook/testing-library";
+import { within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 
 const meta: Meta<typeof Typography> = {
@@ -31,7 +30,7 @@ export const Default: Story = {
     const typography = await canvas.getByText("Typography");
 
     // Verify typography properties
-    expect(typography).toHaveStyle(`
+    await expect(typography).toHaveStyle(`
       text-align: center;
       font-size: 1rem; /* base font size */
       font-weight: 500; /* medium variant */
