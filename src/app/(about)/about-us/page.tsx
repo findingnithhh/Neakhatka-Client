@@ -14,7 +14,7 @@ const AboutUs = () => {
       <div className="container xl:max-w-[1200px]">
         <div>
           <div className="flex justify-center items-center pt-0 lg:pt-10">
-            <div className="bg-gray-100 rounded-2xl px-5 p-2">About Us</div>
+            <div>About Us</div>
           </div>
           <div className="mx-0 md:mx-12 mt-10">
             <Typography fontSize="3xl">

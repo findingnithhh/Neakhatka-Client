@@ -41,11 +41,6 @@ const Banner = () => {
           </span>
         </div>
       </div>
-      {/* <div className="flex justify-center items-center">
-        <div className="absolute">
-          <Promote />
-        </div>
-      </div> */}
     </>
   );
 };

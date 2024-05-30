@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Typography, Input, Button } from "@/components";
 import { FaTrash } from "react-icons/fa";
 import Modal from "@/components/molecules/Modal/Modal";
-import PostJob from "../edit_post/page";
+import PostJob from "../edit-post/page";
 
 interface Company {
   id: number;
