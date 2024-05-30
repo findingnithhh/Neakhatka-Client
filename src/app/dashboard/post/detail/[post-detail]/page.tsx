@@ -1,19 +1,19 @@
-"use client"
+"use client";
 import { useParams } from "next/navigation";
-import React from 'react';
+import React from "react";
 import { Typography } from "@/components";
 import Image from "next/image";
 import { Card, Icon } from "@/components";
 import { Button } from "@/components/ui/button";
 import Modal from "@/components/molecules/Modal/Modal";
-import EditEmployer from "@/app/dashboard/edit_employer/page";
+import EditEmployer from "@/app/dashboard/edit-employer/page";
 
 const PostDetail: React.FC = () => {
   const { id } = useParams();
 
   return (
     <div>
-       <div className="container xl:max-w-[1200px] bg-[#F8F9FA] rounded-xl mt-5 px-10 py-5">
+      <div className="container xl:max-w-[1200px] bg-[#F8F9FA] rounded-xl mt-5 px-10 py-5">
         {/* top */}
         <div className="w-full flex md:flex-row justify-between items-center">
           <div className="flex items-center mb-4 md:mb-0">
@@ -34,7 +34,7 @@ const PostDetail: React.FC = () => {
             </div>
           </div>
         </div>
-       
+
         {/* bottom */}
         <div className="flex flex-col md:flex-row justify-between mt-5">
           <div className="w-full">

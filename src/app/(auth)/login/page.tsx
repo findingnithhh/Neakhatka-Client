@@ -71,7 +71,11 @@ const Login = () => {
       </div>
       <div className="right w-full p-10">
         <div className="text-end">
-          <Link href="/join" color="primary" className="text-sm text-blue-500 underline">
+          <Link
+            href="/join"
+            color="primary"
+            className="text-sm text-blue-500 underline"
+          >
             Sign Up
           </Link>
         </div>
@@ -88,9 +92,9 @@ const Login = () => {
             />
           </Link>
           <div className="text-center">
-            <h1 className="font-bold mb-1 text-lg">Create an account</h1>
+            <h1 className="font-bold mb-1 text-lg mt-5">Log in to Neakhatka</h1>
             <p className="text-gray-500 text-sm">
-              Enter your email below to create your account
+              Enter your email and password below to login <br /> your account
             </p>
           </div>
           <form onSubmit={handleSubmit} className="mt-5">

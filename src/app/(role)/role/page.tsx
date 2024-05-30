@@ -6,7 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import "../../globals.css";
 
-const Join = () => {
+const Role = () => {
   return (
     <>
       <div className="container h-screen flex justify-center items-center">
@@ -120,4 +120,4 @@ const Join = () => {
   );
 };
 
-export default Join;
+export default Role;

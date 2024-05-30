@@ -5,7 +5,7 @@ import { Icon } from "@/components";
 import { Typography } from "../../../components/atoms/Typography";
 import { Button } from "@/components/ui/button";
 import Modal from "@/components/molecules/Modal/Modal";
-import EditEmployer from "@/app/dashboard/edit_employer/page";
+import EditEmployer from "@/app/dashboard/edit-employer/page";
 
 const EmployerProfile: React.FC = () => {
   const [employerData, setEmployerData] = useState({
