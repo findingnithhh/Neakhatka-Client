@@ -93,7 +93,7 @@ export default function Nav() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="/join">
+          <Link href="/role">
             <Button className="bg-[#4B9960] hidden sm:flex">Sign Up</Button>
           </Link>
         </NavbarItem>
