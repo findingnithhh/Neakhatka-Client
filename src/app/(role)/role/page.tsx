@@ -26,7 +26,7 @@ const Role = () => {
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="mx-4">
-                <Link href="/seeker_sign_up">
+                <Link href="/seeker-sign-up">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
@@ -51,7 +51,7 @@ const Role = () => {
                   </motion.div>
                 </Link>
                 <div className="flex justify-center items-center mt-5 mb-10">
-                  <Link href="/seeker_sign_up">
+                  <Link href="/seeker-sign-up">
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
@@ -65,7 +65,7 @@ const Role = () => {
                 </div>
               </div>
               <div className="mx-4">
-                <Link href="/emplyer_sign_up">
+                <Link href="/emplyer-sign-up">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
@@ -88,7 +88,7 @@ const Role = () => {
                   </motion.div>
                 </Link>
                 <div className="flex justify-center items-center mt-5">
-                  <Link href="/emplyer_sign_up">
+                  <Link href="/emplyer-sign-up">
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}

@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import { Card, Icon } from "@/components";
 import { Typography } from "../../../components/atoms/Typography";
-import Link from "next/link";
 import CardList from "@/components/molecules/Card/CardList";
 
 import { Button } from "@/components/ui/button";

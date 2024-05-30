@@ -38,9 +38,9 @@ export default function Nav() {
   const menuItems: MenuItem[] = [
     { text: "Home", link: "/" },
     { text: "Favorite", link: "/favorite" },
-    { text: "Contact Us", link: "/contact_us" },
-    { text: "About Us", link: "/about_us" },
-    { text: "Sign Up", link: "/join" },
+    { text: "Contact Us", link: "/contact-us" },
+    { text: "About Us", link: "/about-us" },
+    { text: "Sign Up", link: "/role" },
     { text: "Login", link: "/login" },
   ];
 

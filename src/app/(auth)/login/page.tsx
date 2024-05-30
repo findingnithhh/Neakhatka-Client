@@ -72,7 +72,7 @@ const Login = () => {
       <div className="right w-full p-10">
         <div className="text-end">
           <Link
-            href="/join"
+            href="/role"
             color="primary"
             className="text-sm text-blue-500 underline"
           >
@@ -129,7 +129,7 @@ const Login = () => {
               )}
             </div>
             <Link
-              href="/forgot_password"
+              href="/forgot-password"
               className="flex justify-end text-blue-600 -mb-5 mt-2 text-sm underline"
             >
               forgot password?
