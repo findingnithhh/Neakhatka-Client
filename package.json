@@ -72,6 +72,7 @@
     "sst": "2.41.5",
     "storybook": "^7.6.12",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "webpack": "^5.91.0"
   }
 }
