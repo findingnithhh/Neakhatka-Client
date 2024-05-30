@@ -18,13 +18,15 @@ interface CardData {
   Emploment: string;
   location: string;
   DeadLine: string;
+  onClick?: (event: any) => void;
 }
 
 interface CardProps {
   className?: string;
   data: CardData; // Use the new interface
-  iconType?: "star" | "close";
+  iconType?: "star" | "close" | "StarFill";
   onDelete?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -160,4 +162,4 @@ const Card: React.FC<CardProps> = ({
   );
 };
 
-export { Card, type CardData };
+export { Card, type CardData, type CardProps };
